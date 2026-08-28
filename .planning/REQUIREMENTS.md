@@ -66,19 +66,38 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SITE-* | Pending | Pending |
-| CONV-* | Pending | Pending |
-| CRM-* | Pending | Pending |
-| SEO-* | Pending | Pending |
-| CONT-* | Pending | Pending |
-| VISTA-* | Pending | Pending |
-
-_(Traceability preenchido na criação do roadmap.)_
+| SITE-01 | Phase 1 | Pending |
+| SITE-02 | Phase 1 | Pending |
+| SEO-01 | Phase 1 | Pending |
+| SITE-03 | Phase 2 | Pending |
+| SITE-04 | Phase 2 | Pending |
+| SITE-05 | Phase 2 | Pending |
+| SITE-06 | Phase 2 | Pending |
+| CRM-03 | Phase 2 | Pending |
+| VISTA-02 | Phase 2 | Pending |
+| VISTA-03 | Phase 2 | Pending |
+| VISTA-04 | Phase 2 (+5) | Pending |
+| CONV-01 | Phase 3 | Pending |
+| CONV-02 | Phase 3 | Pending |
+| CONV-03 | Phase 3 | Pending |
+| CONV-04 | Phase 3 | Pending |
+| CRM-01 | Phase 3 | Pending |
+| CRM-04 | Phase 3 | Pending |
+| VISTA-01 | Phase 3 | Pending |
+| VISTA-05 | Phase 3 | Pending |
+| CONT-01 | Phase 4 | Pending |
+| CONT-02 | Phase 4 | Pending |
+| CONT-03 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| SEO-04 | Phase 4 | Pending |
+| SITE-07 | Phase 5 | Pending |
+| CRM-02 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 27 total
-- Mapped to phases: 0
-- Unmapped: 27 ⚠️
+- Mapped to phases: 27
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-08-28*
