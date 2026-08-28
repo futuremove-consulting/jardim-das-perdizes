@@ -153,7 +153,9 @@ Agências (`/agencias/`), Corretores (`/corretores/` + `/equipes/` + `/usuarios/
 
 ## 3. Design de integração do produto
 
-> **Decisão de arquitetura (registrada em 2026-08-28):** o banco de dados do produto é o **Supabase — banco canônico completo**. Um **API do produto** (futuro) permitirá a integração com o VISTA. Portanto a **modelagem de dados no Supabase deve ser compatível** com a estrutura de dados do VISTA (Loft CRM), de modo que cada entidade do produto se corresponda 1:1 a uma entidade VISTA (`properties` ↔ `Imóveis`; `leads/clients` ↔ `Clientes`; `deals` ↔ `Negócios`) e os códigos de referência do VISTA sejam preservados como atributos de compatibilidade.
+> **Decisão de arquitetura (registrada em 2026-08-28):** o banco de dados do produto é o **Supabase — banco canônico completo**. Um **API do produto** (futuro) permitirá a integração com o VISTA. Portanto a **modelagem de dados no Supabase deve ser compatível** com a estrutura de dados do VISTA (Loft CRM), de modo que cada entidade do produto se corresponda 1:1 a uma entidade VISTA (`units` ↔ `Imóveis`; `leads/clients` ↔ `Clientes`; `deals` ↔ `Negócios`) e os códigos de referência do VISTA sejam preservados como atributos de compatibilidade.
+
+> **Modelo de dados canônico (decisão do fundador, 2026-08-28):** hierarquia `bairro > condomínio > torre/bloco > unidade`, com `tipologia` como **dimensão/referência compartilhada** (não um container aninhado — a mesma planta se repete em várias torres). Ver §3.5.
 
 ### 3.1 Direções e fluxos
 
@@ -213,9 +215,30 @@ As entidades do produto espelham as entidades VISTA. Campos de compatibilidade p
 
 | Tabela | Campos de compatibilidade |
 |--------|---------------------------|
-| `properties` | `vista_code` (Codigo do imóvel), `vista_status`, `verified_at` |
+| `units` | `vista_code` (Codigo do imóvel), `vista_status`, `verified_at` |
 | `leads` / `clients` | `vista_client_code` (Codigo do cliente), `capture_source` (VeiculoCaptacao) |
 | `deals` | `vista_deal_id`, `vista_pipe_id`, `vista_stage_id` |
+
+### 3.5 Modelo de dados canônico (hierarquia)
+
+Decisão do fundador: **bairro > condomínio > torre/bloco > unidade**, com `tipologia` como dimensão/referência compartilhada — a mesma planta (ex.: "2 dorms, 52 m²") existe em várias torres do mesmo condomínio e não deve ser duplicada como nível aninhado. `bairro` também é dimensão (um condomínio reside num bairro; um bairro agrega vários condomínios).
+
+```
+neighborhoods (1) ──< condominiums (1) ──< towers (1) ──< units
+                                          └──(typologies)──┘  ← referência, não container
+```
+
+| Entidade (EN) | Papel | Campos-chave (compatibilidade VISTA) |
+|----------------|-------|----------------------------------------|
+| `neighborhoods` | Bairro (dimensão do condomínio) | `id`, `slug`, `name`, `city` |
+| `condominiums` | Lançamento/empreendimento (Manacá, Araucária, Jequitibá) | `id`, `slug`, `name`, `neighborhood_id`, `address`, `amenities[]`, produto/entrega |
+| `towers` | Torre/bloco física (apenas nomes confirmados) | `id`, `condominium_id`, `name`, `delivery_year`, `status`, `floors`, `units_per_floor` |
+| `typologies` | Catálogo de plantas (dimensão compartilhada) | `id`, `slug`, `bedrooms`, `suites`, `parking_spots`, `private_area_m2`, `bathrooms` |
+| `units` | Item vendável/locável (ficha do imóvel) | `id`, `tower_id`, `typology_id`, `floor`, `number`, `view`, `unit_status`, `sale_price`, `hoa_fee`, `property_tax`, `verified_at`, `vista_code`, `vista_status` |
+
+- `units` é a entidade que espelha o acervo `Imóveis` do VISTA (1 imóvel VISTA = 1 unidade).
+- `typologies` e `towers` são structs do VISTA/do produto que enriquecem a unidade — campos de tipologia/torre vêm no cadastro do imóvel VISTA (ex.: `Dormitorios`, `AreaPrivativa`, `Pavimento/Torre`).
+- **Fidelidade:** só entram torres confirmadas (Manacá: Andorinha/Sabiá/Arara/Cacatua/Falcão/Jacutinga; Araucária: Tê/Tucano; Jequitibá: Canário/Bem-te-vi/Beija-flor). Nunca inventar.
 
 ### 3.4 Sequência de integração recomendada
 
