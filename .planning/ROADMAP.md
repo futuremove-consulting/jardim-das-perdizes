@@ -30,13 +30,13 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
   4. APP_MODE=demo renderiza conteúdo de exemplo; trocar para `prod` não quebra o build (mocks isolados)
   5. Projeto gira com pnpm, build `next build` sem erros, testes TDD passando
 
-**Plans**: 2/4 plans executed
+**Plans**: 3/4 plans executed
 
 Plans:
 
 - [x] 01-01-PLAN.md
 - [x] 01-02-PLAN.md
-- [ ] 01-03-PLAN.md
+- [x] 01-03-PLAN.md
 - [ ] 01-04-PLAN.md
 
 **Wave 1**
@@ -45,7 +45,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 01-02: Registro único de rotas (16 URLs, TDD) + design tokens + Header/Footer/PageLayout (menus dos docs)
+- [x] 01-02: Registro único de rotas (16 URLs, TDD) + design tokens + Header/Footer/PageLayout (menus dos docs)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -195,7 +195,7 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phases 6 e 7 (an�
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação & Esqueleto | 2/4 | In Progress|  |
+| 1. Fundação & Esqueleto | 3/4 | In Progress|  |
 | 2. Inventário & Descoberta | 0/4 | Not started | - |
 | 3. Conversão & CRM | 0/4 | Not started | - |
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |

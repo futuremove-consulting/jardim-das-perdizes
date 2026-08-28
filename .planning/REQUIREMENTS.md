@@ -13,7 +13,7 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 - [ ] **SITE-02**: Home apresenta o hub e a conversão dual em dobra visível, com roteamento imediato por intenção (comprador / locatário / investidor / proprietário)
 - [ ] **SITE-03**: Camada de descoberta: busca + filtros essenciais (finalidade, condomínio, dormitórios, área, preço) e cards de imóvel padronizados
 - [ ] **SITE-04**: Fichas técnicas de imóvel com campos estruturados completos (torre, andar, área, vagas, condomínio, IPTU, custo total estimado, status, fotos)
-- [ ] **SITE-05**: Páginas de condomínio (8+ condomínios reais do Jardim das Perdizes) com produto, torres confirmadas e status de entrega
+- [x] **SITE-05**: Páginas de condomínio (8+ condomínios reais do Jardim das Perdizes) com produto, torres confirmadas e status de entrega
 - [ ] **SITE-06**: Comparador simples de imóveis (lazy, sem portal gigante)
 - [ ] **SITE-07**: Alerta de imóveis (cadastro de interesse para novos imóveis chegarem)
 
@@ -97,7 +97,7 @@ Melhor prática global para múltiplos sistemas de captação: **modelo canônic
 | SEO-01 | Phase 1 | Pending |
 | SITE-03 | Phase 2 | Pending |
 | SITE-04 | Phase 2 | Pending |
-| SITE-05 | Phase 2 | Pending |
+| SITE-05 | Phase 2 | Complete |
 | SITE-06 | Phase 2 | Pending |
 | CRM-03 | Phase 2 | Pending |
 | VISTA-02 | Phase 2 | Pending |
