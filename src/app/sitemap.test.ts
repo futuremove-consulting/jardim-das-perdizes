@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { sitemap } from "./sitemap";
+import sitemap from "./sitemap";
 import { ROUTES } from "@/lib/routes";
 import { siteUrl } from "@/lib/config";
 
