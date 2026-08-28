@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Design tokens — brand / ink / paper (docs design specification) */
+  --color-brand: #14532d; /* deep green — authoritative, editorial */
+  --color-brand-soft: #dcfce7;
+  --color-ink: #171717;
+  --color-ink-muted: #52525b;
+  --color-paper: #ffffff;
 }
 
 @theme inline {
@@ -10,12 +17,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Semantic aliases consumed by utilities like text-brand, bg-paper */
+  --color-brand: var(--color-brand);
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-ink: #ededed;
+    --color-ink-muted: #a1a1aa;
+    --color-paper: #0a0a0a;
   }
 }
 
@@ -23,4 +38,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Shared page container: consistent horizontal rhythm across all 16 pages */
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
 }
