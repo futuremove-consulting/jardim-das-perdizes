@@ -10,7 +10,7 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 ### Site (SITE)
 
 - [x] **SITE-01**: Site Next.js (App Router) responsivo com as 11 páginas P0 + 5 páginas de condomínio do sitemap estratégico
-- [ ] **SITE-02**: Home apresenta o hub e a conversão dual em dobra visível, com roteamento imediato por intenção (comprador / locatário / investidor / proprietário)
+- [x] **SITE-02**: Home apresenta o hub e a conversão dual em dobra visível, com roteamento imediato por intenção (comprador / locatário / investidor / proprietário)
 - [ ] **SITE-03**: Camada de descoberta: busca + filtros essenciais (finalidade, condomínio, dormitórios, área, preço) e cards de imóvel padronizados
 - [ ] **SITE-04**: Fichas técnicas de imóvel com campos estruturados completos (torre, andar, área, vagas, condomínio, IPTU, custo total estimado, status, fotos)
 - [x] **SITE-05**: Páginas de condomínio (8+ condomínios reais do Jardim das Perdizes) com produto, torres confirmadas e status de entrega
@@ -33,7 +33,7 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 
 ### SEO / AEO / GEO (SEO)
 
-- [ ] **SEO-01**: Estrutura SEO/AEO/GEO — schema.org (RealEstateListing, FAQ, Breadcrumb, LocalBusiness), sitemap.xml, metadados por página, canonical, URLs limpas
+- [x] **SEO-01**: Estrutura SEO/AEO/GEO — schema.org (RealEstateListing, FAQ, Breadcrumb, LocalBusiness), sitemap.xml, metadados por página, canonical, URLs limpas
 - [ ] **SEO-02**: FAQ real (baseada em perguntas do CRM) com schema FAQ + "Falar com especialista"
 - [ ] **SEO-03**: Autoria e transparência — política de fontes, data de atualização visível, selo LGPD
 - [ ] **SEO-04**: Analytics/GA4, Search Console, Bing Webmaster e métricas de conversão instalados (após avaliação de privacidade)
@@ -93,8 +93,8 @@ Melhor prática global para múltiplos sistemas de captação: **modelo canônic
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | SITE-01 | Phase 1 | Complete |
-| SITE-02 | Phase 1 | Pending |
-| SEO-01 | Phase 1 | Pending |
+| SITE-02 | Phase 1 | Complete |
+| SEO-01 | Phase 1 | Complete |
 | SITE-03 | Phase 2 | Pending |
 | SITE-04 | Phase 2 | Pending |
 | SITE-05 | Phase 2 | Complete |

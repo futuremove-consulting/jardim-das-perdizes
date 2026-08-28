@@ -6,7 +6,7 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
 
 ## Phases
 
-- [ ] **Phase 1: Fundação & Esqueleto** - Scaffold Next.js + base de layout/menus + 16 rotas + SEO técnico base (demo-first)
+- [x] **Phase 1: Fundação & Esqueleto** - Scaffold Next.js + base de layout/menus + 16 rotas + SEO técnico base (demo-first) (completed 2026-08-28)
 - [ ] **Phase 2: Inventário & Descoberta** - Modelo de dados Supabase, cards/filtros/fichas técnicas, páginas de condomínio, comparador e sync VISTA (demo = mocks)
 - [ ] **Phase 3: Conversão & CRM** - Mini formulário 4 passos, CTA dual + WhatsApp (Uazapi), lead no Supabase + VISTA, LGPD
 - [ ] **Phase 4: Conteúdo & SEO/AEO/GEO** - Blog + pilar principal, FAQ schema, autoria, calendário 90 dias, analytics
@@ -30,14 +30,14 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
   4. APP_MODE=demo renderiza conteúdo de exemplo; trocar para `prod` não quebra o build (mocks isolados)
   5. Projeto gira com pnpm, build `next build` sem erros, testes TDD passando
 
-**Plans**: 3/4 plans executed
+**Plans**: 4/4 plans complete
 
 Plans:
 
 - [x] 01-01-PLAN.md
 - [x] 01-02-PLAN.md
 - [x] 01-03-PLAN.md
-- [ ] 01-04-PLAN.md
+- [x] 01-04-PLAN.md
 
 **Wave 1**
 
@@ -49,7 +49,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 01-03: Dados de condomínios com testes de fidelidade (TDD) + rotas dinâmicas dos 5 condomínios + factory de metadata (canonical)
+- [x] 01-03: Dados de condomínios com testes de fidelidade (TDD) + rotas dinâmicas dos 5 condomínios + factory de metadata (canonical)
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
@@ -195,7 +195,7 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phases 6 e 7 (an�
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação & Esqueleto | 3/4 | In Progress|  |
+| 1. Fundação & Esqueleto | 4/4 | Complete   | 2026-08-28 |
 | 2. Inventário & Descoberta | 0/4 | Not started | - |
 | 3. Conversão & CRM | 0/4 | Not started | - |
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |
