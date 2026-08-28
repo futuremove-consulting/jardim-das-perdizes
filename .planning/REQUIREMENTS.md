@@ -52,6 +52,14 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 - [ ] **VISTA-04**: Cliente atendido: `APP_MODE=demo` usa mocks (`mocks/vista/*.json`); produção usa API real com `VISTA_API_KEY` guardada em secret (server-side apenas)
 - [ ] **VISTA-05**: Dedupe de leads por telefone/Foneprincipal reutilizando `Codigo` existente (sem duplicar clientes no VISTA)
 
+### Integração Captei (CAPTEI)
+
+Integração com a **Captei Listings API** (https://app.captei.com.br/api/listings/doc) — busca big-data de anúncios de portais (Elasticsearch), apenas leitura, sem telefone. Papel: **inteligência de mercado** complementar ao VISTA (canônico).
+
+- [ ] **CAPTEI-01**: Análise da API documentada em `docs/captei-integration.md` (auth `Token` + `User-Key`, limites 1s/60rpm/50k dia, endpoint `GET /api/listings/search`, schemas `SearchResponse`/`Listing`/`Address`)
+- [ ] **CAPTEI-02**: Plano de integração no roadmap (Phase 6) mapeando casos de uso v1: página `mercado-e-dados` (P0), comparador/benchmark, conteúdo de autoridade com fonte
+- [ ] **CAPTEI-03**: Cliente server-side (`src/lib/captei-api-client.ts`) com throttle ≥1 s; `APP_MODE=demo` usa mock (`mocks/captei/*.json` espelhando `SearchResponse`); `CAPTEI_TOKEN`/`CAPTEI_USER_KEY` em secrets server-side
+
 ## Out of Scope
 
 | Feature | Reason |
@@ -60,6 +68,7 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 | Portal gigante com inventário de terceiros não verificado | Nunca inventar torres/unidades/preços; primeira versão = site leve com inventário real |
 | Pagamentos online / reserva com cartão | Conversão é lead → visita → proposta, não e-commerce |
 | Integrações externas do VISTA (CredPago, seguro, VivaReal, Órulo, RD Station, GoodData) | Fora do escopo v1; VISTA faz o push para portais — não replicar |
+| Alimentar inventário canônico via Captei | Captei é agregado de terceiros (sem telefone/fidelidade de torres); inventário canônico vem só do VISTA — Captei é dado de mercado |
 | Chaveiros / retiradas de chaves | Domínio operacional do VISTA, sem necessidade no site |
 
 ## Traceability
@@ -85,6 +94,9 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 | CRM-04 | Phase 3 | Pending |
 | VISTA-01 | Phase 3 | Pending |
 | VISTA-05 | Phase 3 | Pending |
+| CAPTEI-01 | Phase 6 | Pending |
+| CAPTEI-02 | Phase 6 | Pending |
+| CAPTEI-03 | Phase 6 | Pending |
 | CONT-01 | Phase 4 | Pending |
 | CONT-02 | Phase 4 | Pending |
 | CONT-03 | Phase 4 | Pending |
@@ -95,8 +107,8 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 | CRM-02 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 27 total
-- Mapped to phases: 27
+- v1 requirements: 30 total
+- Mapped to phases: 30
 - Unmapped: 0 ✓
 
 ---

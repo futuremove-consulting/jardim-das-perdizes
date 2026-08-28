@@ -2,7 +2,7 @@
 
 ## Overview
 
-O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e entrega um site/blog de autoridade que converte visitantes em leads qualificados via formulário + WhatsApp, com rastreio de origem/intenção no Supabase e integração com o VISTA (Loft CRM) para leads e inventário real. A primeira versão é um site leve (11 páginas P0 + 5 de condomínio), demo-first (`APP_MODE=demo` com mocks), que escala para dados reais (VISTA/Uazapi) e produção no Vercel.
+O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e entrega um site/blog de autoridade que converte visitantes em leads qualificados via formulário + WhatsApp, com rastreio de origem/intenção no Supabase e integração com o VISTA (Loft CRM) para leads e inventário real. A primeira versão é um site leve (11 páginas P0 + 5 de condomínio), demo-first (`APP_MODE=demo` com mocks), que escala para dados reais (VISTA/Uazapi) e produção no Vercel. Como fonte de **inteligência de mercado**, o site também fará análise e planejamento de integração com a **Captei Listings API** (anúncios agregados de portais) para páginas de mercado, comparador e conteúdo de autoridade.
 
 ## Phases
 
@@ -11,6 +11,7 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
 - [ ] **Phase 3: Conversão & CRM** - Mini formulário 4 passos, CTA dual + WhatsApp (Uazapi), lead no Supabase + VISTA, LGPD
 - [ ] **Phase 4: Conteúdo & SEO/AEO/GEO** - Blog + pilar principal, FAQ schema, autoria, calendário 90 dias, analytics
 - [ ] **Phase 5: Produção & Growth** - Chaves reais (VISTA/Uazapi), cron sync, deploy Vercel, alerta de imóveis, dashboard KPIs
+- [ ] **Phase 6: Captei — Análise & Planejamento** - Análise/documentação da Captei Listings API + plano de integração (pode rodar em paralelo às fases 1–5)
 
 ## Phase Details
 
@@ -140,10 +141,30 @@ Plans:
 - [ ] 05-03: Deploy Vercel + domínio + Search Console/GBP
 - [ ] 05-04: Dashboard de KPIs (leads → visitas → propostas) + automação Uazapi
 
+### Phase 6: Captei — Análise & Planejamento
+
+**Goal**: Analisar e documentar a **Captei Listings API** (https://app.captei.com.br/api/listings/doc) e planejar a integração como fonte de **inteligência de mercado** (anúncios agregados de portais) — página `mercado-e-dados`, comparador/benchmark e conteúdo de autoridade. **Papel**: complementar ao VISTA (canônico); nunca alimenta inventário.
+**Mode**: mvp
+**Depends on**: Nenhuma (análise/planejamento paralelos às fases 1–5; execução real em produção após Phase 5)
+**Requirements**: CAPTEI-01, CAPTEI-02, CAPTEI-03
+**Success Criteria** (what must be TRUE):
+
+  1. `docs/captei-integration.md` documenta auth (`Token` + `User-Key`), limites (1s/60rpm/50k dia/10000 deep), endpoint `GET /api/listings/search` e schemas (`SearchResponse`/`Listing`/`Address`)
+  2. Requisitos CAPTEI-01..03 e casos de uso v1 registrados (mercado-e-dados, comparador, conteúdo com fonte)
+  3. Plano define client server-side com throttle ≥1 s, mock demo (`mocks/captei/*.json`), secrets `CAPTEI_TOKEN`/`CAPTEI_USER_KEY` em produção
+
+**Plans**: 3 plans
+
+Plans:
+
+- [x] 06-01: Análise da API + `docs/captei-integration.md` (auth, limites, endpoint, schemas) — entregue 2026-08-28
+- [ ] 06-02: Plano de implementação: `src/lib/captei-api-client.ts` (throttle ≥1s, server-side) + mocks `mocks/captei/*.json` (demo)
+- [ ] 06-03: Página `mercado-e-dados` (P0) com dados Captei (mock no demo; API real em prod) + citação de fonte nos conteúdos
+
 ## Progress
 
 **Execution Order:**
-Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5
+Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phase 6 (análise/planejamento) pode rodar em paralelo.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -152,3 +173,4 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5
 | 3. Conversão & CRM | 0/4 | Not started | - |
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |
 | 5. Produção & Growth | 0/4 | Not started | - |
+| 6. Captei — Análise & Planejamento | 1/3 | In progress | - |
