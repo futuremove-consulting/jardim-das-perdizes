@@ -106,3 +106,9 @@ RED → GREEN sequence verified per task in git log:
 - Task 1: `test(01-04)` (331b8ca) then `feat(01-04)` (f088498).
 - Task 2: `feat(01-04)` only — Task 2 is an execute (non-tdd) task; page content has no unit behavioral logic, verified via build + grep + route existence.
 - Task 3: tests extended first (RED observed, 3 new tests failed), then `feat(01-04)` (d893509) made them green.
+
+## Self-Check: PASSED
+
+- SUMMARY.md exists at `.planning/phases/01-funda-o-esqueleto/01-04-SUMMARY.md`. ✅
+- All plan commits present in git log: 331b8ca (RED), f088498 (GREEN), 3099767 (Task 2), d893509 (Task 3), 9213329 (docs). ✅
+- Final phase gate: `pnpm test` 43/43 pass; `pnpm build` (demo) clean; `APP_MODE=prod pnpm build` clean with 0 demo markers on home (T-04-03). ✅
