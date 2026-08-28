@@ -41,7 +41,7 @@ Gerar leads imobiliários qualificados do Jardim das Perdizes por meio de conte�
 ## Context
 
 - Stack decidida pelo usuário: **Next.js + Supabase + Uazapi** (whatsapp). Vercel para deploy (MCP disponível), .env.local com `APP_MODE` (demo-first, global rule).
-- **VISTA (Loft CRM)**: o produto deve prever estrutura de dados e API de integração com o sistema imobiliário VISTA — documentado em `docs/vista-integration.md` (REST `?key=<chave-pública>`, endpoint de leads `POST /lead/site`, acervo via `/imoveis/*`, webhooks). Chave server-side apenas.
+- **Arquitetura de dados**: **Supabase é o banco canônico completo** — todo dado do produto vive lá. Uma **API do produto (futuro)** permitirá a integração com o VISTA, então a **modelagem no Supabase deve ser compatível** com a estrutura do VISTA (Loft CRM) — documentado em `docs/vista-integration.md` (§3: decidão de arquitetura, direções, mapeamento). VISTA: REST `?key=<chave-pública>` (server-side), leads `POST /lead/site`, acervo `/imoveis/*`, webhooks.
 - Pesquisa extensa já consolidada em 26 docs (`extracted/`) cobrindo: estudo de mercado (3 anéis geográficos, 10 regras analíticas), dados de torres/produtos (396+ unidades, entregas 2015–2027, torres confirmadas), arquitetura de conversão (duas portas de conversão, mini formulário 4 passos, CTA único + roteamento por intenção), sitemap/blog map, benchmark QuintoAndar/Lopes (separar intenção comprador vs vendedor instantaneamente).
 - LGPD: formulário coleta mínimo, informar finalidade/controlador, separar atendimento de comunicação promocional, política revisada profissionalmente, nunca colocar nome/telefone/CPF em parâmetros de URL.
 - Dados reais: 8+ condomínios, torres confirmadas (Araucária: Tê/Tucano; Manacá: Andorinha/Sabiá/Arara/Cacatua/Falcão/Jacutinga; Jequitibá: Canário/Bem-te-vi/Beija-flor). NUNCA inventar nomes de torres.
@@ -65,7 +65,8 @@ Gerar leads imobiliários qualificados do Jardim das Perdizes por meio de conte�
 | Uazapi | WhatsApp API para conversão e automação | — Pending |
 | Vercel (deploy) | Integração nativa com Next.js/Supabase | — Pending |
 | Demo-first (APP_MODE) | Global rule: mock data + ghost auth antes de autenticação real | — Pending |
-| Integração VISTA | Produto prevê estrutura de dados + API de integração com o VISTA (Loft CRM) — leads e inventário | — Pending |
+| Supabase (banco canônico) | Todo dado do produto vive no Supabase; modelagem compatível com VISTA para integração futura via API do produto | — Pending |
+| VISTA (integração futura) | Externo: futura API do produto faz push/pull; site nunca fala direto com o VISTA | — Pending |
 | Skip codebase mapping | Não há código — apenas docs de pesquisa | ✓ Good |
 
 ## Evolution

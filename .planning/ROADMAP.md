@@ -34,7 +34,7 @@ Plans:
 - [ ] 01-04: Home com roteamento por intenção (comprador/locatário/investidor/proprietário) em demo
 
 ### Phase 2: Inventário & Descoberta
-**Goal**: Camada de dados e descoberta do site: modelo Supabase (condomínios, imóveis, leads), sync VISTA via service (mocks no demo), cards/filtros essenciais, fichas técnicas e comparador — tudo com dados fiéis (nunca inventar).
+**Goal**: Camada de dados e descoberta do site: **Supabase como banco canônico completo** (condomínios, imóveis, leads) com modelagem **compatível com a estrutura do VISTA** (campos de compatibilidade), sync VISTA via futura API (mock no demo), cards/filtros essenciais, fichas técnicas e comparador — dados sempre fiéis (nunca inventar).
 **Mode**: mvp
 **Depends on**: Phase 1
 **Requirements**: SITE-03, SITE-04, SITE-05, SITE-06, CRM-03, VISTA-02, VISTA-03, VISTA-04
@@ -43,23 +43,23 @@ Plans:
   2. Ficha técnica de um imóvel exibe todos os campos estruturados (torre, andar, vagas, condomínio, IPTU, fotos, status)
   3. Página de condomínio mostra produto/torres confirmadas/status de entrega por condomínio real
   4. Comparador simples compara 2 imóveis lado a lado
-  5. Service de integração VISTA (`/imoveis/*`) implementado com mock em demo + contrato + mapeamento (VISTA-03); cada imóvel tem `verifiedAt`
+  5. Schema Supabase espelha a estrutura VISTA (modelagem compatível, VISTA-03): campos de compatibilidade (`vistaCode`, `vistaStatus`, `verifiedAt`) presentes; mock do sync VISTA em demo via futura API do produto
 **Plans**: 4 plans
 
 Plans:
 - [ ] 02-01: Modelagem Supabase (properties, condominiums, leads, alerts) + migrations + seed demo
-- [ ] 02-02: vistaApiClient + mocks (`mocks/vista/*.json`) e mapeamento VISTA→schema EN (VISTA-03)
+- [ ] 02-02: Modelagem compatível VISTA: `vistaApiClient` (futura API) + mocks (`mocks/vista/*.json`) + mapeamento VISTA→schema EN (VISTA-03)
 - [ ] 02-03: Camada de descoberta: busca/filtros/cards (docs "Especificação da camada de descoberta")
 - [ ] 02-04: Fichas técnicas + páginas de condomínio + comparador simples
 
 ### Phase 3: Conversão & CRM
-**Goal**: A máquina de leads: mini formulário de qualificação em 4 passos, CTA dual ("Enviar solicitação" + "Falar agora com especialista"), WhatsApp via Uazapi (mocked no demo), registro no Supabase com origem/intenção e criação do lead no VISTA (`POST /lead/site`), com LGPD.
+**Goal**: A máquina de leads: mini formulário de qualificação em 4 passos, CTA dual ("Enviar solicitação" + "Falar agora com especialista"), WhatsApp via Uazapi (mocked no demo), registro **no Supabase (canônico)** com origem/intenção e contrato da futura API para o VISTA (`POST /lead/site`), com LGPD.
 **Mode**: mvp
 **Depends on**: Phase 2
 **Requirements**: CONV-01, CONV-02, CONV-03, CONV-04, CRM-01, CRM-04, VISTA-01, VISTA-05
 **Success Criteria** (what must be TRUE):
-  1. Preencher o mini formulário 4 passos cria um lead no Supabase com origem, URL, entidade, filtros e campanha
-  2. No demo, o lead é registrado no mock do VISTA com `Codigo` retornado (VISTA-01)
+1. Preencher o mini formulário 4 passos cria um lead **no Supabase (canônico)** com origem, URL, entidade, filtros e campanha
+2. A futura API do produto expõe o contrato lead→VISTA (`POST /lead/site`); no demo o mock devolve `Codigo` e o lead fica com `vistaClientCode` (VISTA-01)
   3. CTA WhatsApp abre mensagem pré-preenchida contextual; botão de formulário e WhatsApp presentes em todas as páginas
   4. Lead duplicado por telefone não cria novo cliente (dedupe reutilizando `Codigo` — VISTA-05)
   5. Política de privacidade publicada; consentimento separado; nenhum PII em parâmetros de URL
@@ -70,7 +70,7 @@ Plans:
 - [ ] 03-01: Server Actions/API de lead + schema Supabase (origem/intenção) + dedupe
 - [ ] 03-02: Mini formulário 4 passos + roteamento por intenção + validação LGPD
 - [ ] 03-03: CTA dual contextual + deep-link WhatsApp (Uazapi mock no demo)
-- [ ] 03-04: Integração lead → VISTA `POST /lead/site` (service; mock no demo) + página de privacidade
+- [ ] 03-04: Contrato lead→VISTA `POST /lead/site` (futura API; mock no demo) + página de privacidade
 
 ### Phase 4: Conteúdo & SEO/AEO/GEO
 **Goal**: O motor de autoridade: blog com calendário editorial de 90 dias (12 ativos), artigo pilar do bairro, FAQ com schema, autoria e transparência de fontes, analytics/GA4 + Search Console prontos dentro dos requisitos LGPD.

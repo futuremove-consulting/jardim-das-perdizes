@@ -46,9 +46,9 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 
 ### Integração VISTA (VISTA)
 
-- [ ] **VISTA-01**: Leads criados no VISTA via `POST /lead/site` a partir do formulário 4 passos (resposta inclui `Codigo` do cliente)
-- [ ] **VISTA-02**: Pull sync do inventário via API VISTA (`/imoveis/listarcampos` → `listar` → `detalhes`), filtrado por bairro Jardim das Perdizes/Perdizes, com data de verificação por imóvel, agendado (ex.: Vercel Cron diário)
-- [ ] **VISTA-03**: Mapeamento de campos VISTA→schema inglês do produto aplicado no sync e na exibição (tabela em `docs/vista-integration.md`)
+- [ ] **VISTA-01**: Lead gravado **no Supabase (canônico)** com toda a fonte/intenção; a **futura API do produto** faz `POST /lead/site` no VISTA e grava o `Codigo` (`vistaClientCode`) — sem o site falar com o VISTA diretamente
+- [ ] **VISTA-02**: Inventário **no Supabase como fonte da verdade**; futura API do produto sincroniza do VISTA (`/imoveis/listarcampos` → `listar` → `detalhes`), filtrado por bairro Jardim das Perdizes/Perdizes, com `verifiedAt` por imóvel (ex.: Vercel Cron diário)
+- [ ] **VISTA-03**: **Modelagem de dados compatível** — schema Supabase espelha a estrutura VISTA com campos de compatibilidade (`vistaCode`, `vistaClientCode`, `vistaStatus`, `vistaDealId`...) para sync futuro sem migração de schema (tabela em `docs/vista-integration.md`)
 - [ ] **VISTA-04**: Cliente atendido: `APP_MODE=demo` usa mocks (`mocks/vista/*.json`); produção usa API real com `VISTA_API_KEY` guardada em secret (server-side apenas)
 - [ ] **VISTA-05**: Dedupe de leads por telefone/Foneprincipal reutilizando `Codigo` existente (sem duplicar clientes no VISTA)
 

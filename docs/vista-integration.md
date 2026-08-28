@@ -153,25 +153,30 @@ Agências (`/agencias/`), Corretores (`/corretores/` + `/equipes/` + `/usuarios/
 
 ## 3. Design de integração do produto
 
+> **Decisão de arquitetura (registrada em 2026-08-28):** o banco de dados do produto é o **Supabase — banco canônico completo**. Um **API do produto** (futuro) permitirá a integração com o VISTA. Portanto a **modelagem de dados no Supabase deve ser compatível** com a estrutura de dados do VISTA (Loft CRM), de modo que cada entidade do produto se corresponda 1:1 a uma entidade VISTA (`properties` ↔ `Imóveis`; `leads/clients` ↔ `Clientes`; `deals` ↔ `Negócios`) e os códigos de referência do VISTA sejam preservados como atributos de compatibilidade.
+
 ### 3.1 Direções e fluxos
 
 | Direção | Padrão | Endpoints |
 |---------|--------|-----------|
-| **A. Site → VISTA (leads)** | Nosso mini-formulário de qualificação (4 passos) cria o lead no VISTA. | `POST /lead/site` (corpo `{"cadastro": "<json>"}`) |
-| **B. VISTA → Site (inventário)** | Pull periódico do acervo filtrado por bairro Jardim das Perdizes/Perdizes. | `GET /imoveis/listarcampos` → `/imoveis/listar` → `/imoveis/detalhes` |
-| **C. VISTA → Site (eventos)** | Webhooks (se habilitados no tenant) ou polling como fallback. | `/webhook/{action}` (gestão) |
+| **A. Site → Supabase (canônico)** | O site grava **sempre** no Supabase (formulário, inventário, eventos). Supabase é a fonte da verdade. | schema próprio (trasporta `vista` fields de compatibilidade) |
+| **B. Supabase ⇆ VISTA (futuro)** | **API do produto** (ex.: endpoints próprios em Next.js/FN Supabase) faz o push/pull com o VISTA. No futuro haverá também webhooks/polling. | `POST /lead/site`, `/clientes/*`, `/imoveis/*`, `/webhook/{action}` |
+| **C. VISTA → Site (eventos futuros)** | Webhooks (se habilitados no tenant) ou polling como fallback. | `/webhook/{action}` (gestão) |
 
 ### 3.2 Regras de integração
 
-1. **Auth server-side**: a chave `key` do VISTA vive em secrets (Supabase/Vercel env) — jamais no client. Chamadas via Server Actions / API Routes de Next.js ou Edge/FN do Supabase.
-2. **Mandatory field-discovery**: sempre `*listarcampos` antes de montar `fields`/`filter`. O schema VISTA é dinâmico por tenant; nosso mapeamento deve validar campos recebidos contra o metadata.
-3. **Fidelidade de dados (regra do projeto)**: nunca inventar unidade/torre/preço. Só o que o VISTA retorna (dados autorizados do tenant) vai ao site.
-4. **`.env.local`**: `APP_MODE=demo` → mocks locais (`mocks/vista/*.json`); produção → VISTA real. Nova chave: `VISTA_API_KEY`. Base URL por ambiente (`sandbox` vs produção).
-5. **LGPD**: lead mínimo exigido pelo VISTA; sem PII em URLs; origem/consentimento rastreados no nosso CRM (Supabase) e replicados como `VeiculoCaptacao`.
-6. **Idempotência/dedupe**: cliente já existente (por telefone/`Foneprincipal`) → não duplicar; atualizar e reaproveitar `Codigo`.
-7. **Sincronização de inventário**: agendamento (Vercel Cron) diário; gravar `data de verificação` por imóvel (requisito de confiança dos docs).
+1. **Supabase canônico**: todo dado vive no Supabase. O VISTA é um sistema externo acessado por uma futura API do produto (com `key` server-side em secrets — jamais no client). O site não fala com o VISTA diretamente.
+2. **Compatibilidade de modelagem**: as colunas/entidades do Supabase espelham a estrutura VISTA (mapeamento abaixo), mantendo os campos de compatibilidade (`vista_code`, `vista_client_code`, `vista_status`, ...) para sync futuro sem migração de schema.
+3. **Mandatory field-discovery**: ao integrar com o VISTA, sempre `*listarcampos` antes de montar `fields`/`filter`. O schema VISTA é dinâmico por tenant.
+4. **Fidelidade de dados (regra do projeto)**: nunca inventar unidade/torre/preço. Só o que o VISTA retorna (dados autorizados do tenant) vai ao site.
+5. **`.env.local`**: `APP_MODE=demo` → mocks locais (`mocks/vista/*.json`); produção → VISTA real. Nova chave: `VISTA_API_KEY`. Base URL por ambiente (`sandbox` vs produção).
+6. **LGPD**: lead mínimo exigido pelo VISTA; sem PII em URLs; origem/consentimento rastreados no Supabase e replicados como `VeiculoCaptacao`.
+7. **Idempotência/dedupe**: cliente já existente (por telefone/`Foneprincipal` ou `vista_client_code`) → não duplicar; atualizar e reaproveitar `Codigo`.
+8. **Sincronização de inventário**: agendamento (Vercel Cron) diário; gravar `data de verificação` por imóvel (requisito de confiança dos docs).
 
-### 3.3 Mapeamento de dados (VISTA canonical → nosso schema)
+### 3.3 Mapeamento de dados (compatibilidade Supabase ⇆ VISTA)
+
+As entidades do produto espelham as entidades VISTA. Campos de compatibilidade preservam os códigos de referência para sync futuro.
 
 | VISTA (PT) | Nosso campo (EN) | Tipo | Observação |
 |------------|------------------|------|------------|
@@ -204,9 +209,18 @@ Agências (`/agencias/`), Corretores (`/corretores/` + `/equipes/` + `/usuarios/
 | `Codigo` (lead) | `vistaClientCode` | string | resposta de `/lead/site` |
 | `VeiculoCaptacao` | `captureSource` | string | origem do lead |
 
+**Campos de compatibilidade (colunas em todas as tabelas sincronizáveis):**
+
+| Tabela | Campos de compatibilidade |
+|--------|---------------------------|
+| `properties` | `vista_code` (Codigo do imóvel), `vista_status`, `verified_at` |
+| `leads` / `clients` | `vista_client_code` (Codigo do cliente), `capture_source` (VeiculoCaptacao) |
+| `deals` | `vista_deal_id`, `vista_pipe_id`, `vista_stage_id` |
+
 ### 3.4 Sequência de integração recomendada
 
-1. **Descoberta**: chamar `listarcampos` das entidades usadas; congelar subconjunto de campos no nosso `vistaApiClient`.
-2. **Inventário (B)**: sync diário — `listar` com `filter.Bairro` (Jardim das Perdizes + Perdizes) e `fields` de card; `detalhes` para ficha completa (fotos, características); upsert no Supabase; marcar `verifiedAt`.
-3. **Leads (A)**: formulário 4 passos → Server Action valida (LGPD mínima) → `POST /lead/site` → grava `vistaClientCode` no Supabase → roteamento Uazapi/CRMs conforme `Duas portas de conversão.md`.
-4. **Eventos (C)**: avaliar webhook do VISTA; fallback = polling do nightly sync.
+1. **Modelagem compatível**: criar o schema Supabase espelhando a estrutura VISTA (3.3), com campos de compatibilidade desde o início — sem a necessidade imediata de chamar o VISTA.
+2. **Descoberta (quando o VISTA entrar)**: chamar `listarcampos` das entidades usadas; congelar subconjunto de campos no `vistaApiClient`.
+3. **Inventário**: sync futuro — `listar` com `filter.Bairro` (Jardim das Perdizes + Perdizes) e `fields` de card; `detalhes` para ficha completa (fotos, características); upsert no Supabase; marcar `verifiedAt`.
+4. **Leads**: formulário 4 passos grava no Supabase (canônico) em Primeiro lugar → futura API do produto faz `POST /lead/site` no VISTA → grava `vistaClientCode`.
+5. **Eventos**: avaliar webhook do VISTA; fallback = polling do nightly sync.
