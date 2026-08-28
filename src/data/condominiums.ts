@@ -100,6 +100,8 @@ export const CONDOMINIUMS: Condominium[] = [
     name: "Reserva Figueiras",
     towers: [{ tower: "A", blocks: ["Subcondomínio Torre A"] }],
     units: 104,
+    areaMin: 165,
+    areaMax: 188,
     deliveryStatus: "under-construction",
     deliveryDate: "2026-10 (previsão)",
     launch: "2023-02",
