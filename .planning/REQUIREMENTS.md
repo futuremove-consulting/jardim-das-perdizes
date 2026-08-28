@@ -9,7 +9,7 @@ Requirements para a primeira release. Cada um mapeia para as fases do roadmap.
 
 ### Site (SITE)
 
-- [ ] **SITE-01**: Site Next.js (App Router) responsivo com as 11 páginas P0 + 5 páginas de condomínio do sitemap estratégico
+- [x] **SITE-01**: Site Next.js (App Router) responsivo com as 11 páginas P0 + 5 páginas de condomínio do sitemap estratégico
 - [ ] **SITE-02**: Home apresenta o hub e a conversão dual em dobra visível, com roteamento imediato por intenção (comprador / locatário / investidor / proprietário)
 - [ ] **SITE-03**: Camada de descoberta: busca + filtros essenciais (finalidade, condomínio, dormitórios, área, preço) e cards de imóvel padronizados
 - [ ] **SITE-04**: Fichas técnicas de imóvel com campos estruturados completos (torre, andar, área, vagas, condomínio, IPTU, custo total estimado, status, fotos)
@@ -75,7 +75,7 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SITE-01 | Phase 1 | Pending |
+| SITE-01 | Phase 1 | Complete |
 | SITE-02 | Phase 1 | Pending |
 | SEO-01 | Phase 1 | Pending |
 | SITE-03 | Phase 2 | Pending |
@@ -107,6 +107,7 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 | CRM-02 | Phase 5 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 30 total
 - Mapped to phases: 30
 - Unmapped: 0 ✓

@@ -29,12 +29,18 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
   4. APP_MODE=demo renderiza conteúdo de exemplo; trocar para `prod` não quebra o build (mocks isolados)
   5. Projeto gira com pnpm, build `next build` sem erros, testes TDD passando
 
-**Plans**: 4 plans
+**Plans**: 1/4 plans executed
 
 Plans:
+
+- [x] 01-01-PLAN.md
+- [ ] 01-02-PLAN.md
+- [ ] 01-03-PLAN.md
+- [ ] 01-04-PLAN.md
+
 **Wave 1**
 
-- [ ] 01-01: Walking skeleton — scaffold Next.js (App Router+TS+Tailwind+Vitest, pnpm) + APP_MODE config + identidade da home + git/AGENTS
+- [x] 01-01: Walking skeleton — scaffold Next.js (App Router+TS+Tailwind+Vitest, pnpm) + APP_MODE config + identidade da home + git/AGENTS
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -168,7 +174,7 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phase 6 (análise
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação & Esqueleto | 0/4 | Not started | - |
+| 1. Fundação & Esqueleto | 1/4 | In Progress|  |
 | 2. Inventário & Descoberta | 0/4 | Not started | - |
 | 3. Conversão & CRM | 0/4 | Not started | - |
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |
