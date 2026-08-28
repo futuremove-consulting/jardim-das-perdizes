@@ -60,6 +60,21 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 - [ ] **CAPTEI-02**: Plano de integração no roadmap (Phase 6) mapeando casos de uso v1: página `mercado-e-dados` (P0), comparador/benchmark, conteúdo de autoridade com fonte
 - [ ] **CAPTEI-03**: Cliente server-side (`src/lib/captei-api-client.ts`) com throttle ≥1 s; `APP_MODE=demo` usa mock (`mocks/captei/*.json` espelhando `SearchResponse`); `CAPTEI_TOKEN`/`CAPTEI_USER_KEY` em secrets server-side
 
+### Integração EEMOVEL Converta+ (EEM)
+
+Integração com a **EEMOVEL Converta+ Rest API** (https://developer.convertamais.com/, v1.7.0) — gestor inteligente de leads/funil (atendimentos, visitas, temperatura). Papel: **destino de leads + fonte de eventos de funil** (webhooks) via hub-and-spoke; nunca alimenta inventário.
+
+- [ ] **EEM-01**: Análise da API documentada em `docs/eemovel-integration.md` (auth `Basic` + `api_key`, webhooks `customer_service_created`/`status_changed`, endpoints `/v1/channels/{channelName}/leads`, `/public/v1/customer-services*`, `/public/v1/visits`, funil de etapas)
+- [ ] **EEM-02**: Plano de integração no roadmap (Phase 7) mapeando casos de uso: lead no Supabase **primeiro** (canônico) e depois `POST` no Converta+; webhooks atualizam o funil KPI (CRM-02); mocks `mocks/eemovel/*.json` no demo
+- [ ] **EEM-03**: Cliente server-side (`src/lib/integrations/eemovel/*`) — `createLead`, `createAtendimento`, `listAtendimentos`, `moveStatus`, `mapToCanonical`, handlers de webhook; secrets `CONVERTAMAIS_USER`/`CONVERTAMAIS_PASS`/`CONVERTAMAIS_API_KEY` server-side; `APP_MODE=demo` usa mock
+
+### Modelo de Dados Integrado (INTG)
+
+Melhor prática global para múltiplos sistemas de captação: **modelo canônico (hub-and-spoke) + tradutores/adapters por fonte (anti-corruption layer) + matriz de conversão documentada**. Sem tradução par-a-par (N×N) — cada fonte traduz para o canônico.
+
+- [ ] **INTG-01**: Schema Supabase canônico como fonte da verdade (`properties`, `condominiums`, `leads`, `alerts`, `funnel_events`) com `sourceKey` (origem + id externo, ex.: `vista:AP-171`, `captei:793d0ea...`, `eemovel:304030`) e timestamps de sync (`verifiedAt`/`syncedAt`), compatível com VISTA/Captei/eemovel sem migração futura
+- [ ] **INTG-02**: Camada de tradutores por fonte (`src/lib/integrations/{vista,captei,eemovel,uazapi}` — `mapToCanonical`/`mapFromCanonical`) + matriz de conversão (field mapping fonte → canônico) documentada em cada doc de integração; demo usa mock por adapter; segredos server-side
+
 ## Out of Scope
 
 | Feature | Reason |
@@ -69,6 +84,8 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 | Pagamentos online / reserva com cartão | Conversão é lead → visita → proposta, não e-commerce |
 | Integrações externas do VISTA (CredPago, seguro, VivaReal, Órulo, RD Station, GoodData) | Fora do escopo v1; VISTA faz o push para portais — não replicar |
 | Alimentar inventário canônico via Captei | Captei é agregado de terceiros (sem telefone/fidelidade de torres); inventário canônico vem só do VISTA — Captei é dado de mercado |
+| Alimentar inventário via eemovel Converta+ | Converta+ é gestor de leads/funil, não expõe feed de imóveis; inventário canônico continua vindo do VISTA |
+| Enviar lead a sistema externo antes do Supabase | Canônico sempre primeiro (hub-and-spoke) para preservar origem/intenção e LGPD |
 | Chaveiros / retiradas de chaves | Domínio operacional do VISTA, sem necessidade no site |
 
 ## Traceability
@@ -97,6 +114,11 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 | CAPTEI-01 | Phase 6 | Pending |
 | CAPTEI-02 | Phase 6 | Pending |
 | CAPTEI-03 | Phase 6 | Pending |
+| EEM-01 | Phase 7 | Pending |
+| EEM-02 | Phase 7 | Pending |
+| EEM-03 | Phase 7 | Pending |
+| INTG-01 | Phase 7 | Pending |
+| INTG-02 | Phase 7 | Pending |
 | CONT-01 | Phase 4 | Pending |
 | CONT-02 | Phase 4 | Pending |
 | CONT-03 | Phase 4 | Pending |
@@ -108,8 +130,8 @@ Integração com a **Captei Listings API** (https://app.captei.com.br/api/listin
 
 **Coverage:**
 
-- v1 requirements: 30 total
-- Mapped to phases: 30
+- v1 requirements: 35 total
+- Mapped to phases: 35
 - Unmapped: 0 ✓
 
 ---

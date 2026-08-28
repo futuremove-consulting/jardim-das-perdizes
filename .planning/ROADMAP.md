@@ -2,7 +2,7 @@
 
 ## Overview
 
-O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e entrega um site/blog de autoridade que converte visitantes em leads qualificados via formulário + WhatsApp, com rastreio de origem/intenção no Supabase e integração com o VISTA (Loft CRM) para leads e inventário real. A primeira versão é um site leve (11 páginas P0 + 5 de condomínio), demo-first (`APP_MODE=demo` com mocks), que escala para dados reais (VISTA/Uazapi) e produção no Vercel. Como fonte de **inteligência de mercado**, o site também fará análise e planejamento de integração com a **Captei Listings API** (anúncios agregados de portais) para páginas de mercado, comparador e conteúdo de autoridade.
+O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e entrega um site/blog de autoridade que converte visitantes em leads qualificados via formulário + WhatsApp, com rastreio de origem/intenção no Supabase e integração com o VISTA (Loft CRM) para leads e inventário real. A primeira versão é um site leve (11 páginas P0 + 5 de condomínio), demo-first (`APP_MODE=demo` com mocks), que escala para dados reais (VISTA/Uazapi) e produção no Vercel. Como fonte de **inteligência de mercado**, o site também fará análise e planejamento de integração com a **Captei Listings API** (anúncios agregados de portais) para páginas de mercado, comparador e conteúdo de autoridade. No eixo de leads, será analisada/planejada a integração com a **EEMOVEL Converta+** (gestor inteligente de leads/funil) e definido um **modelo de dados canônico** no Supabase com tradutores por fonte (hub-and-spoke) — melhor prática global para múltiplos sistemas de captação.
 
 ## Phases
 
@@ -12,6 +12,7 @@ O projeto nasce da pesquisa 360º já consolidada (26 docs em `extracted/`) e en
 - [ ] **Phase 4: Conteúdo & SEO/AEO/GEO** - Blog + pilar principal, FAQ schema, autoria, calendário 90 dias, analytics
 - [ ] **Phase 5: Produção & Growth** - Chaves reais (VISTA/Uazapi), cron sync, deploy Vercel, alerta de imóveis, dashboard KPIs
 - [ ] **Phase 6: Captei — Análise & Planejamento** - Análise/documentação da Captei Listings API + plano de integração (pode rodar em paralelo às fases 1–5)
+- [ ] **Phase 7: EEMOVEL Converta+ & Modelo Canônico — Análise & Planejamento** - Análise/documentação da API EEMOVEL Converta+ (leads/funil) + modelo de dados canônico e matriz de conversão (pode rodar em paralelo às fases 1–5)
 
 ## Phase Details
 
@@ -167,10 +168,30 @@ Plans:
 - [ ] 06-02: Plano de implementação: `src/lib/captei-api-client.ts` (throttle ≥1s, server-side) + mocks `mocks/captei/*.json` (demo)
 - [ ] 06-03: Página `mercado-e-dados` (P0) com dados Captei (mock no demo; API real em prod) + citação de fonte nos conteúdos
 
+### Phase 7: EEMOVEL Converta+ & Modelo Canônico — Análise & Planejamento
+
+**Goal**: Analisar e documentar a **EEMOVEL Converta+ Rest API** (https://developer.convertamais.com/ — gestor inteligente de leads/funil, v1.7.0) e planejar a integração como **destino de leads + fonte de eventos de funil** (webhooks). Definir também o **modelo de dados canônico** (Supabase como centro) com **tradutores/adapters por fonte** e **matriz de conversão** documentada — melhor prática global para múltiplos sistemas de captação (VISTA, Captei, eemovel, Uazapi). **Papel**: complementar ao VISTA no eixo de leads; nunca alimenta inventário.
+**Mode**: mvp
+**Depends on**: Nenhuma (análise/planejamento paralelos às fases 1–5; execução real em produção após Phase 5)
+**Requirements**: EEM-01, EEM-02, EEM-03, INTG-01, INTG-02
+**Success Criteria** (what must be TRUE):
+
+  1. `docs/eemovel-integration.md` documenta auth (Basic + `api_key`), webhooks (`customer_service_created`/`status_changed`), endpoints (`/v1/channels/{channelName}/leads`, `/public/v1/customer-services*`, `/public/v1/visits`) e o funil de etapas
+  2. Requisitos EEM-01..03 e INTG-01..02 registrados; melhor prática de modelo canônico (hub-and-spoke + tradutores + matriz de conversão) documentada com exemplo de crosswalk eemovel→canônico
+  3. Plano define: lead no Supabase **primeiro** (canônico), depois `POST` ao Converta+; webhooks alimentam o funil KPI (CRM-02); secrets `CONVERTAMAIS_USER`/`CONVERTAMAIS_PASS`/`CONVERTAMAIS_API_KEY` server-side; mocks `mocks/eemovel/*.json` no demo
+
+**Plans**: 3 plans
+
+Plans:
+
+- [x] 07-01: Análise da API + `docs/eemovel-integration.md` (auth, webhooks, endpoints, funil, matriz de conversão) — entregue 2026-08-28
+- [ ] 07-02: Plano de implementação: `src/lib/integrations/eemovel/` (client + `mapToCanonical`) + mocks `mocks/eemovel/*.json` (demo) + handlers de webhook
+- [ ] 07-03: Modelo canônico no schema Supabase (`sourceKey`, `funnel_events`) + adapters `{vista,captei,eemovel,uazapi}` + matriz de conversão nos docs
+
 ## Progress
 
 **Execution Order:**
-Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phase 6 (análise/planejamento) pode rodar em paralelo.
+Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phases 6 e 7 (análise/planejamento de integrações) podem rodar em paralelo.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -180,3 +201,4 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phase 6 (análise
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |
 | 5. Produção & Growth | 0/4 | Not started | - |
 | 6. Captei — Análise & Planejamento | 1/3 | In progress | - |
+| 7. EEMOVEL Converta+ & Modelo Canônico — Análise & Planejamento | 1/3 | In progress | - |
