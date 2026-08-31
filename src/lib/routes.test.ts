@@ -11,7 +11,7 @@ const P0_PATHS = [
   "/guia-jardim-das-perdizes/",
   "/para-morar/",
   "/para-investir/",
-  "/venda-ou-alugue-seu-imovel/",
+  "/venda-ou-alugue/",
   "/guias-do-bairro/",
   "/mercado-e-dados/",
   "/encontre-seu-perfil/",
@@ -66,7 +66,7 @@ describe("route registry", () => {
       "Home",
       "Para Morar",
       "Para Investir",
-      "Venda ou Alugue seu Imóvel",
+      "Venda ou Alugue",
       "Guias do Bairro",
       "Mercado & Dados",
     ]);

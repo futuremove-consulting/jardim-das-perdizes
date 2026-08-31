@@ -13,7 +13,7 @@ export const metadata = buildPageMetadata({
   title: "Venda ou Alugue seu Imóvel no Jardim das Perdizes — Broker",
   description:
     "Como avaliar e posicionar seu imóvel para venda ou locação no Jardim das Perdizes: método de precificação, preparação, documentos e divulgação.",
-  path: "/venda-ou-alugue-seu-imovel/",
+  path: "/venda-ou-alugue/",
 });
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -151,7 +151,7 @@ export default function VendaOuAluguePage() {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Venda ou Alugue seu Imóvel", path: "/venda-ou-alugue-seu-imovel/" },
+          { name: "Venda ou Alugue seu Imóvel", path: "/venda-ou-alugue/" },
         ])}
       />
 

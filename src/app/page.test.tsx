@@ -6,7 +6,7 @@ import { localBusinessSchema } from "@/lib/seo/schemas";
 const INTENT_LINKS = [
   { label: /comprador para morar/i, href: "/para-morar" },
   { label: /comprador para investir/i, href: "/para-investir" },
-  { label: /propriet[aá]rio/i, href: "/venda-ou-alugue-seu-imovel" },
+  { label: /propriet[aá]rio/i, href: "/venda-ou-alugue" },
   { label: /alugar para morar/i, href: "/encontre-seu-perfil" },
 ];
 

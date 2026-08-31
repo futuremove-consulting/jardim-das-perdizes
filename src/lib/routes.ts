@@ -17,7 +17,7 @@ export const ROUTES: Route[] = [
   { key: "guia-jardim-das-perdizes", path: "/guia-jardim-das-perdizes/", label: "Guia do Jardim das Perdizes" },
   { key: "para-morar", path: "/para-morar/", label: "Para Morar" },
   { key: "para-investir", path: "/para-investir/", label: "Para Investir" },
-  { key: "venda-ou-alugue-seu-imovel", path: "/venda-ou-alugue-seu-imovel/", label: "Venda ou Alugue seu Imóvel" },
+  { key: "venda-ou-alugue", path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { key: "guias-do-bairro", path: "/guias-do-bairro/", label: "Guias do Bairro" },
   { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado & Dados" },
   { key: "encontre-seu-perfil", path: "/encontre-seu-perfil/", label: "Encontre seu Perfil" },
@@ -41,7 +41,7 @@ export const NAV_MAIN: NavItem[] = [
   { path: "/", label: "Home" },
   { path: "/para-morar/", label: "Para Morar" },
   { path: "/para-investir/", label: "Para Investir" },
-  { path: "/venda-ou-alugue-seu-imovel/", label: "Venda ou Alugue seu Imóvel" },
+  { path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { path: "/guias-do-bairro/", label: "Guias do Bairro" },
   { path: "/mercado-e-dados/", label: "Mercado & Dados" },
 ];

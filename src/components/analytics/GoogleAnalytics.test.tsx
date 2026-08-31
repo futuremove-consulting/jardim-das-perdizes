@@ -1,4 +1,5 @@
 import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
+import React from "react";
 
 describe("GoogleAnalytics", () => {
   beforeEach(() => {
@@ -21,17 +22,16 @@ describe("GoogleAnalytics", () => {
   it("renders the GA4 script tag when measurement ID is set", async () => {
     process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID = "G-TEST123";
     vi.mock("next/script", () => ({
-      default: async ({ id, strategy }: { id?: string; strategy: string }) => {
-        const react = await import("react");
+      default: ({ id, strategy, src, dangerouslySetInnerHTML }: { id?: string; strategy: string; src?: string; dangerouslySetInnerHTML?: { __html: string } }) => {
         if (id) {
-          return react.createElement("script", {
+          return React.createElement("script", {
             id,
-            "data-gaid": "G-TEST123",
             "data-strategy": strategy,
-            dangerouslySetInnerHTML: { __html: "" },
+            dangerouslySetInnerHTML: dangerouslySetInnerHTML ?? { __html: "" },
           });
         }
-        return react.createElement("script", {
+        return React.createElement("script", {
+          src,
           "data-strategy": strategy,
         });
       },

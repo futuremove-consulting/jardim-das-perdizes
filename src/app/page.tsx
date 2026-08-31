@@ -28,7 +28,7 @@ const INTENT_CARDS = [
   },
   {
     key: "proprietario",
-    href: "/venda-ou-alugue-seu-imovel/",
+    href: "/venda-ou-alugue/",
     title: "Proprietário",
     text: "Quero vender ou alugar o meu imóvel — avaliação com método, não com promessa.",
   },
