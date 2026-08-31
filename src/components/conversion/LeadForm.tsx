@@ -9,7 +9,6 @@ const INTENT_OPTIONS = [
   { value: "buy-to-live", label: "Quero comprar para morar" },
   { value: "invest", label: "Quero investir" },
   { value: "sell-or-rent", label: "Sou proprietário" },
-  { value: "rent-to-live", label: "Quero alugar para morar" },
 ] as const;
 
 const SEGMENT_OPTIONS = [

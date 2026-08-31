@@ -37,7 +37,6 @@ describe("LeadForm", () => {
       /quero comprar para morar/i,
       /quero investir/i,
       /sou proprietário/i,
-      /quero alugar para morar/i,
     ]) {
       expect(screen.getByRole("radio", { name: label })).toBeInTheDocument();
     }

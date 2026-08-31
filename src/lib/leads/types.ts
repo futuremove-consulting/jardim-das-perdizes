@@ -2,7 +2,6 @@ export const LEAD_INTENTS = [
   "buy-to-live",
   "invest",
   "sell-or-rent",
-  "rent-to-live",
 ] as const;
 export type LeadIntent = (typeof LEAD_INTENTS)[number];
 

@@ -18,8 +18,6 @@ const WHATSAPP_MESSAGES: Record<LeadIntent, string> = {
     "Olá! Quero investir no Jardim das Perdizes (renda com locação ou revenda) e gostaria de falar com um especialista.",
   "sell-or-rent":
     "Olá! Sou proprietário no Jardim das Perdizes e quero vender ou alugar meu imóvel com um especialista.",
-  "rent-to-live":
-    "Olá! Quero alugar um imóvel para morar no Jardim das Perdizes e gostaria de falar com um especialista.",
 };
 
 export interface WhatsAppLinkOptions {
