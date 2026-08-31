@@ -18,7 +18,7 @@ export const ROUTES: Route[] = [
   { key: "para-investir", path: "/para-investir/", label: "Para Investir" },
   { key: "venda-ou-alugue", path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { key: "guias-do-bairro", path: "/guias-do-bairro/", label: "Guias do Bairro" },
-  { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado e Dados" },
+  { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado & Dados" },
   { key: "encontre-seu-perfil", path: "/encontre-seu-perfil/", label: "Encontre seu Perfil" },
   { key: "guia-jardim-das-perdizes", path: "/guia-jardim-das-perdizes/", label: "Guia do Jardim das Perdizes" },
   { key: "condominios", path: `${CONDOS_PREFIX}/`, label: "Condomínios" },
