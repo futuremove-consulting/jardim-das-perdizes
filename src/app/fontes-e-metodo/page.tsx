@@ -11,14 +11,14 @@ export default function FontesEMetodoPage() {
   return (
     <section className="px-6 py-12">
       <h1 className="text-3xl font-semibold tracking-tight">Fontes e Método</h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600">
+      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         A credibilidade do nosso conteúdo vem do método. Explicamos aqui como
         pesquisamos, verificamos, contextualizamos e orientamos — e como você
         pode conferir cada afirmação.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">As quatro etapas</h2>
-      <ol className="mt-4 max-w-2xl list-decimal space-y-2 pl-5 text-zinc-700">
+      <ol className="mt-4 max-w-2xl list-decimal space-y-2 pl-5 text-ink-soft">
         <li>Pesquisar: reunir dados e informações a partir de fontes declaradas.</li>
         <li>Verificar: cruzar fontes e informar o nível de evidência de cada fato.</li>
         <li>Contextualizar: explicar o que os dados significam, com limitações.</li>
@@ -26,7 +26,7 @@ export default function FontesEMetodoPage() {
       </ol>
 
       <h2 className="mt-10 text-xl font-semibold">Compromissos</h2>
-      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-zinc-700">
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
         <li>Nunca inventar preços, torres ou dados de condomínios.</li>
         <li>Separar publicidade de dado e de análise.</li>
         <li>Publicar correções e changelog quando necessário.</li>

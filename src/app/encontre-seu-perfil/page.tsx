@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
@@ -13,14 +14,14 @@ export default function EncontreSeuPerfilPage() {
       <h1 className="text-3xl font-semibold tracking-tight">
         Encontre seu Perfil
       </h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600">
+      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Seja para morar, alugar ou investir, cada perfil tem um tipo de imóvel e
         de condomínio mais adequado. Aqui você entende o que combina com sua
         rotina, família, orçamento e preferências.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">Dimensões do perfil</h2>
-      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-zinc-700">
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
         <li>Família, pets e home office.</li>
         <li>Rotina de deslocamento e mobilidade.</li>
         <li>Metragem e tipo de condomínio como conceito, sem estoque específico.</li>
@@ -28,11 +29,11 @@ export default function EncontreSeuPerfilPage() {
         <li>Perfil para investimento: renda, revenda ou liquidez.</li>
       </ul>
 
-      <p className="mt-10 max-w-2xl text-zinc-600">
+      <p className="mt-10 max-w-2xl text-ink-soft">
         Conheça os condomínios do bairro em{" "}
-        <a href="/condominios-e-produtos/" className="underline hover:text-zinc-800">
+        <Link href="/condominios-e-produtos/" className="underline hover:text-ink">
           Condomínios e Produtos
-        </a>
+        </Link>
         .
       </p>
     </section>

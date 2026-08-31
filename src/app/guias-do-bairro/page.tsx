@@ -13,14 +13,14 @@ export default function GuiasDoBairroPage() {
       <h1 className="text-3xl font-semibold tracking-tight">
         Guias do Bairro
       </h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600">
+      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Os guias do Jardim das Perdizes ajudam a entender a vida no bairro
         antes de decidir morar. Cada tema é tratado como um sistema atualizado,
         com fontes e avisos de que horários e operações podem mudar.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">Temas cobertos</h2>
-      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-zinc-700">
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
         <li>Parque Jardim das Perdizes: horários, regras, acessibilidade e história.</li>
         <li>Mobilidade: Linha 6-Laranja, estações, ônibus, trem e metrô.</li>
         <li>Comércio e serviços do bairro.</li>
@@ -29,9 +29,9 @@ export default function GuiasDoBairroPage() {
         <li>Segurança, privacidade e governança.</li>
       </ul>
 
-      <p className="mt-10 max-w-2xl text-zinc-600">
+      <p className="mt-10 max-w-2xl text-ink-soft">
         Comece pelo{" "}
-        <a href="/guia-jardim-das-perdizes/" className="underline hover:text-zinc-800">
+        <a href="/guia-jardim-das-perdizes/" className="underline hover:text-ink">
           Guia do Jardim das Perdizes
         </a>
         , a porta de entrada para o bairro.

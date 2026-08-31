@@ -1,11 +1,18 @@
 import Link from "next/link";
-import { CONDOMINIUMS } from "@/data/condominiums";
+import { CONDOMINIUMS, STATUS_LABELS, type DeliveryStatus } from "@/data/condominiums";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+
+const STATUS_TONE: Record<DeliveryStatus, string> = {
+  delivered: "bg-emerald-100 text-emerald-800",
+  "ready-to-move": "bg-emerald-100 text-emerald-800",
+  "under-construction": "bg-amber-100 text-amber-800",
+  "coming-soon": "bg-sky-100 text-sky-800",
+};
 
 export const metadata = buildPageMetadata({
   title: "Condomínios e Produtos — Jardim das Perdizes",
   description:
-    "Os 5 condomínios do Jardim das Perdizes com dados verificados: torres confirmadas, unidades, metragens e status de entrega.",
+    "Os 9 condomínios e produtos do Jardim das Perdizes com dados verificados e fonte datada: torres confirmadas, unidades, metragens, tipologias e status de entrega.",
   path: "/condominios-e-produtos/",
 });
 
@@ -15,9 +22,10 @@ export default function CondominiumsIndexPage() {
       <h1 className="text-3xl font-semibold tracking-tight">
         Condomínios e Produtos
       </h1>
-      <p className="mt-3 max-w-2xl text-zinc-600">
-        Conheça os condomínios do Jardim das Perdizes com os dados confirmados
-        de torres, unidades, metragens e status de entrega.
+      <p className="mt-3 max-w-2xl text-ink-soft">
+        Conheça os condomínios do Jardim das Perdizes com dados confirmados de
+        torres, unidades, metragens, tipologias e status de entrega — cada
+        ficha indica a fonte e a data de verificação.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -25,23 +33,22 @@ export default function CondominiumsIndexPage() {
           <Link
             key={c.slug}
             href={`/condominios-e-produtos/${c.slug}/`}
-            className="rounded-2xl border border-zinc-200 p-6 transition-colors hover:border-zinc-400"
+            className="rounded-2xl border border-line p-6 transition-colors hover:border-brand"
           >
             <div className="flex items-center justify-between gap-3">
               <h2 className="text-xl font-semibold">{c.name}</h2>
               <span
-                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium ${
-                  c.deliveryStatus === "delivered"
-                    ? "bg-emerald-100 text-emerald-800"
-                    : "bg-amber-100 text-amber-800"
-                }`}
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium ${STATUS_TONE[c.deliveryStatus]}`}
               >
-                {c.deliveryStatus === "delivered" ? "Entregue" : "Em construção"}
+                {STATUS_LABELS[c.deliveryStatus]}
               </span>
             </div>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">{c.blurb}</p>
-            <p className="mt-4 text-sm font-medium text-zinc-800">
-              {c.units} unidades · {c.areaMin}–{c.areaMax} m²
+            <p className="mt-3 text-sm leading-6 text-ink-soft">{c.blurb}</p>
+            <p className="mt-4 text-sm font-medium text-ink">
+              {c.units !== undefined
+                ? `${c.units} unidades`
+                : "Unidades não divulgadas"}{" "}
+              · {c.areaMin}–{c.areaMax} m²
             </p>
           </Link>
         ))}

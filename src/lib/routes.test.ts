@@ -26,11 +26,15 @@ const CONDOMINIUM_PATHS = [
   "/condominios-e-produtos/bosque-araucaria/",
   "/condominios-e-produtos/recanto-jacaranda/",
   "/condominios-e-produtos/reserva-figueiras/",
+  "/condominios-e-produtos/sequoia/",
+  "/condominios-e-produtos/bosque-cerejeiras/",
+  "/condominios-e-produtos/reserva-flamboyant/",
+  "/condominios-e-produtos/recanto-oliveiras/",
 ];
 
 describe("route registry", () => {
-  it("contains EXACTLY 16 entries (11 P0 + 5 condominium)", () => {
-    expect(ROUTES).toHaveLength(16);
+  it("contains EXACTLY 20 entries (11 P0 + 9 condominium)", () => {
+    expect(ROUTES).toHaveLength(20);
   });
 
   it("contains all 11 P0 paths", () => {
@@ -40,7 +44,7 @@ describe("route registry", () => {
     }
   });
 
-  it("contains all 5 condominium paths under /condominios-e-produtos/", () => {
+  it("contains all 9 condominium paths under /condominios-e-produtos/", () => {
     const paths = ROUTES.map((r) => r.path);
     for (const p of CONDOMINIUM_PATHS) {
       expect(paths).toContain(p);

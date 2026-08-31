@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Header from "./Header";
+import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 import { NAV_MAIN, NAV_SECONDARY } from "@/lib/routes";
 
 // Next's Link normalizes trailing slashes in the rendered href, so compare
@@ -31,5 +32,25 @@ describe("Header", () => {
         expect(link).toHaveAttribute("href", canonical(item.path));
       }
     }
+  });
+
+  it("renders the dual conversion CTAs pointing to the #conversao anchor", () => {
+    render(<Header />);
+    const sol = screen.getAllByRole("link", { name: /enviar solicitação/i });
+    const zapp = screen.getAllByRole("link", { name: /falar agora com especialista/i });
+    expect(sol.length).toBeGreaterThan(0);
+    expect(zapp.length).toBeGreaterThan(0);
+    for (const link of [...sol, ...zapp]) {
+      expect(link.getAttribute("href")).toBe("/#conversao");
+    }
+  });
+
+  it("renders the theme toggle in the header", () => {
+    render(
+      <ThemeProvider>
+        <Header />
+      </ThemeProvider>
+    );
+    expect(screen.getAllByRole("button", { name: /tema/i }).length).toBeGreaterThan(0);
   });
 });

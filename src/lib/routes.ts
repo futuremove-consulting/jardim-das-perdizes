@@ -24,12 +24,16 @@ export const ROUTES: Route[] = [
   { key: "condominios-e-produtos", path: `${CONDOS_PREFIX}/`, label: "Condomínios e Produtos" },
   { key: "glossario", path: "/ferramentas/glossario/", label: "Glossário" },
   { key: "fontes-e-metodo", path: "/fontes-e-metodo/", label: "Fontes e Método" },
-  // --- 5 condominium pages (P0) under /condominios-e-produtos/ ---
+  // --- 10 condominium/product pages (P0) under /condominios-e-produtos/ ---
   { key: "condominio-reserva-manaca", path: `${CONDOS_PREFIX}/reserva-manaca/`, label: "Reserva Manacá" },
   { key: "condominio-bosque-jequitiba", path: `${CONDOS_PREFIX}/bosque-jequitiba/`, label: "Bosque Jequitibá" },
   { key: "condominio-bosque-araucaria", path: `${CONDOS_PREFIX}/bosque-araucaria/`, label: "Bosque Araucária" },
   { key: "condominio-recanto-jacaranda", path: `${CONDOS_PREFIX}/recanto-jacaranda/`, label: "Recanto Jacarandá" },
   { key: "condominio-reserva-figueiras", path: `${CONDOS_PREFIX}/reserva-figueiras/`, label: "Reserva Figueiras" },
+  { key: "condominio-sequoia", path: `${CONDOS_PREFIX}/sequoia/`, label: "Sequoia" },
+  { key: "condominio-bosque-cerejeiras", path: `${CONDOS_PREFIX}/bosque-cerejeiras/`, label: "Bosque Cerejeiras" },
+  { key: "condominio-reserva-flamboyant", path: `${CONDOS_PREFIX}/reserva-flamboyant/`, label: "Reserva Flamboyant" },
+  { key: "condominio-recanto-oliveiras", path: `${CONDOS_PREFIX}/recanto-oliveiras/`, label: "Recanto Oliveiras" },
 ];
 
 /** Main documented navigation: exactly 6 items. */

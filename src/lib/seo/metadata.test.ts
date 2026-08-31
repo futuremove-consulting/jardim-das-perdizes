@@ -50,4 +50,23 @@ describe("buildPageMetadata", () => {
       "https://www.jardimdasperdizes.com.br/condominios-e-produtos/reserva-manaca/"
     );
   });
+
+  it("audits openGraph and twitter cards for every page", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://example.com";
+    const metadata = buildPageMetadata({
+      title: "Reserva Manacá",
+      description: "Três torres com seis blocos.",
+      path: "/condominios-e-produtos/reserva-manaca/",
+    });
+    expect(metadata.openGraph?.title).toBe("Reserva Manacá");
+    expect(metadata.openGraph?.url).toBe(
+      "https://example.com/condominios-e-produtos/reserva-manaca/"
+    );
+    expect(metadata.openGraph?.locale).toBe("pt_BR");
+    expect(Array.isArray(metadata.openGraph?.images)).toBe(true);
+    // `Metadata["twitter"]` is a union whose base member (`TwitterMetadata`)
+    // lacks `card`, so we assert via matcher instead of property access.
+    expect(metadata.twitter).toMatchObject({ card: "summary_large_image" });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
+  });
 });

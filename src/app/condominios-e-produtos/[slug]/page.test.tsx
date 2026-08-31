@@ -46,4 +46,27 @@ describe("condominium [slug] page", () => {
       "/condominios-e-produtos/reserva-manaca/"
     );
   });
+
+  it("renders Sequoia as breve lançamento with undisclosed-units note and dated source", async () => {
+    const element = await CondominiumPage({
+      params: Promise.resolve({ slug: "sequoia" }),
+    });
+    render(element);
+
+    expect(screen.getAllByText(/breve lançamento/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/não divulgado — breve lançamento/i)).toBeInTheDocument();
+    expect(screen.getByText(/tecnisa\.com\.br\/imoveis\/sequoia/i)).toBeInTheDocument();
+    expect(screen.getByText("4 dormitórios — 148 m²")).toBeInTheDocument();
+  });
+
+  it("renders Reserva Figueiras 'Pronto para morar' with the reconciliation note", async () => {
+    const element = await CondominiumPage({
+      params: Promise.resolve({ slug: "reserva-figueiras" }),
+    });
+    render(element);
+
+    expect(screen.getAllByText(/pronto para morar/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/outubro de 2026/i)).toBeInTheDocument();
+    expect(screen.getByText(/captura 31\/08\/2026/i)).toBeInTheDocument();
+  });
 });

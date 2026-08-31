@@ -13,7 +13,7 @@ export default function MercadoEDadosPage() {
       <h1 className="text-3xl font-semibold tracking-tight">
         Mercado &amp; Dados
       </h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600">
+      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Este é o principal ativo de autoridade do Jardim das Perdizes: dados
         agregados, relatórios e análises sobre o mercado do bairro. Cada
         relatório informa período, data de captura, amostra, fonte, método e
@@ -21,7 +21,7 @@ export default function MercadoEDadosPage() {
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">O que é monitorado</h2>
-      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-zinc-700">
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
         <li>Preços pedidos e preços por m².</li>
         <li>Aluguéis observados.</li>
         <li>Condomínio e IPTU.</li>
@@ -30,9 +30,9 @@ export default function MercadoEDadosPage() {
         <li>Oferta, demanda, liquidez e obras em andamento.</li>
       </ul>
 
-      <p className="mt-10 max-w-2xl text-zinc-600">
+      <p className="mt-10 max-w-2xl text-ink-soft">
         Detalhes sobre fontes e metodologia estão em{" "}
-        <a href="/fontes-e-metodo/" className="underline hover:text-zinc-800">
+        <a href="/fontes-e-metodo/" className="underline hover:text-ink">
           Fontes e Método
         </a>
         .

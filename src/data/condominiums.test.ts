@@ -1,20 +1,53 @@
 import { describe, it, expect } from "vitest";
-import { CONDOMINIUMS, getCondominiumBySlug } from "@/data/condominiums";
+import {
+  CONDOMINIUMS,
+  getCondominiumBySlug,
+  STATUS_LABELS,
+} from "@/data/condominiums";
 
 const EXPECTED_SLUGS = [
+  // delivered (phase-1 research docs)
   "reserva-manaca",
   "bosque-jequitiba",
   "bosque-araucaria",
   "recanto-jacaranda",
+  // ready-to-move (official Tecnisa capture 2026-08-31)
   "reserva-figueiras",
+  // under-construction / coming-soon (official Tecnisa captures 2026-08-31)
+  "sequoia",
+  "bosque-cerejeiras",
+  "reserva-flamboyant",
+  "recanto-oliveiras",
 ];
 
 describe("CONDOMINIUMS", () => {
-  it("has exactly 5 entries with unique slugs", () => {
-    expect(CONDOMINIUMS).toHaveLength(5);
+  it("has exactly 9 entries with unique slugs", () => {
+    expect(CONDOMINIUMS).toHaveLength(EXPECTED_SLUGS.length);
     const slugs = CONDOMINIUMS.map((c) => c.slug);
     expect(slugs).toEqual(EXPECTED_SLUGS);
     expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("every record carries source + verifiedAt (credibility rule)", () => {
+    for (const c of CONDOMINIUMS) {
+      expect(c.source.trim().length).toBeGreaterThan(0);
+      expect(c.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
+
+  it("every record has coherent areas and no invented data", () => {
+    for (const c of CONDOMINIUMS) {
+      expect(c.areaMin).toBeLessThanOrEqual(c.areaMax);
+      // units OR an explicit disclosure note — never a made-up number
+      expect(c.units !== undefined || c.unitsNote !== undefined).toBe(true);
+    }
+  });
+
+  it("status labels map to the official Tecnisa badges", () => {
+    expect(STATUS_LABELS.delivered).toBe("Entregue");
+    expect(STATUS_LABELS["ready-to-move"]).toBe("Pronto para morar");
+    expect(STATUS_LABELS["under-construction"]).toBe("Em obras");
+    expect(STATUS_LABELS["coming-soon"]).toBe("Breve lançamento");
   });
 
   it("Reserva Manacá matches the confirmed towers, units, areas and delivery (fidelity)", () => {
@@ -73,16 +106,63 @@ describe("CONDOMINIUMS", () => {
     expect(jacaranda!.monthlyFee).toBe("R$ 1.450 (condomínio médio informado)");
   });
 
-  it("Reserva Figueiras matches the confirmed tower, units, launch and construction status (fidelity)", () => {
+  it("Reserva Figueiras reconciles to the official 'Pronto para morar' status with a documented discrepancy note", () => {
     const figueiras = getCondominiumBySlug("reserva-figueiras");
     expect(figueiras).toBeDefined();
     expect(figueiras!.towers).toEqual([
       { tower: "A", blocks: ["Subcondomínio Torre A"] },
     ]);
     expect(figueiras!.units).toBe(104);
-    expect(figueiras!.deliveryStatus).toBe("under-construction");
-    expect(figueiras!.deliveryDate).toBe("2026-10 (previsão)");
+    expect(figueiras!.deliveryStatus).toBe("ready-to-move");
     expect(figueiras!.launch).toBe("2023-02");
+    // disclosure of the earlier 'entrega out/2026' record — no silent overwrite
+    expect(figueiras!.statusNote).toMatch(/outubro de 2026/);
+    expect(figueiras!.source).toMatch(/tecnisa\.com\.br/);
+  });
+
+  it("Sequoia is a coming-soon product without invented unit counts (fidelity)", () => {
+    const sequoia = getCondominiumBySlug("sequoia");
+    expect(sequoia).toBeDefined();
+    expect(sequoia!.deliveryStatus).toBe("coming-soon");
+    expect(sequoia!.units).toBeUndefined();
+    expect(sequoia!.unitsNote).toMatch(/não divulgado/i);
+    expect(sequoia!.areaMin).toBe(121);
+    expect(sequoia!.areaMax).toBe(175);
+    expect(sequoia!.typologies).toContain("4 dormitórios — 148 m²");
+    expect(sequoia!.address).toContain("Pablo Picasso, 150");
+    expect(sequoia!.highlights!.join(" ")).toContain("Windsor");
+  });
+
+  it("Bosque Cerejeiras exposes the official typologies incl. duplexes (fidelity)", () => {
+    const cerejeiras = getCondominiumBySlug("bosque-cerejeiras");
+    expect(cerejeiras).toBeDefined();
+    expect(cerejeiras!.deliveryStatus).toBe("under-construction");
+    expect(cerejeiras!.areaMin).toBe(222);
+    expect(cerejeiras!.areaMax).toBe(569);
+    expect(cerejeiras!.typologies).toContain("3 suítes — 221,64 m²");
+    expect(cerejeiras!.typologies).toContain("Duplex — 569 m²");
+    expect(cerejeiras!.parking).toBe("2–3 vagas");
+  });
+
+  it("Reserva Flamboyant records tower height, lot and official typologies (fidelity)", () => {
+    const flamboyant = getCondominiumBySlug("reserva-flamboyant");
+    expect(flamboyant).toBeDefined();
+    expect(flamboyant!.deliveryStatus).toBe("under-construction");
+    expect(flamboyant!.areaMin).toBe(157);
+    expect(flamboyant!.areaMax).toBe(377);
+    expect(flamboyant!.typologies).toContain("Duplex 3 suítes — 336 m²");
+    expect(flamboyant!.highlights!.join(" ")).toContain("38 andares");
+    expect(flamboyant!.address).toContain("Pablo Picasso, 50");
+  });
+
+  it("Recanto Oliveiras keeps headline areas and plant-level typologies (fidelity)", () => {
+    const oliveiras = getCondominiumBySlug("recanto-oliveiras");
+    expect(oliveiras).toBeDefined();
+    expect(oliveiras!.deliveryStatus).toBe("under-construction");
+    expect(oliveiras!.areaMin).toBe(83);
+    expect(oliveiras!.areaMax).toBe(111);
+    expect(oliveiras!.typologies).toContain("2 suítes — 109 m²");
+    expect(oliveiras!.address).toContain("Marc Chagall, 467");
   });
 });
 

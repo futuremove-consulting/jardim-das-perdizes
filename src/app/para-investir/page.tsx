@@ -13,14 +13,14 @@ export default function ParaInvestirPage() {
       <h1 className="text-3xl font-semibold tracking-tight">
         Para Investir no Jardim das Perdizes
       </h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600">
+      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Investir no bairro exige avaliar renda e locação, custos e riscos — e
         tratar revenda como uma possível saída, nunca como garantia. Aqui você
         encontra método e dados para decidir com critério.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">O que analisar antes de investir</h2>
-      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-zinc-700">
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
         <li>Renda e locação: aluguel observado, vacância, condomínio, IPTU e yield.</li>
         <li>Estratégia de revenda: entrada, horizonte, liquidez e risco de saída.</li>
         <li>Valorização: séries, inflação e cenários — sem promessa de ganho.</li>
@@ -28,9 +28,9 @@ export default function ParaInvestirPage() {
         <li>Riscos: documentação, obra, vacância, concentração e mercado.</li>
       </ul>
 
-      <p className="mt-10 max-w-2xl text-zinc-600">
+      <p className="mt-10 max-w-2xl text-ink-soft">
         Relatórios e séries de preço do bairro ficam em{" "}
-        <a href="/mercado-e-dados/" className="underline hover:text-zinc-800">
+        <a href="/mercado-e-dados/" className="underline hover:text-ink">
           Mercado &amp; Dados
         </a>
         , com metodologia e limitações declaradas.

@@ -4,10 +4,10 @@ import Home from "./page";
 import { localBusinessSchema } from "@/lib/seo/schemas";
 
 const INTENT_LINKS = [
-  { label: /comprador/i, href: "/para-morar" },
-  { label: /locatário/i, href: "/encontre-seu-perfil" },
-  { label: /investidor/i, href: "/para-investir" },
-  { label: /proprietário/i, href: "/venda-ou-alugue-seu-imovel" },
+  { label: /comprador para morar/i, href: "/para-morar" },
+  { label: /comprador para investir/i, href: "/para-investir" },
+  { label: /propriet[aá]rio/i, href: "/venda-ou-alugue-seu-imovel" },
+  { label: /alugar para morar/i, href: "/encontre-seu-perfil" },
 ];
 
 describe("Home identity page", () => {
