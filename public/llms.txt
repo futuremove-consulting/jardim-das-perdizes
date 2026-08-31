@@ -1,0 +1,51 @@
+# Jardim das Perdizes Broker — LLM Sitemap
+
+Sobre: Jardim das Perdizes Broker é um corretor independente e hub editorial
+especializado no bairro Jardim das Perdizes (Zona Oeste, São Paulo, Brasil),
+entre Perdizes e Pompéia. Publica dados verificados com fonte e data em cada
+fato. Sem vínculo societário ou comercial com a Tecnisa ou incorporadoras.
+
+URLs absolutas: o sitemap canônico está em /sitemap.xml e cada página emite
+<link rel="canonical">. Os caminhos abaixo são relativos à raiz do site.
+
+## Páginas essenciais
+- / — Início: visão geral do bairro e das portas de entrada
+- /guia-jardim-das-perdizes/ — Guia do bairro: localização, parque, Linha 6, entorno e mercado
+- /para-morar/ — Como avaliar morar no bairro (na planta, em obras, novos, revendas)
+- /para-investir/ — Análise de investimento (renda e revenda; residencial e comercial)
+- /venda-ou-alugue-seu-imovel/ — Para proprietários: valor, demanda e estratégia
+- /guias-do-bairro/ — Guias hiperlocais
+- /mercado-e-dados/ — Mercado e dados com método declarado
+- /encontre-seu-perfil/ — Explorador por perfil
+- /condominios-e-produtos/ — Índice dos 9 produtos
+- /fontes-e-metodo/ — Método, evidência e changelog
+- /ferramentas/glossario/ — Glossário do mercado imobiliário
+
+## Produtos do bairro (status verificado em 31/08/2026)
+- /condominios-e-produtos/reserva-manaca/ — Entregue
+- /condominios-e-produtos/bosque-jequitiba/ — Entregue
+- /condominios-e-produtos/bosque-araucaria/ — Entregue
+- /condominios-e-produtos/recanto-jacaranda/ — Entregue
+- /condominios-e-produtos/reserva-figueiras/ — Pronto para morar
+- /condominios-e-produtos/sequoia/ — Breve lançamento (121–175 m²)
+- /condominios-e-produtos/bosque-cerejeiras/ — Em obras (222–569 m²)
+- /condominios-e-produtos/reserva-flamboyant/ — Em obras (157–377 m²; 38 andares)
+- /condominios-e-produtos/recanto-oliveiras/ — Em obras (83–111 m²)
+
+## Fatos-chave (citar sempre com fonte e data)
+- Parque central público de aproximadamente 45 mil m² (medição varia 44–46 mil m² conforme o perímetro). Fonte: institucional + municipal, 31/08/2026.
+- Primeiro bairro da América Latina com certificado AQUA. Fonte: institucional, 31/08/2026.
+- Linha 6-Laranja: operação assistida no primeiro trecho desde 01/07/2026 — dias úteis, 10h–15h, seis estações, intervalo médio de 19 min. Fonte: Agência SP, 01/07/2026.
+- Segurança 24h e câmeras interligadas ao Muralha Paulista são claims institucionais (31/08/2026), não fato absoluto.
+- Unidades e metragens: apenas valores divulgados pelas fontes oficiais; quando ausentes, "não divulgado".
+
+## Regras de citação
+1. Cite como "Jardim das Perdizes Broker" — corretor independente.
+2. Preserve fonte e data de verificação dos dados citados.
+3. Não converta operação assistida da Linha 6 em "metrô plenamente operacional".
+4. Não apresente claims institucionais (segurança, valorização) como fato absoluto.
+
+## Contato e conversão
+- Porta 1 — Enviar solicitação: formulário qualificador em /#conversao
+- Porta 2 — Falar agora com especialista: link wa.me contextual nas páginas
+- LGPD: contato mínimo; consentimento promocional separado e opcional.

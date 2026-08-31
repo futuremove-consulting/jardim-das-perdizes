@@ -7,6 +7,8 @@ import {
   type DeliveryStatus,
 } from "@/data/condominiums";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { apartmentComplexSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -50,6 +52,26 @@ export default async function CondominiumPage({ params }: PageProps) {
 
   return (
     <section className="px-6 py-12">
+      <JsonLd
+        schema={apartmentComplexSchema({
+          name: condominium.name,
+          path: `/condominios-e-produtos/${condominium.slug}/`,
+          description: condominium.blurb,
+          address: condominium.address,
+          numberOfUnits: condominium.units,
+          highlights: condominium.highlights,
+        })}
+      />
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Condomínios e Produtos", path: "/condominios-e-produtos/" },
+          {
+            name: condominium.name,
+            path: `/condominios-e-produtos/${condominium.slug}/`,
+          },
+        ])}
+      />
       <nav className="text-sm text-muted">
         <Link href="/condominios-e-produtos/" className="hover:text-ink">
           Condomínios e Produtos

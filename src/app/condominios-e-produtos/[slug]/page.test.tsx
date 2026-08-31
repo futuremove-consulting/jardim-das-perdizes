@@ -69,4 +69,35 @@ describe("condominium [slug] page", () => {
     expect(screen.getByText(/outubro de 2026/i)).toBeInTheDocument();
     expect(screen.getByText(/captura 31\/08\/2026/i)).toBeInTheDocument();
   });
+
+  it("emits ApartmentComplex + BreadcrumbList JSON-LD on product pages", async () => {
+    const element = await CondominiumPage({
+      params: Promise.resolve({ slug: "reserva-manaca" }),
+    });
+    const { container } = render(element);
+
+    const scripts = container.querySelectorAll(
+      'script[type="application/ld+json"]'
+    );
+    expect(scripts).toHaveLength(2);
+    const types = Array.from(scripts).map(
+      (s) => (JSON.parse(s.textContent!) as { "@type": string })["@type"]
+    );
+    expect(types).toEqual(["ApartmentComplex", "BreadcrumbList"]);
+
+    const complex = JSON.parse(scripts[0].textContent!) as Record<
+      string,
+      unknown
+    >;
+    expect(complex.name).toBe("Reserva Manacá");
+    // Manacá has a disclosed unit count; undisclosed products omit the field.
+    expect(complex.numberOfAccommodationUnits).toBeDefined();
+
+    const breadcrumbs = JSON.parse(scripts[1].textContent!) as {
+      itemListElement: Array<{ item: string }>;
+    };
+    expect(breadcrumbs.itemListElement[2].item).toContain(
+      "/condominios-e-produtos/reserva-manaca/"
+    );
+  });
 });

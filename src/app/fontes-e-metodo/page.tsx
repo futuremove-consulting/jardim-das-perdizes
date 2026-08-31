@@ -32,6 +32,23 @@ export default function FontesEMetodoPage() {
         <li>Publicar correções e changelog quando necessário.</li>
         <li>Manter um nível de evidência claro em cada página.</li>
       </ul>
+
+      <h2 className="mt-10 text-xl font-semibold">Changelog de verificação</h2>
+      <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-ink-soft">
+        <li>
+          <strong>31/08/2026</strong> — Portfólio ampliado de 5 para 9 produtos
+          com captura das páginas oficiais da Tecnisa (fonte e data em cada
+          ficha). Status da Reserva Figueiras reconciliado: a página oficial
+          exibe &quot;Pronto para morar&quot;, divergindo dos registros
+          documentais anteriores (entrega prevista para outubro de 2026); a
+          divergência está documentada na própria ficha.
+        </li>
+        <li>
+          <strong>31/08/2026</strong> — Dados de mercado e metragens conferidos
+          contra as fontes primárias; unidades não divulgadas oficialmente são
+          exibidas como &quot;não divulgado&quot;, nunca estimadas.
+        </li>
+      </ul>
     </section>
   );
 }
