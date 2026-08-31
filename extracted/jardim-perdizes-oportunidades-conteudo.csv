@@ -1,0 +1,42 @@
+prioridade;tema/titulo_sugerido;intencao;publico;formato;dados_evidencia_necessarios;cta;diferencial
+P0;Jardim das Perdizes: guia independente e atualizado 2026;informacional/comercial;comprador,locatario,investidor;pagina pilar;area do parque,horarios,produtos,precos,data,status,fontes;receber curadoria de imoveis;independencia e atualização
+P0;Quanto custa morar no Jardim das Perdizes;comercial;comprador,locatario;calculadora/guia;preco,m2,condominio,IPTU,aluguel,seguro,agua/gas;simular custo total;nao apenas preco de anuncio
+P0;Preço por m2 por condomínio e torre;investigacao comercial;comprador,proprietario;dashboard;amostra,area privativa,preco,andar,vista,data;pedir avaliacao;metodologia e série temporal
+P0;Jardim das Perdizes: preço pedido x preço fechado;investidor;comprador,vendedor;estudo;ITBI ou dados autorizados,anuncios,descontos,metodo;solicitar analise de preço;transparencia de negociação
+P0;Comparativo completo dos dez produtos;comercial;comprador;comparador interativo;metragem,quartos,vagas,entrega,condominio,vista,status;falar com especialista;matching por perfil
+P0;Matriz de torres, finais, vistas e insolação;comercial;comprador alto padrao;mapa/guia;plantas,implantacao,vistas,orientação,horarios;receber shortlist;informação por unidade
+P0;Valorização do Jardim das Perdizes: o que os dados permitem afirmar;investidor;investidor,vendedor;relatorio;FipeZAP,ITBI,IPCA,produto,periodo;receber estudo;cenários e limites
+P0;Repasses do Bosque Pitangueiras;transacional;comprador,investidor;landing atualizada;status 100% vendido,unidade,preco,condominio,obra;ver repasses;separação primario/revenda
+P0;Recanto Oliveiras: entrega, plantas e preço atualizado;transacional;comprador;ficha produto;memorial,obra,deposito,preco,data;agendar visita;área útil x comercial
+P0;Reserva Figueiras pronto para morar: entrega, plantas e custos;transacional;comprador;ficha produto;entrega,RI,planta,condominio,IPTU,anuncios;agendar visita;documentação e custo total
+P1;É bom morar no Jardim das Perdizes? pontos fortes e limites;informacional;morador potencial;video+artigo;rotina,ruido,acesso,parque,servicos,custos;falar com morador/consultor;equilibrio
+P1;Jardim das Perdizes é seguro? câmeras, AMO e limites;informacional;morador,locatario;FAQ/entrevista;Muralha,portaria,estatistica,fonte,LGPD;receber guia;nao prometer segurança absoluta
+P1;Regras do Parque Jardim das Perdizes 2026;informacional/local;morador,visitante;guia oficial;Portaria SVMA 72/2026,horarios,portoes,pets,eventos;salvar guia;fonte normativa
+P1;Parque publico x areas privadas: o que é de quem;informacional;comprador,visitante;infografico/artigo;ficha municipal,condominios,AMO;pedir mapa;clareza de governança
+P1;Linha 6-Laranja: distância real, status e impacto;informacional/investidor;comprador,investidor;mapa/estudo;rotas,horarios,status,anel,ITBI,FipeZAP;receber monitoramento;status datado e nao promessa
+P1;Jardim das Perdizes x Perdizes x Barra Funda x Água Branca;comparativa;comprador;comparador;taxonomia,precos,aluguel,condominio,servicos;receber recomendacao;recorte hiperlocal
+P1;Custo de condomínio por m2 nos edifícios;investigacao;comprador,proprietario;dashboard;condominio,area,servicos,fundo,ano;avaliar meu imovel;normalização
+P1;Vale a pena investir para alugar?;investidor;investidor;calculadora;preco,aluguel,vacancia,condominio,IPTU,IR,manutencao;simular yield;cenário bruto/liquido
+P1;Como escolher entre 81/109,79/111,157/165/188 e 241/283 m2;comercial;comprador;guia/matching;plantas,numero de pessoas,vagas,custos;receber shortlist;orientação por estilo de vida
+P1;Vista para o parque: prêmio, liquidez e o que medir;comercial/investidor;comprador,vendedor;estudo;anuncios por vista,andar,orientacao,tempo de mercado;pedir avaliação;premio observado,nao presumido
+P1;História do Jardim das Perdizes: anúncio x entrega;informacional;pesquisador,comprador;linha do tempo;Secovi,Prefeitura,Tecnisa,Hines,artigo academico;baixar timeline;reconciliação de versões
+P1;O que significa AQUA-HQE no Jardim das Perdizes;informacional;comprador;explicador;Fundacao Vanzolini,escopo,impacto operacional;receber checklist;traduz selo em critérios
+P1;Drenagem zero: o que foi prometido e o que é mensurável;informacional;morador,urbanista;reportagem tecnica;projeto,Prefeitura,academico,medicoes;falar com especialista;fact-check
+P1;Guia de comércios e serviços com mapa e horário;local;morador,visitante;diretorio;Guia JP,Google Maps,verificacao,data;listar serviço;atualização e fonte
+P1;Rotina de eventos: Allianz/Nubank Parque, parque e entorno;local;morador,locatario;calendario;agendas oficiais,ruido,transito,horario;receber alertas;impacto na moradia
+P1;Jardim das Perdizes para famílias;informacional;familias;guia/video;escolas,parque,plantas,seguranca,custos;agendar visita;decisão por perfil
+P1;Jardim das Perdizes para estudantes e jovens profissionais;informacional;estudante,executivo;guia;universidades,transporte,aluguel,compactos;ver aluguel;recorte de demanda
+P1;Jardim das Perdizes para pets;local;pet owners;guia;regras do parque,pet shops,condominios;ver imóveis pet;experiência real
+P2;Arquitetura e reforma: apartamento com vista para o parque;informacional;morador,arquiteto;case;ArchDaily,planta,fotos,aprovacoes;consultar reforma;conteúdo visual independente
+P2;Primeiro ciclo: Manacá, Jequitibá, Araucária e Jacarandá;histórico;comprador,proprietario;ficha histórica;Apto,Viva,RI,anuncios;ver revendas;memória do bairro
+P2;Quem administra o parque e qual o papel da AMO;informacional;morador;FAQ;Prefeitura,IPEA,AMO,regulamento;receber fontes;governança clara
+P2;Checklist de compra e vistoria no Jardim das Perdizes;transacional;comprador;checklist;memorial,matricula,unidade,condominio,assistencia;baixar checklist;redução de risco
+P2;Diferença entre metragem anunciada, útil e depósito;informacional;comprador;explicador;memoriais,plantas,rodapes Tecnisa;pedir análise;clareza técnica
+P2;Como negociar preço no Jardim das Perdizes;transacional;comprador,vendedor;guia;amostra,tempo,condominio,comparaveis;solicitar análise;inteligência de negociação
+P2;Histórico societário Tecnisa-Hines-BTG;informacional/investidor;investidor,imprensa;timeline;RI,MetroQuadrado,InvestNews;receber monitoramento;governança e fontes
+P2;O que falta para completar o desenho original;informacional;urbanista,investidor;análise;Hines,Tecnisa,OUC,CEPACs,aprovações;acompanhar projetos;separação de planos/status
+P2;Preço de lançamento de cada fase desde 2013;histórico/investidor;proprietario,investidor;data room;RI,Tecnisa,reportagens,tabelas,IPCA;pedir valuation;preço nominal x real
+P2;Mapa de ruído e eventos por torre;comercial;comprador;mapa;agenda,orientação,observação,medição autorizada;receber shortlist;decisão por ambiente
+P2;Mapa de sombra, árvores e conforto térmico;local;comprador,urbanista;mapa/ensaio;flora,orientação,observação,clima;agendar visita;conteúdo técnico
+P2;Banco de respostas para IA sobre o Jardim das Perdizes;AEO/GEO;todos;FAQ/knowledge base;fatos com fontes,dates,entities;falar com especialista;citabilidade
+P2;Relatório mensal Jardim das Perdizes Data Watch;investidor,vendedor;newsletter/dashboard;preços,estoque,aluguel,obra,mobilidade;assinar monitoramento;recorrência e dados próprios

@@ -53,7 +53,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 01-04: 9 páginas P0 restantes com conteúdo real + sitemap.xml/robots.txt/LocalBusiness (TDD) + home hub com roteamento por intenção (demo)
+- [x] 01-04: 9 páginas P0 restantes com conteúdo real + sitemap.xml/robots.txt/LocalBusiness (TDD) + home hub com roteamento por intenção (demo)
 
 ### Phase 2: Inventário & Descoberta
 
@@ -195,7 +195,7 @@ Phases executam em ordem numérica: 1 → 2 → 3 → 4 → 5. Phases 6 e 7 (an�
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação & Esqueleto | 4/4 | Complete   | 2026-08-28 |
+| 1. Fundação & Esqueleto | 4/4 | Complete    | 2026-08-28 |
 | 2. Inventário & Descoberta | 0/4 | Not started | - |
 | 3. Conversão & CRM | 0/4 | Not started | - |
 | 4. Conteúdo & SEO/AEO/GEO | 0/3 | Not started | - |

@@ -1,0 +1,31 @@
+family;date_current;area_m2;price_current_brl;status;source_current;note;price_current_per_m2
+Recanto Jacarandá;2026-08-27;79;1365000;revenda;Imovelweb;JDP-specific;17278.481013
+Recanto Jacarandá;2026-08-27;79;1485000;revenda;Imovelweb;JDP-specific;18797.468354
+Recanto Jacarandá;2026-08-27;79;1500000;revenda;Imovelweb;JDP-specific;18987.341772
+Recanto Jacarandá;2026-08-27;108;1855000;revenda;Imovelweb;JDP-specific;17175.925926
+Recanto Jacarandá;2026-08-27;108;1980000;revenda;Imovelweb;JDP-specific;18333.333333
+Recanto Jacarandá;2026-08-27;108;1990000;Imovelweb;Imovelweb;JDP-specific;18425.925926
+Recanto Jacarandá;2026-08-27;108;2050000;revenda;Imovelweb;JDP-specific;18981.481481
+Recanto Jacarandá;2026-08-27;108;2100000;revenda;Imovelweb;JDP-specific;19444.444444
+Bosque Jequitibá;2026-08-27;159;2970000;revenda;Imovelweb;JDP-specific;18679.245283
+Bosque Jequitibá;2026-08-27;159;3000000;revenda;Imovelweb;JDP-specific;18867.924528
+Bosque Jequitibá;2026-08-27;159;3180000;revenda;Imovelweb;JDP-specific;20000.000000
+Bosque Jequitibá;2026-08-27;242;4197000;revenda;Imovelweb;JDP-specific;17342.975207
+Bosque Araucária;2026-08-27;157;2550000;revenda;Imoveis JN;JDP-specific;16242.038217
+Time (Residencial);2026-08-27;63;1100000;revenda;Unyk Home;JDP-specific;17460.317460
+Reserva Manacá;2026-08-27;283;5350000;revenda;Imovelweb;JDP-specific;18904.593640
+Reserva Manacá;2026-08-27;283;6000000;revenda;Imovelweb;JDP-specific;21201.413428
+Reserva Manacá;2026-08-27;421;11000000;revenda;Imovelweb;JDP-specific;26128.266033
+Bosque Pitangueiras;2026-08-27;79;1300000;revenda;Imovelweb;JDP-specific;16455.696203
+Bosque Pitangueiras;2026-08-27;79;1500000;revenda;Imovelweb;JDP-specific;18987.341772
+Bosque Pitangueiras;2026-08-27;79;1750000;revenda;Imovelweb/Imoveis JN;JDP-specific;22151.898734
+Bosque Pitangueiras;2026-08-27;98;2020000;revenda;Imovelweb;JDP-specific;20612.244898
+Bosque Pitangueiras;2026-08-27;136;2200000;revenda;Imovelweb;JDP-specific;16176.470588
+Bosque Pitangueiras;2026-08-27;136;2400000;revenda;Imovelweb;JDP-specific;17647.058824
+Bosque Pitangueiras;2026-08-27;136;2550000;revenda;Imovelweb;JDP-specific;18750.000000
+Bosque Pitangueiras;2026-08-27;151;1999000;revenda_or_outlier;Imovelweb;"JDP-specific; area/price needs validation";13238.410596
+Reserva Figueiras;2026-08-27;165;3200000;revenda;Imoveis JN;JDP-specific;19393.939394
+Reserva Figueiras;2026-08-27;188;3690000;revenda;Imovelweb;JDP-specific;19627.659574
+Recanto Oliveiras;2026-08-27;109;1692000;primary_stock_table;Imoveis JN;"JDP-specific; table Aug 2026, delivery Aug 2027";15522.935780
+Bosque Cerejeiras;2026-08-27;222;3430000;primary_stock_table;Imoveis JN;"JDP-specific; cash price from, delivery Oct 2027";15450.450450
+Reserva Flamboyant;2026-08-27;157;2555000;primary_stock_table;Imoveis JN;"JDP-specific; launch/new stock";16273.885350

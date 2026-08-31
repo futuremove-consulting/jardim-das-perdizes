@@ -39,6 +39,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# windows metadata + source archives (extracted/ is the curated source of record)
+*.Zone.Identifier
+*.zip
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

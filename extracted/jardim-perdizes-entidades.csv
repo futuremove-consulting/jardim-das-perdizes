@@ -1,0 +1,68 @@
+entidade;tipo;relacao_com_jardim_das_perdizes;atributos_confirmados_ou_observados;fonte_principal;status_de_validacao;uso_estrategico
+Jardim das Perdizes;empreendimento/loteamento;bairro planejado na Zona Oeste entre Água Branca, Barra Funda, Perdizes e Pompeia;terreno historico 250 mil m2, uso residencial/comercial, parque municipal;F04 F23 F25 F29;confirmar escopo atual;entidade pilar e pagina principal
+Windsor Investimentos Imobiliarios Ltda;SPE/incorporadora;veiculo do empreendimento;incorporadora dos produtos Tecnisa atuais e historicos;F16-F21 F05 F06;confirmar documentos societarios atuais;autoridade e compliance
+Tecnisa;incorporadora/realizadora;idealizadora e vendedora de produtos;CRECI 19.773-J, paginas oficiais, produtos e conteúdo;F04-F22;confirmado em rodapes consultados;fonte primaria e concorrente institucional
+Hines;realizadora/investidora;participacao e realizacao de produtos recentes;pagina do ativo e rodapes de produtos;F23 F16-F21;confirmar estrutura societaria atual;governanca e timeline
+BTG Pactual;investidor/controlador divulgado;entrada/assunção de controle da Windsor em noticias 2026;participacao divulgada em materias Metro Quadrado/InvestNews;F62 F63;confirmar atos oficiais e data;monitorar risco/capital/novos lancamentos
+PDG;ex-socia historica;participacao historica de 25 por cento na Windsor;estrutura de 2013/2014;F05 F06 F25;historico datado;timeline societaria
+BVEP;ex-socia historica;participacao historica minoritaria;estrutura divulgada em comunicados;F05 F06 F28;historico datado;timeline societaria
+Parque Jardim das Perdizes;parque municipal;area verde central aberta ao publico;46.149,35 m2 na ficha atual, seis portoes, 6h-22h, acessibilidade;F29 F30 F31;confirmado fonte municipal;pagina de experiencia/FAQ
+AMO Jardim das Perdizes;associacao privada/comunitaria;governanca de moradores e apoio ao parque;CNPJ 18.195.496/0001-61, ativa, fundada/cadastrada 2012;F54 F55 F30;existencia confirmada, governanca parcial;entidade local e transparência
+SVMA;orgao publico municipal;gestao ambiental/parque;ficha do parque, sede, regras e noticias;F29-F31;confirmado;fonte primaria
+Prefeitura de Sao Paulo;orgao publico;parque, urbanismo e legislação;decretos, portaria, OUC e infraestrutura;F29-F31 F34;confirmado;fonte primaria e risco regulatorio
+Governo do Estado de Sao Paulo;orgao publico;Linha 6/Muralha Paulista;mobilidade e segurança;F32 F56;confirmado;status factual
+Linha Uni;concessionaria;operacao da Linha 6-Laranja;extensao, estacoes e operação assistida;F33 F32;status dinamico;monitoramento de mobilidade
+Linha 6-Laranja;infraestrutura de transporte;estações Água Branca, Sesc-Pompeia e Perdizes;primeiro trecho em operação assistida em 01/07/2026;F32 F33 F36;confirmado na data da fonte;conteudo de mobilidade
+Estacao Agua Branca;estacao;integracao Linha 6/Linha 7;estação no trecho inaugural, conexão com Linha 7;F32;confirmado status da matéria;mapa de rotas
+Estacao Sesc-Pompeia;estacao;mobilidade regional;trecho inaugural da Linha 6;F32 F36;confirmado status da matéria;mapa de rotas
+Estacao Perdizes;estacao;mobilidade regional;trecho inaugural da Linha 6;F32 F36;confirmado status da matéria;mapa de rotas
+OUC Agua Branca;operacao urbana;contexto regulatorio e urbanistico;CEPACs, adensamento, drenagem, HIS, potencial construtivo;F34 F35;confirmar status de projetos;conteudo de risco/catalisador
+CEPAC;instrumento urbanistico;potencial construtivo e custo de desenvolvimento;precos e compras citados em fontes 2015/2022/2026;F35 F62;datado e requer fonte oficial;análise de oferta futura
+Reserva Manaca;condominio/produto;primeiro ciclo, alto padrao;241/283 m2,3 torres,320 unidades,entrega 2016;F49 F37;estrutura confirmada, preço atual em anuncios;ficha e comparador
+Andorinha;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Sabia;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Arara;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Cacatua;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Falcao;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Jacutinga;torre/bloco;torre do Reserva Manaca;nome citado em ficha técnica;F49;confirmar memorial;matriz de torres
+Bosque Jequitiba;condominio/produto;primeiro entregue/alto padrão;158-331 m2,3 torres,320 unidades,entrega 2015;F37 F38;confirmar memorial;ficha e comparação
+Canario;torre/bloco;torre Bosque Jequitiba;nome citado em ficha tecnica publica;F48;confirmar memorial;matriz de torres
+Bem-te-vi;torre/bloco;torre Bosque Jequitiba;nome citado em ficha tecnica publica;F48;confirmar memorial;matriz de torres
+Beija-flor;torre/bloco;torre Bosque Jequitiba;nome citado em ficha tecnica publica;F48;confirmar memorial;matriz de torres
+Bosque Araucaria;condominio/produto;primeiro ciclo;157/170 m2,2 torres,212 unidades,entrega 2016;F48 F37;confirmar memorial;ficha e comparação
+Tie;torre/bloco;torre Bosque Araucaria;nome citado em ficha tecnica publica;F48;confirmar memorial;matriz de torres
+Tucano;torre/bloco;torre Bosque Araucaria;nome citado em ficha tecnica publica;F48;confirmar memorial;matriz de torres
+Recanto Jacaranda;condominio/produto;primeiro ciclo;79-161 m2,2 torres,396 unidades,entrega 2016;F37 F48;confirmar memorial;ficha e liquidez
+TIME Life;condominio/produto;produto compacto/porta de entrada;57-66 m2 no Viva, outras fontes citam 83 m2,torres/unidades a confirmar;F37 F05;parcialmente validado;segmento compacto e locacao
+TIME Corporate;torre corporativa;uso comercial;endereco Av Nicolas Boer 399, escritorio Tecnisa;F05 F22;confirmado na pagina;entidade do entorno
+Bosque Pitangueiras;condominio/produto;retomada 2022;79/136 m2,torre unica,150 unidades,100 por cento vendido;F17 F35 F37;confirmado status primario;repasse e historico
+Reserva Figueiras;condominio/produto;retomada/entrega 2026;165/188 m2,subcondominio Torre A,pronto para morar;F18 F35;status pagina conflita com texto;ficha e entrega
+Recanto Oliveiras;condominio/produto;retomada/obra;81/109 ou 83/111 m2,2 torres,em obras;F16 F37;area precisa distinguir deposito;ficha e evolução de obra
+Bosque Cerejeiras;condominio/produto;produto alto padrão recente;221,64/222/293/436/569 m2,torre unica/torre 2 Bosques,em obras;F20;confirmar unidade total e escopo do terreno;ficha e comparador
+Reserva Flamboyant;condominio/produto;produto alto padrão recente;157/189/336/377 m2,torre unica,38 andares,em obras;F19;confirmado pagina;ficha e vistas
+Sequoia;produto breve lancamento;novo produto mencionado em dominio antigo;121/148/175 m2,3-4 dormitorios,duas torres;F61;pre-RI/status a confirmar;monitoramento e alerta
+Casa100 Arquitetura;escritorio;projeto de reforma de apartamento no JDP;apartamento de 240 m2,2017,vista para parque;F52;confirmado projeto publicado;conteudo de reforma/experiencia
+MCAA Arquitetos;escritorio;arquitetura de Bosque Cerejeiras/Pitangueiras;projeto oficial;F17 F20;confirmado rodape;ficha tecnica
+Itamar Berezin;arquiteto;Recanto Oliveiras/Reserva Figueiras;projeto arquitetonico;F16 F18;confirmado rodape;autoridade de produto
+Candusso Arquitetos;escritorio;Reserva Flamboyant;projeto arquitetonico;F19;confirmado rodape;ficha tecnica
+Marcelo Vassalo;paisagista;Bosques Cerejeiras/Pitangueiras;projeto paisagistico;F17 F20;confirmado rodape;ficha tecnica
+Benedito Abbud;paisagista;Reserva Figueiras;projeto paisagistico;F18;confirmado rodape;ficha tecnica
+Tomie Ohtake;artista;obras no parque;esculturas/arte publica;F29 F30 F08;confirmar inventario atual;conteudo cultural
+Frans Krajcberg;artista;obra citada no parque;arte e paisagismo;F04 F19;confirmar obra/localizacao;conteudo cultural
+Nubank Parque;arena/eventos;antigo Allianz Parque;shows/futebol e demanda de visitantes;F08 F36;nome comercial dinamico;entorno e ruido/eventos
+Shopping Bourbon;shopping;comercio/lazer proximo;varejo,gastronomia,cinema;F08 F36 F50;confirmar distancias por rota;entorno
+West Plaza;shopping;comercio/lazer proximo;varejo e serviços;F08 F50;confirmar distancias;entorno
+Parque da Agua Branca;parque estadual/municipal;area verde regional;137 mil m2 citado no estudo anterior;F08 F50;confirmar fonte/dado;comparativo de parques
+Memorial da America Latina;centro cultural;entorno cultural;exposicoes,biblioteca,auditorio;F50;confirmar agenda;entorno
+SESC Pompeia;centro cultural/lazer;entorno;teatro,quadras,piscina,alimentacao,exposicoes;F50 F36;confirmar horarios;entorno
+PUC-SP Campus Monte Alegre;educacao;entorno;universidade em Perdizes;F08 F50;confirmar distancia;demanda estudantil
+Hospital Albert Einstein Unidade Perdizes;saude;entorno;unidade hospitalar citada em guias;F08;confirmar endereco/servicos;demanda e entorno
+Hospital Sao Camilo Pompeia;saude;entorno;hospital citado em guias;F08 F50;confirmar endereco/servicos;demanda e entorno
+Real Price;dados imobiliarios;estudo de proximidade da Linha 6;1,36 milhao de transacoes e premio de 10,8% ate 500m;F36;dados secundários/reportados;benchmark analítico
+FipeZAP;indice de mercado;benchmark municipal;preço pedido de venda/aluguel por cidade;relatorios anteriores;confirmar periodo em cada uso;contexto macro
+Viva Jardim das Perdizes;concorrente/hub hiperlocal;portal edifício por edifício;precos,condominio,IPTU,alertas e avaliação;F37;confirmado pagina;benchmark direto
+YK Private;concorrente/imobiliaria;especialista Zona Oeste;inventario,artigo,prova social,CRECI;F01-F03;confirmado pagina;benchmark direto
+França Prime;concorrente/alto padrao;estoque local e tour;45 imoveis na captura,alto padrão;F43;fotografia de consulta;benchmark premium
+FMI Prime;concorrente/alto padrao;estoque/custos;19 imoveis na captura;F44;fotografia de consulta;benchmark premium
+Zimmermann;concorrente/editorial;guia e inventario local;guia de bairro e paginas de imoveis;F50;confirmado pagina;benchmark SEO
+Guia Jardim das Perdizes;diretorio local;comercio e serviços;mapa,comercios,noticias,newsletter;F53;site ativo;parcerias/entidades

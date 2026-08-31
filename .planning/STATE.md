@@ -2,15 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-08-28T17:11:00.000Z"
+status: verifying
+last_updated: "2026-08-28T17:15:40.479Z"
 progress:
   total_phases: 7
   completed_phases: 1
   total_plans: 4
   completed_plans: 4
-  percent: 100
-  percent_note: "percent reflects Phase 1 (4/4 plans). gsd state.advance-plan/record-metric fail on this STATE.md format (no 'Current Plan in Phase'); percent corrected manually to 100% per plan env note. update-progress computed 14 (phase-based 1/7)."
+  percent: 14
 ---
 
 # Project State — Jardim das Perdizes Broker

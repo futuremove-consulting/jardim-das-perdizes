@@ -1,0 +1,201 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Captei Listings API",
+    "version": "1.0.0",
+    "description": "Search Captei's real-estate listings (\"anúncios\") big-data (Elasticsearch).\n\n**Authentication (BOTH headers required):** `Token` = your **client key** ([acesse aqui](https://app.captei.com.br/painel/meus-dados)) and `User-Key` = your **personal user key** ([acesse aqui](https://app.captei.com.br/painel/api-integracoes)). API access must be enabled for your client (contact the Captei team); the user must be active and belong to the client.\n\n**Abuse protection:** min 1s between requests, 60 requests/minute, and a per-client daily record quota (50,000 records/day). Deep pagination is bounded by `page * page_size <= 10000`; narrow filters (date range, city, neighborhood) to reach more results.\n\n**Privacy:** the advertiser's phone number is intentionally not exposed by this API."
+  },
+  "servers": [
+    { "url": "https://app.captei.com.br", "description": "Production" }
+  ],
+  "tags": [
+    { "name": "Listings", "description": "Real-estate listings search (big-data)." }
+  ],
+  "components": {
+    "securitySchemes": {
+      "TokenAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Token",
+        "description": "Account-level client key. Get or regenerate it in Meus Dados → API ([acesse aqui](https://app.captei.com.br/painel/meus-dados)). REQUIRED together with User-Key."
+      },
+      "UserKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "User-Key",
+        "description": "Your personal user key. Generate or rotate it in API / Integrações ([acesse aqui](https://app.captei.com.br/painel/api-integracoes)). REQUIRED together with Token. The user must be active and belong to the client."
+      }
+    },
+    "schemas": {
+      "Geo": {
+        "type": "object",
+        "properties": {
+          "lat": { "type": "number", "format": "float", "example": -27.5969 },
+          "lon": { "type": "number", "format": "float", "example": -48.5495 }
+        }
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "street": { "type": "string", "nullable": true, "example": "Rua Manoel Pedro Vieira" },
+          "number": { "type": "string", "nullable": true, "example": "960" },
+          "complement": { "type": "string", "nullable": true },
+          "unit": { "type": "string", "nullable": true, "description": "Apartment/unit number." },
+          "neighborhood": { "type": "string", "nullable": true, "example": "Morro das Pedras" },
+          "city": { "type": "string", "nullable": true, "example": "Florianópolis" },
+          "state": { "type": "string", "nullable": true, "example": "SC" },
+          "zip_code": { "type": "string", "nullable": true, "example": "88066100" },
+          "full": { "type": "string", "nullable": true },
+          "geo": { "allOf": [{ "$ref": "#/components/schemas/Geo" }], "nullable": true }
+        }
+      },
+      "Listing": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "793d0ea743328c5ad09c8147ea22dc2e513f0039" },
+          "status": { "type": "string", "example": "Ativo", "description": "Ativo | Inativo" },
+          "portal": { "type": "string", "nullable": true, "example": "Zap Imoveis" },
+          "advertiser_name": { "type": "string", "nullable": true },
+          "advertiser_type": { "type": "string", "nullable": true, "example": "Profissional" },
+          "business_type": { "type": "array", "items": { "type": "string" }, "example": ["Venda"] },
+          "category": { "type": "array", "items": { "type": "string" }, "example": ["Residencial"] },
+          "property_type": { "type": "string", "nullable": true, "example": "Apartamento" },
+          "address": { "$ref": "#/components/schemas/Address" },
+          "bedrooms": { "type": "integer", "nullable": true, "example": 3 },
+          "suites": { "type": "integer", "nullable": true, "example": 1 },
+          "bathrooms": { "type": "integer", "nullable": true, "example": 2 },
+          "parking_spots": { "type": "integer", "nullable": true, "example": 2 },
+          "usable_area": { "type": "number", "nullable": true, "example": 90 },
+          "total_area": { "type": "number", "nullable": true, "example": 110 },
+          "price": { "type": "number", "nullable": true, "description": "Numeric price.", "example": 850000 },
+          "price_label": { "type": "string", "nullable": true, "example": "R$ 850.000,00" },
+          "price_period": { "type": "string", "nullable": true, "description": "For rentals (e.g. 'mês')." },
+          "condo_fee": { "type": "number", "nullable": true, "example": 600 },
+          "iptu": { "type": "number", "nullable": true },
+          "features": { "type": "object", "nullable": true },
+          "photos": { "type": "array", "items": { "type": "object" }, "nullable": true },
+          "title": { "type": "string", "nullable": true },
+          "description": { "type": "string", "nullable": true },
+          "link": { "type": "string", "nullable": true },
+          "created_at": { "type": "string", "format": "date-time", "nullable": true },
+          "deactivated_at": { "type": "string", "format": "date-time", "nullable": true }
+        }
+      },
+      "SearchResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "total": { "type": "integer", "description": "Total matching records.", "example": 660078 },
+          "page": { "type": "integer", "example": 1 },
+          "page_size": { "type": "integer", "example": 20 },
+          "count": { "type": "integer", "description": "Records in this page.", "example": 20 },
+          "has_more": { "type": "boolean", "example": true },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Listing" } }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": false },
+          "message": { "type": "string", "example": "Rate limit reached: up to 60 requests per minute." }
+        }
+      }
+    }
+  },
+  "security": [{ "TokenAuth": [], "UserKeyAuth": [] }],
+  "paths": {
+    "/api/listings/search": {
+      "get": {
+        "tags": ["Listings"],
+        "summary": "Search listings",
+        "description": "Rich search over active/inactive listings. Returns a page of results plus `has_more`. Use `page` to navigate (depth capped at 10000).",
+        "operationId": "searchListings",
+        "security": [{ "TokenAuth": [], "UserKeyAuth": [] }],
+        "parameters": [
+          { "name": "status", "in": "query", "schema": { "type": "string", "enum": ["active", "inactive", "all"], "default": "active" }, "description": "Listing status." },
+          { "name": "date_from", "in": "query", "schema": { "type": "string", "format": "date" }, "description": "YYYY-MM-DD. Applies to deactivation date when status=inactive, otherwise to creation date. Max window 366 days." },
+          { "name": "date_to", "in": "query", "schema": { "type": "string", "format": "date" } },
+          { "name": "state", "in": "query", "schema": { "type": "string" }, "example": "SC", "description": "UF." },
+          { "name": "city", "in": "query", "schema": { "type": "string" }, "example": "Florianopolis" },
+          { "name": "neighborhood", "in": "query", "schema": { "type": "string" }, "description": "Requires state + city." },
+          { "name": "locations", "in": "query", "schema": { "type": "string" }, "description": "Advanced multi-location: 'SC;Florianopolis;Jurere|SP;Sao Paulo' (pipe-separated, 'uf;city[;neighborhood]')." },
+          { "name": "business_type", "in": "query", "schema": { "type": "string" }, "description": "sale | rent (CSV).", "example": "sale" },
+          { "name": "property_type", "in": "query", "schema": { "type": "string" }, "description": "CSV, e.g. apartamento,casa." },
+          { "name": "category", "in": "query", "schema": { "type": "string" }, "description": "residential | commercial (CSV)." },
+          { "name": "advertiser_type", "in": "query", "schema": { "type": "string" }, "description": "CSV." },
+          { "name": "portal", "in": "query", "schema": { "type": "string" }, "description": "CSV of source portals (motor.nome), e.g. 'zap imoveis'." },
+          { "name": "price_min", "in": "query", "schema": { "type": "number" } },
+          { "name": "price_max", "in": "query", "schema": { "type": "number" } },
+          { "name": "condo_min", "in": "query", "schema": { "type": "number" } },
+          { "name": "condo_max", "in": "query", "schema": { "type": "number" } },
+          { "name": "area_min", "in": "query", "schema": { "type": "number" } },
+          { "name": "area_max", "in": "query", "schema": { "type": "number" } },
+          { "name": "bedrooms_min", "in": "query", "schema": { "type": "integer" } },
+          { "name": "bedrooms_max", "in": "query", "schema": { "type": "integer" } },
+          { "name": "suites_min", "in": "query", "schema": { "type": "integer" } },
+          { "name": "suites_max", "in": "query", "schema": { "type": "integer" } },
+          { "name": "bathrooms_min", "in": "query", "schema": { "type": "integer" } },
+          { "name": "bathrooms_max", "in": "query", "schema": { "type": "integer" } },
+          { "name": "parking_min", "in": "query", "schema": { "type": "integer" } },
+          { "name": "parking_max", "in": "query", "schema": { "type": "integer" } },
+          { "name": "only_with_photos", "in": "query", "schema": { "type": "boolean" } },
+          { "name": "only_complete_address", "in": "query", "schema": { "type": "boolean" }, "description": "Must have a numeric street number." },
+          { "name": "text", "in": "query", "schema": { "type": "string" }, "description": "Free-text (title, description, advertiser, address)." },
+          { "name": "ids", "in": "query", "schema": { "type": "string" }, "description": "CSV of listing ids." },
+          { "name": "exclude_ids", "in": "query", "schema": { "type": "string" }, "description": "CSV of listing ids to exclude." },
+          { "name": "sort", "in": "query", "schema": { "type": "string", "enum": ["recent", "price_asc", "price_desc", "area_desc"], "default": "recent" } },
+          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 }, "description": "1-based page. page * page_size <= 10000." },
+          { "name": "page_size", "in": "query", "schema": { "type": "integer", "default": 50, "maximum": 100 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search result (note: errors are also returned with HTTP 200 and success=false).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/SearchResponse" },
+                    { "$ref": "#/components/schemas/ErrorResponse" }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/listings/doc": {
+      "get": {
+        "tags": ["Listings"],
+        "summary": "Visual documentation (Swagger UI)",
+        "description": "This page.",
+        "security": [],
+        "responses": { "200": { "description": "HTML page." } }
+      }
+    },
+    "/api/listings/postman": {
+      "get": {
+        "tags": ["Listings"],
+        "summary": "Download the Postman collection",
+        "security": [],
+        "responses": { "200": { "description": "Postman v2.1 collection (Listings + Proprietario APIs)." } }
+      }
+    },
+    "/api/listings/openapi": {
+      "get": {
+        "tags": ["Listings"],
+        "summary": "Download this OpenAPI spec (JSON)",
+        "security": [],
+        "responses": { "200": { "description": "OpenAPI 3 document." } }
+      }
+    },
+    "/api/listings/llms": {
+      "get": {
+        "tags": ["Listings"],
+        "summary": "Download the AI/LLM integration guide (Markdown)",
+        "security": [],
+        "responses": { "200": { "description": "Markdown integration guide." } }
+      }
+    }
+  }
+}

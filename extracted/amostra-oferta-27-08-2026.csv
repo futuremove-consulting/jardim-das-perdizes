@@ -1,0 +1,31 @@
+source;url;observed_date;operation;location_label;property_type;area_m2;bedrooms;suites;parking_spaces;asking_price_brl;rent_brl_month;condo_brl_month;iptu_brl_month;furnished;listing_ref;quality_flag
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;111;2;2;2;2050000;;;;nao;AP75084-RMMB;amostra_portal
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;79;2;1;1;1100000;;;;nao;AP69473-RMMB;amostra_portal
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;79;2;1;1;1520000;;;;nao;AP0051-C-KS;amostra_portal
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;188;3;3;2;3500000;;;;nao;AP74415-RMMB;amostra_portal
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;157;3;3;2;2600000;;;;nao;AP73871-RMMB;amostra_portal
+Century21;https://www.century21brasil.com/imoveis/a-venda/apartamento/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;80;2;1;2;1780800;;;;nao;AP32118-RMMB;amostra_portal
+FrancaPrime;https://francaprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes/6;2026-08-27;venda;Jardim das Perdizes;apartamento;79;2;1;1;1310000;;;;nao;PC328;pagina_6
+FrancaPrime;https://francaprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes/6;2026-08-27;venda;Jardim das Perdizes;apartamento;83;2;2;2;1300000;;;;nao;PC240;pagina_6
+FrancaPrime;https://francaprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes/6;2026-08-27;venda;Jardim das Perdizes;apartamento;58;2;1;2;1190000;;;;nao;FM188068;pagina_6
+FrancaPrime;https://francaprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes/6;2026-08-27;venda;Jardim das Perdizes;apartamento;79;2;1;2;1130000;;;;nao;FP2893;pagina_6
+FrancaPrime;https://francaprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes/6;2026-08-27;venda;Jardim das Perdizes;apartamento;60;2;1;1;1070000;;;;nao;PC432;pagina_6
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;241;4;3;3;4800000;;;1400;nao;FM201740;alto_padrao
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;241;4;3;3;4400000;;;1200;nao;FM198314;alto_padrao
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;242;4;3;3;4200000;;;1188;nao;FM198755;alto_padrao
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;197;3;3;3;4000000;;;850;nao;FM198197;alto_padrao
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;202;3;3;3;3800000;;;700;nao;FM195406;alto_padrao
+FMIPrime;https://www.fmiprime.com.br/imoveis/venda/sp/sao-paulo/jardim-das-perdizes;2026-08-27;venda;Jardim das Perdizes;apartamento;185;4;3;2;3500000;;;824;nao;FM201388;alto_padrao
+VivaReal;https://www.vivareal.com.br/venda/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;venda;Agua Branca;apartamento;160;3;;2;3250000;;;725;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/venda/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;venda;Agua Branca;apartamento;81;2;;1;1290000;;;199;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/venda/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;venda;Agua Branca;apartamento;79;2;;1;1375800;;;10;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/venda/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;venda;Parque Industrial Tomas Edson;apartamento;63;2;;0;1100000;;;163;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/aluguel/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;aluguel;Agua Branca;apartamento;63;2;;1;;5500;1300;300;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/aluguel/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;aluguel;Agua Branca;apartamento;60;2;;1;;4700;1050;255;nao;;entorno_taxonomia
+VivaReal;https://www.vivareal.com.br/aluguel/sp/sao-paulo/zona-oeste/jardim-das-perdizes/apartamento_residencial/;2026-08-27;aluguel;Agua Branca;apartamento;83;2;;1;;7000;1300;370;nao;;entorno_taxonomia
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Jardim das Perdizes;apartamento;168;3;;2;;26000;;;sim;;amostra_portal
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Jardim das Perdizes;apartamento;60;2;;1;;5200;;;sim;;amostra_portal
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Jardim das Perdizes;apartamento;60;2;;1;;7500;;;sim;;amostra_portal
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Agua Branca;apartamento;70;2;;1;;4703;;;sim;;amostra_portal_anomalia
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Agua Branca;apartamento;79;2;;1;;6520;;;nao;;amostra_portal
+QuintoAndar;https://www.quintoandar.com.br/alugar/imovel/jardim-das-perdizes-sao-paulo-sp-brasil;2026-08-27;aluguel;Agua Branca;apartamento;62;2;;1;;5440;;;nao;;amostra_portal

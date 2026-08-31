@@ -1,0 +1,59 @@
+cluster;consulta ou família de consultas;intenção;persona;url alvo;tipo de conteúdo;prioridade;cta principal;prova necessária
+marca;Jardim das Perdizes Broker / imobiliária Jardim das Perdizes;navegacional;todos;/;landing institucional;P0;Falar com especialista;nome CRECI telefone e perfis consistentes
+compra;apartamentos à venda Jardim das Perdizes;transacional;comprador;/comprar/;hub de inventário;P0;Receber imóveis compatíveis;estoque autorizado e atualizado
+aluguel;apartamento para alugar Jardim das Perdizes;transacional;locatário;/alugar/;hub de inventário;P0;Ver disponibilidade atual;estoque e custos datados
+compra;apartamento 2 dormitórios Jardim das Perdizes;transacional;casal investidor;/comprar/2-dormitorios/;página curada;P0;Receber seleção;unidades ativas com metragem preço e custos
+compra;apartamento 3 dormitórios Jardim das Perdizes;transacional;família;/comprar/3-dormitorios/;página curada;P0;Comparar unidades;plantas e estoque
+compra;apartamento 4 dormitórios Jardim das Perdizes;transacional;alto padrão;/comprar/4-dormitorios/;página curada;P0;Agendar visita;estoque autorizado
+aluguel;mobiliado para alugar Jardim das Perdizes;transacional;executivo;/alugar/mobiliados/;página curada;P0;Receber opções mobiliadas;fotos e custo total
+condomínio;condomínios Jardim das Perdizes;navegacional;comprador;/condominios/;hub de entidades;P0;Comparar condomínios;lista de nomes e status
+condomínio;Reserva Manacá Jardim das Perdizes;transacional;navegacional;/condominios/reserva-manaca/;página de entidade;P0;Ver oportunidades;dados oficiais e estoque
+condomínio;Bosque Jequitibá Jardim das Perdizes;transacional;navegacional;/condominios/bosque-jequitiba/;página de entidade;P1;Consultar disponibilidade;dados verificáveis
+condomínio;Bosque Araucária Jardim das Perdizes;transacional;navegacional;/condominios/bosque-araucaria/;página de entidade;P1;Consultar disponibilidade;dados verificáveis
+condomínio;Recanto Jacarandá Jardim das Perdizes;transacional;navegacional;/condominios/recanto-jacaranda/;página de entidade;P1;Consultar disponibilidade;dados verificáveis
+condomínio;Reserva Figueiras Jardim das Perdizes;transacional;comprador;/condominios/reserva-figueiras/;página de entidade;P0;Ver unidades;status pronto para morar e estoque
+condomínio;Recanto Oliveiras Jardim das Perdizes;transacional;comprador;/condominios/recanto-oliveiras/;página de entidade;P0;Ver unidades;status e plantas autorizadas
+condomínio;Reserva Flamboyant Jardim das Perdizes;transacional;alto padrão;/condominios/reserva-flamboyant/;página de entidade;P0;Ver unidades;metragem plantas e status
+condomínio;Bosque Cerejeiras Jardim das Perdizes;transacional;alto padrão;/condominios/bosque-cerejeiras/;página de entidade;P0;Ver unidades;metragem plantas e status
+condomínio;Bosque Pitangueiras Jardim das Perdizes;informacional;proprietário;/condominios/bosque-pitangueiras/;arquivo/entidade;P1;Pedir avaliação;status 100% vendido e revenda
+preço;quanto custa apartamento Jardim das Perdizes;investigação;comprador;/guia/quanto-custa-morar-jardim-das-perdizes/;observatório;P0;Receber comparativo;amostra própria data e método
+preço;preço m2 Jardim das Perdizes;investigação;investidor;/guia/preco-m2-jardim-das-perdizes/;observatório;P0;Solicitar diagnóstico;preço pedido separado de preço fechado
+custo;valor condomínio Jardim das Perdizes;investigação;comprador;/guia/custo-condominio-iptu-jardim-das-perdizes/;guia AEO;P0;Calcular custo;exemplos reais com data
+custo;IPTU Jardim das Perdizes apartamento;investigação;comprador;/guia/custo-condominio-iptu-jardim-das-perdizes/;FAQ/guia;P1;Falar com especialista;fonte e ressalvas
+localização;onde fica Jardim das Perdizes;informacional;morador/comprador;/guia/onde-fica-jardim-das-perdizes/;guia local;P0;Consultar endereço;mapa fontes e delimitações
+localização;Jardim das Perdizes é Perdizes ou Barra Funda;informacional;morador/comprador;/guia/jardim-das-perdizes-perdizes-agua-branca-barra-funda/;guia AEO;P0;Ver imóvel por rua;explicação de nomenclatura e CEP
+localização;Jardim das Perdizes Água Branca;informacional/comercial;comprador;/guia/jardim-das-perdizes-perdizes-agua-branca-barra-funda/;guia de geografia;P0;Consultar endereço;portais e fonte oficial
+localização;Jardim das Perdizes Barra Funda;informacional/comercial;comprador;/guia/jardim-das-perdizes-perdizes-agua-branca-barra-funda/;guia de geografia;P0;Consultar endereço;portais e fonte oficial
+morar;como é morar no Jardim das Perdizes;informacional;família;/guia/jardim-das-perdizes/;pilar editorial;P0;Receber seleção;visita fontes próprias e limitações
+morar;vale a pena morar no Jardim das Perdizes;investigação;família;/guia/jardim-das-perdizes/;análise equilibrada;P1;Agendar visita;prós contras e critérios
+parque;Parque Jardim das Perdizes;informacional;morador;/guia/parque-jardim-das-perdizes/;guia local;P1;Conhecer imóveis próximos;fonte municipal e fotos próprias
+parque;Jardim das Perdizes pet playground ciclovia;informacional;família/pet;/guia/parque-jardim-das-perdizes/;guia de infraestrutura;P1;Agendar visita;infraestrutura pública verificada
+segurança;Jardim das Perdizes é seguro;informacional;família;/guia/seguranca-jardim-das-perdizes/;análise com fontes;P1;Falar com especialista;atribuição de claims e ressalvas
+segurança;Muralha Paulista Jardim das Perdizes;informacional;morador;/guia/seguranca-jardim-das-perdizes/;explicador;P1;Receber guia;fonte institucional e atualização
+mobilidade;Jardim das Perdizes metrô;informacional/comercial;executivo;/guia/mobilidade-jardim-das-perdizes/;guia atualizado;P0;Agendar visita;status fonte e data
+mobilidade;Estação Perdizes Linha 6;informacional;executivo;/guia/mobilidade-jardim-das-perdizes/;atualização;P0;Receber atualização;LinhaUni e status operacional
+mobilidade;Jardim das Perdizes Estação Água Branca;informacional/comercial;executivo;/guia/mobilidade-jardim-das-perdizes/;guia de trajeto;P1;Consultar imóvel;trajeto medido
+entorno;Jardim das Perdizes perto do Allianz Parque;local;família/torcedor;/guia/entorno/;guia de proximidade;P1;Ver imóveis;distância e rota verificadas
+entorno;Jardim das Perdizes perto Bourbon Shopping;local;família;/guia/entorno/;guia de proximidade;P1;Ver imóveis;distância e rota verificadas
+entorno;Jardim das Perdizes perto PUC;local;família/estudante;/guia/entorno/;guia de proximidade;P1;Ver imóveis;distância e rota verificadas
+entorno;serviços perto Jardim das Perdizes;local;morador;/guia/entorno/;guia de serviços;P1;Receber mapa;endereços e datas de verificação
+comparação;melhores condomínios Jardim das Perdizes;investigação comercial;comprador;/comparar-condominios/;comparador;P0;Receber comparativo;critérios explícitos e dados comparáveis
+comparação;Reserva Figueiras ou Recanto Oliveiras;comparação;comprador;/comparar-condominios/;comparativo;P1;Falar com especialista;plantas e perfil de morador
+comparação;3 ou 4 dormitórios Jardim das Perdizes;comparação;família;/comparar-condominios/;comparativo;P0;Receber curadoria;plantas e rotina
+planta;planta apartamento Jardim das Perdizes;investigação comercial;comprador;/plantas/;biblioteca autorizada;P0;Receber plantas;materiais autorizados
+planta;apartamento 188 m2 Jardim das Perdizes;transacional;alto padrão;/comprar/188-m2/;página curada;P0;Ver unidades;fotos metragem e status
+planta;apartamento 157 m2 Jardim das Perdizes;transacional;alto padrão;/comprar/157-m2/;página curada;P0;Ver unidades;fotos metragem e status
+planta;apartamento 111 m2 Jardim das Perdizes;transacional;família;/comprar/111-m2/;página curada;P0;Ver unidades;fotos metragem e status
+planta;apartamento 79 m2 Jardim das Perdizes;transacional;casal investidor;/comprar/79-m2/;página curada;P0;Ver unidades;fotos metragem e status
+investimento;investir no Jardim das Perdizes;investigação comercial;investidor;/investir/;framework;P1;Solicitar diagnóstico;cenários sem promessa
+investimento;rentabilidade aluguel Jardim das Perdizes;investigação;investidor;/investir/renda-aluguel/;observatório;P1;Receber análise;preço pedido aluguel custos e limitações
+investimento;comprar apartamento para alugar Jardim das Perdizes;transacional;investidor;/investir/;guia comercial;P1;Falar com especialista;oferta atual e perfil de risco
+proprietário;vender apartamento Jardim das Perdizes;captação;proprietário;/vender/;landing de captação;P0;Solicitar avaliação;comparáveis e plano de venda
+proprietário;avaliar apartamento Jardim das Perdizes;captação;proprietário;/vender/avaliar-imovel-jardim-das-perdizes/;formulário;P0;Solicitar avaliação;metodologia e CRECI
+proprietário;alugar meu apartamento Jardim das Perdizes;captação;proprietário;/vender/alugar/;landing de captação;P0;Solicitar plano de locação;processo e SLA
+visita;visita Jardim das Perdizes apartamento;ação;comprador;/agendar-visita/;landing de visita;P0;Agendar visita;agenda real e roteiro
+alerta;alerta imóveis Jardim das Perdizes;ação;comprador/locatário;/alerta-de-imoveis/;captura recorrente;P0;Criar alerta;filtros e consentimento
+conteúdo;checklist visita apartamento Jardim das Perdizes;informacional/comercial;comprador;/materiais/checklist-visita/;lead magnet;P1;Baixar checklist;PDF e HTML equivalente
+faq;perguntas frequentes compra Jardim das Perdizes;informacional;comprador;/faq/;FAQ hub;P1;Falar com especialista;perguntas reais do CRM
+documentação;documentos comprar apartamento São Paulo;informacional;comprador;/guia/documentacao-compra/;guia;P1;Solicitar orientação;revisão profissional
+mercado;relatório preço pedido Jardim das Perdizes;informacional/comercial;investidor;/observatorio/;relatório periódico;P0;Receber próxima edição;amostra mediana período metodologia
