@@ -3,6 +3,8 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { localBusinessSchema } from "@/lib/seo/schemas";
 import { isDemo } from "@/lib/config";
 import { CONDOMINIUMS } from "@/data/condominiums";
+import LeadForm from "@/components/conversion/LeadForm";
+import WhatsAppCta from "@/components/conversion/WhatsAppCta";
 
 export const metadata = buildPageMetadata({
   title: "Jardim das Perdizes Broker — Guia, Dados e Imóveis do Bairro",
@@ -119,31 +121,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* #conversao — destination of the dual conversion CTAs (Header/Footer).
-          Phase 3 replaces this honest block with the 4-step form + WhatsApp. */}
+      {/* #conversao — CONV-01: the dual conversion doors (Header/Footer CTAs
+          land here). Form is the qualifier; WhatsApp degrades gracefully when
+          unconfigured. */}
       <section id="conversao" className="scroll-mt-8 border-t border-line bg-paper-secondary px-6 py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Encontrou o que procura?
           </h2>
           <p className="mt-3 max-w-2xl text-ink-soft">
-            Envie sua solicitação e receba um retorno direcionado, ou fale agora
-            com um especialista local. O formulário de qualificação e o
-            atendimento por WhatsApp chegam em uma próxima etapa do site.
+            Envie sua solicitação em 4 passos e receba um retorno direcionado —
+            ou fale agora com um especialista local pelo WhatsApp.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="#conversao"
-              className="inline-flex rounded-full border border-line-strong px-5 py-2.5 text-sm font-medium text-ink hover:border-brand hover:text-brand"
-            >
-              Falar agora com especialista
-            </Link>
-            <Link
-              href="#conversao"
-              className="inline-flex rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-contrast hover:opacity-90"
-            >
-              Enviar solicitação
-            </Link>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
+            <LeadForm source={{ page: "/" }} />
+            <div className="rounded-2xl border border-line bg-paper p-6 lg:max-w-xs">
+              <h3 className="text-sm font-semibold text-ink">
+                Prefere falar agora?
+              </h3>
+              <p className="mt-2 text-sm text-ink-soft">
+                Atendimento direto, sem formulário, com mensagem já preenchida
+                conforme o seu objetivo.
+              </p>
+              <div className="mt-4">
+                <WhatsAppCta source={{ page: "/" }} />
+              </div>
+            </div>
           </div>
         </div>
       </section>
