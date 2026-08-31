@@ -67,7 +67,7 @@ describe("parseLeadPayload", () => {
       operation: "sell",
       interest: "Sequoia",
       source: {
-        page: "/condominios-e-produtos/sequoia/",
+        page: "/condominios/sequoia/",
         entity: "sequoia",
         filters: { dorms: "4", area: "121" },
         campaign: "guia-perdizes",

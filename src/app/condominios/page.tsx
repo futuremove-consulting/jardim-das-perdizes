@@ -10,17 +10,17 @@ const STATUS_TONE: Record<DeliveryStatus, string> = {
 };
 
 export const metadata = buildPageMetadata({
-  title: "Condomínios e Produtos — Jardim das Perdizes",
+  title: "Condomínios — Jardim das Perdizes",
   description:
     "Os 9 condomínios e produtos do Jardim das Perdizes com dados verificados e fonte datada: torres confirmadas, unidades, metragens, tipologias e status de entrega.",
-  path: "/condominios-e-produtos/",
+  path: "/condominios/",
 });
 
 export default function CondominiumsIndexPage() {
   return (
     <section className="px-6 py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
-        Condomínios e Produtos
+        Condomínios
       </h1>
       <p className="mt-3 max-w-2xl text-ink-soft">
         Conheça os condomínios do Jardim das Perdizes com dados confirmados de
@@ -32,7 +32,7 @@ export default function CondominiumsIndexPage() {
         {CONDOMINIUMS.map((c) => (
           <Link
             key={c.slug}
-            href={`/condominios-e-produtos/${c.slug}/`}
+            href={`/condominios/${c.slug}/`}
             className="rounded-2xl border border-line p-6 transition-colors hover:border-brand"
           >
             <div className="flex items-center justify-between gap-3">

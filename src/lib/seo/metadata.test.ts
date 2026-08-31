@@ -17,12 +17,12 @@ describe("buildPageMetadata", () => {
     const metadata = buildPageMetadata({
       title: "Reserva Manacá",
       description: "Três torres com seis blocos de alto padrão.",
-      path: "/condominios-e-produtos/reserva-manaca/",
+      path: "/condominios/reserva-manaca/",
     });
     expect(metadata.title).toBe("Reserva Manacá");
     expect(metadata.description).toBe("Três torres com seis blocos de alto padrão.");
     expect(metadata.alternates?.canonical).toBe(
-      "http://localhost:3000/condominios-e-produtos/reserva-manaca/"
+      "http://localhost:3000/condominios/reserva-manaca/"
     );
   });
 
@@ -31,10 +31,10 @@ describe("buildPageMetadata", () => {
     const metadata = buildPageMetadata({
       title: "T",
       description: "D",
-      path: "/condominios-e-produtos/reserva-manaca/",
+      path: "/condominios/reserva-manaca/",
     });
     expect(metadata.alternates?.canonical).toBe(
-      "http://localhost:3000/condominios-e-produtos/reserva-manaca/"
+      "http://localhost:3000/condominios/reserva-manaca/"
     );
   });
 
@@ -44,10 +44,10 @@ describe("buildPageMetadata", () => {
     const metadata = buildPageMetadata({
       title: "T",
       description: "D",
-      path: "/condominios-e-produtos/reserva-manaca/",
+      path: "/condominios/reserva-manaca/",
     });
     expect(metadata.alternates?.canonical).toBe(
-      "https://www.jardimdasperdizes.com.br/condominios-e-produtos/reserva-manaca/"
+      "https://www.jardimdasperdizes.com.br/condominios/reserva-manaca/"
     );
   });
 
@@ -56,11 +56,11 @@ describe("buildPageMetadata", () => {
     const metadata = buildPageMetadata({
       title: "Reserva Manacá",
       description: "Três torres com seis blocos.",
-      path: "/condominios-e-produtos/reserva-manaca/",
+      path: "/condominios/reserva-manaca/",
     });
     expect(metadata.openGraph?.title).toBe("Reserva Manacá");
     expect(metadata.openGraph?.url).toBe(
-      "https://example.com/condominios-e-produtos/reserva-manaca/"
+      "https://example.com/condominios/reserva-manaca/"
     );
     expect(metadata.openGraph?.locale).toBe("pt_BR");
     expect(Array.isArray(metadata.openGraph?.images)).toBe(true);

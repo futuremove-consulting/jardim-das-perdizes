@@ -52,7 +52,7 @@ describe("guia-jardim-das-perdizes page (pillar)", () => {
 
     expect(
       screen.getByRole("link", { name: /explorar condomínios/i })
-    ).toHaveAttribute("href", "/condominios-e-produtos");
+    ).toHaveAttribute("href", "/condominios");
     expect(
       screen.getByRole("link", { name: /descobrir seu perfil/i })
     ).toHaveAttribute("href", "/encontre-seu-perfil");

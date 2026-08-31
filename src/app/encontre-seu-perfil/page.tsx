@@ -35,8 +35,8 @@ export default function EncontreSeuPerfilPage() {
 
       <p className="mt-10 max-w-2xl text-ink-soft">
         As fichas completas de cada condomínio ficam em{" "}
-        <Link href="/condominios-e-produtos/" className="underline hover:text-ink">
-          Condomínios e Produtos
+        <Link href="/condominios/" className="underline hover:text-ink">
+          Condomínios
         </Link>
         .
       </p>

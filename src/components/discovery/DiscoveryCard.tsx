@@ -17,7 +17,7 @@ export default function DiscoveryCard({
 }) {
   return (
     <Link
-      href={`/condominios-e-produtos/${condominium.slug}/`}
+      href={`/condominios/${condominium.slug}/`}
       className="group flex flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-brand"
     >
       <div className="flex items-center justify-between gap-3">

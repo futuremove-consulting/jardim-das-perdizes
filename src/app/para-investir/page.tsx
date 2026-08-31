@@ -138,7 +138,7 @@ export default function ParaInvestirPage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/condominios-e-produtos/"
+            href="/condominios/"
             className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
           >
             Explorar condomínios
@@ -164,8 +164,8 @@ export default function ParaInvestirPage() {
         Fontes: páginas oficiais da Tecnisa dos produtos do bairro (captura
         31/08/2026) e matriz de torres e produtos do projeto. Verificação por
         ficha em{" "}
-        <Link href="/condominios-e-produtos/" className="underline hover:text-ink">
-          Condomínios e Produtos
+        <Link href="/condominios/" className="underline hover:text-ink">
+          Condomínios
         </Link>
         .
       </p>

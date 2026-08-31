@@ -15,27 +15,27 @@ export const metadata = buildPageMetadata({
 
 const INTENT_CARDS = [
   {
-    key: "comprador",
+    key: "morar",
     href: "/para-morar/",
-    title: "Comprador para morar",
+    title: "Morar",
     text: "Avaliar bairro, condomínio, rotina e custo para comprar o imóvel em que você vai viver.",
   },
   {
-    key: "investidor",
+    key: "investir",
     href: "/para-investir/",
-    title: "Comprador para investir",
+    title: "Investir",
     text: "Comprar para renda (locação) ou para revender — com dados, custos, cenários e riscos.",
   },
   {
-    key: "proprietario",
+    key: "vender-ou-alugar",
     href: "/venda-ou-alugue/",
-    title: "Proprietário",
+    title: "Venda ou Alugue",
     text: "Quero vender ou alugar o meu imóvel — avaliação com método, não com promessa.",
   },
   {
-    key: "locatario",
+    key: "perfil",
     href: "/encontre-seu-perfil/",
-    title: "Alugar para morar",
+    title: "Encontre seu Perfil",
     text: "Descubra qual perfil de imóvel e condomínio combina com a sua rotina e orçamento.",
   },
 ];
@@ -110,7 +110,7 @@ export default function Home() {
             {CONDOMINIUMS.map((c) => (
               <li key={c.slug}>
                 <Link
-                  href={`/condominios-e-produtos/${c.slug}/`}
+                  href={`/condominios/${c.slug}/`}
                   className="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-brand hover:text-brand"
                 >
                   {c.name}

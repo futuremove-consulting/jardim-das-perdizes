@@ -8,7 +8,7 @@ const LAST_MODIFIED = new Date("2026-08-28");
 /** Priority tier: home is canonical root; P0 hub pages; condominium pages. */
 function priorityFor(path: string): number {
   if (path === "/") return 1.0;
-  if (path.startsWith("/condominios-e-produtos/")) return 0.7;
+  if (path.startsWith("/condominios/")) return 0.7;
   return 0.8;
 }
 

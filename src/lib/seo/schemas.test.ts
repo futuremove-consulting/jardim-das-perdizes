@@ -79,7 +79,7 @@ describe("localBusinessSchema", () => {
 describe("apartmentComplexSchema", () => {
   const baseInput = {
     name: "Sequoia",
-    path: "/condominios-e-produtos/sequoia/",
+    path: "/condominios/sequoia/",
     description:
       "Breve lançamento no bairro: apartamentos de 3 e 4 dormitórios de 121 a 175 m².",
   };
@@ -89,7 +89,7 @@ describe("apartmentComplexSchema", () => {
     const schema = apartmentComplexSchema(baseInput);
     expect(schema["@type"]).toBe("ApartmentComplex");
     expect(schema.url).toBe(
-      "https://example.com/condominios-e-produtos/sequoia/"
+      "https://example.com/condominios/sequoia/"
     );
     expect(() => JSON.stringify(schema)).not.toThrow();
   });
