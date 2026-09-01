@@ -37,6 +37,16 @@ dados rastreados no CRM.
 - `pnpm start` — serve the production build
 - `pnpm test` — run TDD tests (`vitest run`)
 - `pnpm lint` — ESLint
+- `pnpm lint:impeccable` — design anti-pattern scan (`impeccable detect src/`)
+
+## Personas & navigation
+
+Four intents, each with a dedicated hub — keep the mapping in
+`src/lib/routes.ts` as the single source of truth:
+- **Morar** → `/para-morar/`
+- **Trabalhar** → `/para-trabalhar/` (+ `/comprar/`, `/alugar/`, `[modality]/[slug]`)
+- **Investir** → `/para-investir/`
+- **Vender ou Alugar** → `/venda-ou-alugue/`
 
 ## Workflow
 
