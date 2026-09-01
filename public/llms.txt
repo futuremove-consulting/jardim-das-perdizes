@@ -15,7 +15,7 @@ URLs absolutas: o sitemap canônico está em /sitemap.xml e cada página emite
 - /para-investir/ — Análise de investimento (renda e revenda; residencial e comercial)
 - /venda-ou-alugue-seu-imovel/ — Para proprietários: valor, demanda e estratégia
 - /guias-do-bairro/ — Guias hiperlocais
-- /mercado-e-dados/ — Mercado e dados com método declarado
+- /mercado-e-dados/ — Mercado: dados com método declarado
 - /para-trabalhar/ — Trabalhar: salas comerciais (TIME Office) e lajes corporativas (TIME Corporate)
 - /condominios-e-produtos/ — Índice dos 9 produtos
 - /fontes-e-metodo/ — Método, evidência e changelog

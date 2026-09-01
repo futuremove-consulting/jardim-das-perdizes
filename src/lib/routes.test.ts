@@ -70,7 +70,7 @@ describe("route registry", () => {
       "Para Investir",
       "Venda ou Alugue",
       "Guias do Bairro",
-      "Mercado & Dados",
+      "Mercado",
     ]);
   });
 

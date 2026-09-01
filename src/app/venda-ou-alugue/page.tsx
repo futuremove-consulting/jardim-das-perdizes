@@ -35,7 +35,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quando abre o contato direto?",
     answer:
-      "O formulário de solicitação e o WhatsApp entram na próxima etapa do site. Enquanto isso, o método de avaliação permanece público aqui e em Mercado & Dados.",
+      "O formulário de solicitação e o WhatsApp entram na próxima etapa do site. Enquanto isso, o método de avaliação permanece público aqui e em Mercado.",
   },
 ];
 

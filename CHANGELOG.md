@@ -23,6 +23,8 @@ e versionamento semântico.
   agora retorna zero ocorrências).
 - Links órfãos de "Encontre seu Perfil" redirecionados para `/para-trabalhar/`
   (home, para-morar, guia-jardim-das-perdizes, `llms.txt`).
+- Label de navegação "Mercado & Dados" → "Mercado" (rotas, breadcrumb, título
+  da página, referências em para-investir/venda-ou-alugue e `llms.txt`).
 
 ### Removido
 - Página legada `src/app/encontre-seu-perfil/` (substituída pelo hub comercial).

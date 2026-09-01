@@ -30,7 +30,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "O bairro tem boa demanda de aluguel?",
     answer:
-      "O perfil do bairro é de alto padrão, e a demanda de locação deve ser avaliada por aluguéis observados e tempo médio de anúncio por tipologia. O diagnóstico de Mercado & Dados reúne esses indicadores com fonte e data.",
+      "O perfil do bairro é de alto padrão, e a demanda de locação deve ser avaliada por aluguéis observados e tempo médio de anúncio por tipologia. O diagnóstico de Mercado reúne esses indicadores com fonte e data.",
   },
   {
     question: "E o mercado comercial (lojas e lajes)?",

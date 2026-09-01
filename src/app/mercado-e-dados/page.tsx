@@ -10,7 +10,7 @@ import {
 } from "@/lib/seo/schemas";
 
 export const metadata = buildPageMetadata({
-  title: "Mercado & Dados do Jardim das Perdizes — Broker",
+  title: "Mercado do Jardim das Perdizes — Broker",
   description:
     "O principal ativo de autoridade do bairro: preços pedidos, aluguéis observados, condomínio e IPTU, valorização e histórico de lançamentos — com fontes e metodologia.",
   path: "/mercado-e-dados/",
@@ -208,7 +208,7 @@ export default function MercadoEDadosPage() {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Mercado & Dados", path: "/mercado-e-dados/" },
+          { name: "Mercado", path: "/mercado-e-dados/" },
         ])}
       />
 

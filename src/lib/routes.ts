@@ -18,7 +18,7 @@ export const ROUTES: Route[] = [
   { key: "para-investir", path: "/para-investir/", label: "Para Investir" },
   { key: "venda-ou-alugue", path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { key: "guias-do-bairro", path: "/guias-do-bairro/", label: "Guias do Bairro" },
-  { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado & Dados" },
+  { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado" },
   { key: "para-trabalhar", path: "/para-trabalhar/", label: "Trabalhar" },
   { key: "para-trabalhar-comprar", path: "/para-trabalhar/comprar/", label: "Comprar" },
   { key: "para-trabalhar-alugar", path: "/para-trabalhar/alugar/", label: "Alugar" },
@@ -45,7 +45,7 @@ export const NAV_MAIN: NavItem[] = [
   { path: "/para-investir/", label: "Para Investir" },
   { path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { path: "/guias-do-bairro/", label: "Guias do Bairro" },
-  { path: "/mercado-e-dados/", label: "Mercado & Dados" },
+  { path: "/mercado-e-dados/", label: "Mercado" },
 ];
 
 /**
