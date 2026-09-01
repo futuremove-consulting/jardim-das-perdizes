@@ -39,16 +39,17 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-ink">Jardim das Perdizes Broker</p>
             <p className="mt-2 text-sm text-muted">
-              Corretor independente especializado no Jardim das Perdizes
-              (Perdizes, São Paulo).
+              Imobiliária especializada no Jardim das Perdizes
+              (Perdizes, São Paulo). CRECI: 43.897-J.
             </p>
-            <p className="mt-2 text-sm text-muted">CRECI: [inserir número]</p>
           </div>
 
           {/* Contact */}
           <div>
             <p className="font-semibold text-ink">Contato</p>
-            <p className="mt-2 text-sm text-muted">[inserir e-mail e telefone]</p>
+            <p className="mt-2 text-sm text-muted">
+              gustavo@jardimdasperdizesbroker.com.br
+            </p>
           </div>
 
           {/* Institutional links (no dead links: only existing P0 routes) */}

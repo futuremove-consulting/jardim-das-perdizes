@@ -7,6 +7,17 @@ const SITE_URL_DEFAULT = {
   demo: "http://localhost:3000",
 };
 
+/**
+ * Broker identity (E-E-A-T / institutional). CRECI is the official
+ * registration number of the Jardim das Perdizes realty.
+ */
+export const BROKER = {
+  name: "Jardim das Perdizes Broker",
+  creci: "43.897-J",
+  email: "gustavo@jardimdasperdizesbroker.com.br",
+  neighborhood: "Jardim das Perdizes (Perdizes, São Paulo)",
+} as const;
+
 export function appMode(): AppMode {
   const raw = process.env.APP_MODE;
   if (raw === "prod") return "prod";

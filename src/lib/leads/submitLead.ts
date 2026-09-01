@@ -1,6 +1,7 @@
 "use server";
 
 import { parseLeadPayload, type LeadFieldErrors } from "./validation";
+import { BROKER } from "@/lib/config";
 
 export interface SubmitLeadResult {
   ok: boolean;
@@ -35,6 +36,7 @@ export async function submitLeadAction(payload: unknown): Promise<SubmitLeadResu
     timeline: lead.timeline,
     name: lead.name,
     whatsapp: lead.whatsapp,
+    email: BROKER.email,
     best_time: lead.bestTime,
     segment: lead.segment ?? null,
     operation: lead.operation ?? null,
