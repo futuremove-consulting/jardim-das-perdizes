@@ -8,7 +8,18 @@ e versionamento semântico.
 ## [Não publicado]
 
 ### Adicionado
-- Nova persona **Trabalhar**: hub `/para-trabalhar/` substitui "Encontre seu
+- **Sistema "Guias do Bairro"** (8 guias no formato-exemplar AEO/GEO com fonte
+  datada em cada entidade): Escolas, Bares e Restaurantes, Saúde, Transporte e
+  Mobilidade, Comércio e Serviços, Lazer e Cultura, Segurança, Pet-Friendly.
+- Componente compartilhado `GuiaPage` (H1 → takeaways → tabelas com fonte →
+  FAQ 1:1 JSON-LD → duas portas de conversão) + camada de dados `src/data/guias.ts`.
+- Hub `/guias-do-bairro/` agora lista os oito guias com links e atualiza o
+  título de "seis guias" para "oito guias".
+- 8 rotas novas no `routes.ts` (30 no total) com atualização de sitemap,
+  `llms.txt` e testes.
+- 6 novos testes (160 no total) cobrindo `GuiaPage`, integridade dos dados e
+  rotas.
+- Nova pessoa **Trabalhar**: hub `/para-trabalhar/` substitui "Encontre seu
   Perfil" — salas comerciais (TIME Office) e lajes corporativas (TIME
   Corporate).
 - Vitrines comerciais `/para-trabalhar/comprar/` e `/para-trabalhar/alugar/`.

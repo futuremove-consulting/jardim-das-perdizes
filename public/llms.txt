@@ -15,6 +15,14 @@ URLs absolutas: o sitemap canônico está em /sitemap.xml e cada página emite
 - /para-investir/ — Análise de investimento (renda e revenda; residencial e comercial)
 - /venda-ou-alugue-seu-imovel/ — Para proprietários: valor, demanda e estratégia
 - /guias-do-bairro/ — Guias hiperlocais
+- /guias-do-bairro/escolas/ — Guia de Escolas (colégios e universidades do entorno)
+- /guias-do-bairro/bares-e-restaurantes/ — Guia de Bares e Restaurantes (gastronomia do bairro e entorno)
+- /guias-do-bairro/saude/ — Guia de Saúde (hospitais de referência e clínicas)
+- /guias-do-bairro/transporte-e-mobilidade/ — Guia de Transporte e Mobilidade (Linha 6-Laranja e acessos)
+- /guias-do-bairro/comercio-e-servicos/ — Guia de Comércio e Serviços (dia a dia do bairro)
+- /guias-do-bairro/lazer-e-cultura/ — Guia de Lazer e Cultura (parque, JP Experience, SESC Pompeia)
+- /guias-do-bairro/seguranca/ — Guia de Segurança (monitoramento, Muralha Paulista)
+- /guias-do-bairro/pet-friendly/ — Guia Pet-Friendly (parque, pet shops, eventos)
 - /mercado-e-dados/ — Mercado: dados com método declarado
 - /para-trabalhar/ — Trabalhar: salas comerciais (TIME Office) e lajes corporativas (TIME Corporate)
 - /condominios-e-produtos/ — Índice dos 9 produtos

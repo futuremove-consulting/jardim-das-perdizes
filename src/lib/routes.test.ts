@@ -13,6 +13,14 @@ const P0_PATHS = [
   "/para-investir/",
   "/venda-ou-alugue/",
   "/guias-do-bairro/",
+  "/guias-do-bairro/escolas/",
+  "/guias-do-bairro/bares-e-restaurantes/",
+  "/guias-do-bairro/saude/",
+  "/guias-do-bairro/transporte-e-mobilidade/",
+  "/guias-do-bairro/comercio-e-servicos/",
+  "/guias-do-bairro/lazer-e-cultura/",
+  "/guias-do-bairro/seguranca/",
+  "/guias-do-bairro/pet-friendly/",
   "/mercado-e-dados/",
   "/para-trabalhar/",
   "/para-trabalhar/comprar/",
@@ -35,11 +43,11 @@ const CONDOMINIUM_PATHS = [
 ];
 
 describe("route registry", () => {
-  it("contains EXACTLY 22 entries (13 P0 + 9 condominium)", () => {
-    expect(ROUTES).toHaveLength(22);
+  it("contains EXACTLY 30 entries (21 P0 + 9 condominium)", () => {
+    expect(ROUTES).toHaveLength(30);
   });
 
-  it("contains all 13 P0 paths", () => {
+  it("contains all 21 P0 paths", () => {
     const paths = ROUTES.map((r) => r.path);
     for (const p of P0_PATHS) {
       expect(paths).toContain(p);

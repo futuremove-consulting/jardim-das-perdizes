@@ -16,6 +16,22 @@ O site é organizado por intenção — cada jornada tem um hub dedicado:
 | **Investir** | `/para-investir/` | Renda (locação) e revenda, com dados, custos e riscos |
 | **Vender ou Alugar** | `/venda-ou-alugue/` | Avaliação do próprio imóvel com método declarado |
 
+## Guias do Bairro
+
+O centro editorial de autoridade local — 8 guias no formato-exemplar AEO/GEO,
+cada um com fonte datada por entidade:
+
+| Guia | Rota | Cobre |
+|---|---|---|
+| Escolas | `/guias-do-bairro/escolas/` | Colégios e universidades do entorno |
+| Bares e Restaurantes | `/guias-do-bairro/bares-e-restaurantes/` | Gastronomia dentro e perto do bairro |
+| Saúde | `/guias-do-bairro/saude/` | Hospitais de referência e clínicas |
+| Transporte e Mobilidade | `/guias-do-bairro/transporte-e-mobilidade/` | Linha 6-Laranja, trem e acessos |
+| Comércio e Serviços | `/guias-do-bairro/comercio-e-servicos/` | Padaria, mercado, farmácia, WeWork |
+| Lazer e Cultura | `/guias-do-bairro/lazer-e-cultura/` | Parque, JP Experience, SESC Pompeia |
+| Segurança | `/guias-do-bairro/seguranca/` | Monitoramento, Muralha Paulista |
+| Pet-Friendly | `/guias-do-bairro/pet-friendly/` | Parque, pet shops, eventos |
+
 ## Stack
 
 | Camada | Tecnologia |

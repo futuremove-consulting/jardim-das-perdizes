@@ -40,40 +40,58 @@ const FAQ_ITEMS: FaqItem[] = [
 ];
 
 const GUIDES: Array<{
+  slug: string;
   guia: string;
   responde: string;
   indicamos: string;
 }> = [
   {
-    guia: "Parque Jardim das Perdizes",
-    responde: "Horários, regras de acesso, acessibilidade e história",
-    indicamos:
-      "Parque central de 45 mil m² com obras de Tomie Ohtake e Frans Krajcberg; regras e horários com fonte datada",
+    slug: "escolas",
+    guia: "Escolas",
+    responde: "Colégios e universidades no entorno imediato",
+    indicamos: "Inventário verificado com fonte datada — sem ranking promocional",
   },
   {
-    guia: "Mobilidade",
-    responde: "Linha 6-Laranja (em construção), ônibus, trem e metrô do entorno",
+    slug: "bares-e-restaurantes",
+    guia: "Bares e Restaurantes",
+    responde: "Gastronomia dentro do bairro e no entorno",
+    indicamos: "Cada casa com fonte; preços e horários mudam — confirme antes",
+  },
+  {
+    slug: "saude",
+    guia: "Saúde",
+    responde: "Hospitais de referência e clínicas no bairro",
+    indicamos: "Inventário, não recomendação médica — confirme convênios",
+  },
+  {
+    slug: "transporte-e-mobilidade",
+    guia: "Transporte e Mobilidade",
+    responde: "Linha 6-Laranja (operação assistida), ônibus, trem e acessos",
     indicamos: "O que já funciona hoje e o que muda a cada estação operando",
   },
   {
-    guia: "Comércio e serviços",
-    responde: "Supermercados, Bourbon, Sesc Pompeia e o dia a dia do bairro",
+    slug: "comercio-e-servicos",
+    guia: "Comércio e Serviços",
+    responde: "Padaria, mercado, farmácia, WeWork, Bourbon e o dia a dia",
     indicamos: "Distâncias reais e horários verificados por fonte",
   },
   {
-    guia: "Educação e saúde",
-    responde: "Escolas e serviços de saúde no entorno imediato",
-    indicamos: "Oferta confirmada por fonte, sem ranking promocional",
-  },
-  {
-    guia: "Cultura, lazer e eventos",
-    responde: "Espaços culturais e programação da região",
+    slug: "lazer-e-cultura",
+    guia: "Lazer e Cultura",
+    responde: "Parque, JP Experience, SESC Pompeia e o entorno cultural",
     indicamos: "Programação muda — cada indicação leva data de verificação",
   },
   {
-    guia: "Segurança e governança",
+    slug: "seguranca",
+    guia: "Segurança e Governança",
     responde: "Segurança 24h, Muralha Paulista e condomínios independentes",
     indicamos: "O que é atributo do bairro e o que é atributo de cada condomínio",
+  },
+  {
+    slug: "pet-friendly",
+    guia: "Pet-Friendly",
+    responde: "Parque, bebedouros, pet shops e eventos para pets",
+    indicamos: "Regras de pets variam por condomínio — confirme na ficha",
   },
 ];
 
@@ -100,7 +118,7 @@ export default function GuiasDoBairroPage() {
         confirmado pessoalmente na visita.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold">Os seis guias do bairro</h2>
+      <h2 className="mt-12 text-xl font-semibold">Os oito guias do bairro</h2>
       <div className="mt-4 max-w-3xl overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
@@ -112,8 +130,15 @@ export default function GuiasDoBairroPage() {
           </thead>
           <tbody>
             {GUIDES.map((row) => (
-              <tr key={row.guia} className="border-b border-line align-top">
-                <td className="py-3 pr-4 font-medium text-ink">{row.guia}</td>
+              <tr key={row.slug} className="border-b border-line align-top">
+                <td className="py-3 pr-4 font-medium text-ink">
+                  <Link
+                    href={`/guias-do-bairro/${row.slug}/`}
+                    className="underline decoration-line underline-offset-4 transition-colors hover:text-brand"
+                  >
+                    {row.guia}
+                  </Link>
+                </td>
                 <td className="py-3 pr-4 text-ink-soft">{row.responde}</td>
                 <td className="py-3 text-ink-soft">{row.indicamos}</td>
               </tr>
