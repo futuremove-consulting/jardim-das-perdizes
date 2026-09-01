@@ -27,6 +27,9 @@ e versionamento semântico.
   SSG: time-office-salas e time-corporate-lajes × comprar/alugar).
 - Fonte de dados `src/data/commercial.ts` com fonte + data de verificação.
 - 2 novos tests (34 asserts) cobrindo o hub comercial, rotas e sitemap.
+- Checklist operacional de deploy `docs/DEPLOY_CHECKLIST.md` — responsáveis
+  por passo (VOCÊ vs AGENTE), SQL da tabela `leads` (modelagem VISTA), env
+  vars de produção e validações pós-deploy (fases B–F).
 
 ### Corrigido
 - `globals.css`: `font-family: Arial, Helvetica, sans-serif` hardcoded →

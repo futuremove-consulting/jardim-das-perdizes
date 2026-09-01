@@ -103,6 +103,8 @@ Uma regra estrutural importante: **nunca hardcode valores do design system**
 
 ## Deploy & Analytics
 
+> 📋 **Checklist operacional com responsáveis por passo:** [`docs/DEPLOY_CHECKLIST.md`](./docs/DEPLOY_CHECKLIST.md)
+
 Deploy na Vercel (Next.js auto-detectado; `trailingSlash: true` já definido
 em `next.config.ts` — URLs servidas batem com os canonicals).
 
