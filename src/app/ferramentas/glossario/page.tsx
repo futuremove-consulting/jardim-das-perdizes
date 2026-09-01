@@ -9,7 +9,7 @@ export const metadata = buildPageMetadata({
 
 export default function GlossarioPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">Glossário</h1>
       <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Um glossário para você entender os termos do mercado imobiliário sem

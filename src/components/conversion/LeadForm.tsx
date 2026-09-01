@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { submitLeadAction, type SubmitLeadResult } from "@/lib/leads/submitLead";
 import type { LeadFieldErrors } from "@/lib/leads/types";
 import type { LeadFormSource } from "./source";
@@ -115,6 +115,19 @@ export default function LeadForm({ source }: { source: LeadFormSource }) {
 
   const errorMessages = Object.values(resultErrors).filter(Boolean);
 
+  // Focus management: announce + move focus to the step indicator on every
+  // step change (keyboard/screen-reader users never lose their place). The
+  // first render is skipped so the form never steals page focus on load.
+  const stepRef = useRef<HTMLParagraphElement>(null);
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    if (!mountedRef.current) {
+      mountedRef.current = true;
+      return;
+    }
+    stepRef.current?.focus();
+  }, [step]);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
@@ -186,7 +199,12 @@ export default function LeadForm({ source }: { source: LeadFormSource }) {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
-      <p aria-live="polite" className="text-xs font-medium uppercase tracking-wide text-muted">
+      <p
+        ref={stepRef}
+        tabIndex={-1}
+        aria-live="polite"
+        className="text-xs font-medium uppercase tracking-wide text-muted focus:outline-none"
+      >
         Etapa {step} de 4
       </p>
 
@@ -315,8 +333,15 @@ export default function LeadForm({ source }: { source: LeadFormSource }) {
               required
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className={FIELD_CLASS}
+              aria-invalid={resultErrors.name ? true : undefined}
+              aria-describedby={resultErrors.name ? "name-error" : undefined}
+              className={`${FIELD_CLASS} ${resultErrors.name ? "border-error" : ""}`}
             />
+            {resultErrors.name && (
+              <p id="name-error" className="mt-1 text-sm text-error">
+                {resultErrors.name}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="whatsapp" className="text-sm font-medium text-ink">
@@ -331,8 +356,15 @@ export default function LeadForm({ source }: { source: LeadFormSource }) {
               value={whatsapp}
               onChange={(event) => setWhatsapp(event.target.value)}
               placeholder="(11) 98765-4321"
-              className={FIELD_CLASS}
+              aria-invalid={resultErrors.whatsapp ? true : undefined}
+              aria-describedby={resultErrors.whatsapp ? "whatsapp-error" : undefined}
+              className={`${FIELD_CLASS} ${resultErrors.whatsapp ? "border-error" : ""}`}
             />
+            {resultErrors.whatsapp && (
+              <p id="whatsapp-error" className="mt-1 text-sm text-error">
+                {resultErrors.whatsapp}
+              </p>
+            )}
           </div>
           <RadioGroup
             legend="Melhor horário para contato"

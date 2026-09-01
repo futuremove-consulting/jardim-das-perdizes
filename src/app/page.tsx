@@ -50,8 +50,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: schema }}
       />
 
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl">
+      <section className="container-page py-16">
           {isDemo() && (
             <p className="mb-6 inline-block rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-sm text-amber-800">
               Modo demonstração — conteúdo de exemplo exibido sem banco de dados.
@@ -69,17 +68,17 @@ export default function Home() {
           </p>
           <p className="mt-6 max-w-2xl text-ink-soft">
             Precisa de um diagnóstico sob medida?{" "}
-            <span className="font-medium text-ink">
+            <a
+              href="#conversao"
+              className="font-medium text-ink underline underline-offset-4 hover:text-brand"
+            >
               Receba uma análise
-            </span>{" "}
-            de um especialista local — o contato direto chega em uma próxima
-            etapa.
+            </a>{" "}
+            de um especialista local, com fonte e data em cada resposta.
           </p>
-        </div>
       </section>
 
-      <section className="px-6 pb-16">
-        <div className="mx-auto max-w-4xl">
+      <section className="container-page pb-16">
           <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Escolha sua intenção
           </h2>
@@ -98,11 +97,9 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
       </section>
 
-      <section className="px-6 pb-16">
-        <div className="mx-auto max-w-4xl">
+      <section className="container-page pb-16">
           <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Condomínios do bairro
           </h2>
@@ -110,7 +107,7 @@ export default function Home() {
             {CONDOMINIUMS.map((c) => (
               <li key={c.slug}>
                 <Link
-                  href={`/condominios/${c.slug}/`}
+                  href={`/condominios-e-produtos/${c.slug}/`}
                   className="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-brand hover:text-brand"
                 >
                   {c.name}
@@ -118,14 +115,13 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
       </section>
 
       {/* #conversao — CONV-01: the dual conversion doors (Header/Footer CTAs
           land here). Form is the qualifier; WhatsApp degrades gracefully when
           unconfigured. */}
-      <section id="conversao" className="scroll-mt-8 border-t border-line bg-paper-secondary px-6 py-16">
-        <div className="mx-auto max-w-4xl">
+      <section id="conversao" className="scroll-mt-8 border-t border-line bg-paper-secondary py-16">
+        <div className="container-page">
           <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Encontrou o que procura?
           </h2>

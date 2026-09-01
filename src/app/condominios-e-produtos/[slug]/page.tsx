@@ -3,12 +3,11 @@ import { notFound } from "next/navigation";
 import {
   CONDOMINIUMS,
   getCondominiumBySlug,
-  STATUS_LABELS,
-  type DeliveryStatus,
 } from "@/data/condominiums";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { apartmentComplexSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 import JsonLd from "@/components/seo/JsonLd";
+import Badge from "@/components/ui/Badge";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -34,13 +33,6 @@ export default async function CondominiumPage({ params }: PageProps) {
   const condominium = getCondominiumBySlug(slug);
   if (!condominium) notFound();
 
-  const statusBadge = STATUS_LABELS[condominium.deliveryStatus];
-  const statusTone: Record<DeliveryStatus, string> = {
-    delivered: "bg-emerald-100 text-emerald-800",
-    "ready-to-move": "bg-emerald-100 text-emerald-800",
-    "under-construction": "bg-amber-100 text-amber-800",
-    "coming-soon": "bg-sky-100 text-sky-800",
-  };
   const isFinished =
     condominium.deliveryStatus === "delivered" ||
     condominium.deliveryStatus === "ready-to-move";
@@ -51,7 +43,7 @@ export default async function CondominiumPage({ params }: PageProps) {
     .join("/");
 
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <JsonLd
         schema={apartmentComplexSchema({
           name: condominium.name,
@@ -86,11 +78,7 @@ export default async function CondominiumPage({ params }: PageProps) {
         <h1 className="text-3xl font-semibold tracking-tight">
           {condominium.name}
         </h1>
-        <span
-          className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium ${statusTone[condominium.deliveryStatus]}`}
-        >
-          {statusBadge}
-        </span>
+        <Badge status={condominium.deliveryStatus} />
       </div>
       <p className="mt-3 max-w-2xl text-ink-soft">{condominium.blurb}</p>
 

@@ -74,7 +74,7 @@ export default function GuiaPage({
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/guia-jardim-das-perdizes/"
-            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-contrast transition-colors hover:opacity-90"
           >
             Guia completo do bairro
           </Link>

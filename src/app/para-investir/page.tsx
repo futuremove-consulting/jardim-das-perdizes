@@ -69,7 +69,7 @@ const ESTRATEGIAS: Array<{
 
 export default function ParaInvestirPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
         Para Investir no Jardim das Perdizes
       </h1>
@@ -139,7 +139,7 @@ export default function ParaInvestirPage() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/condominios-e-produtos/"
-            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-contrast transition-colors hover:opacity-90"
           >
             Explorar condomínios
           </Link>

@@ -14,7 +14,7 @@ export default function ComprarPage() {
   const properties = getCommercialByModality("comprar");
 
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
         Comprar — Salas e Lajes Comerciais
       </h1>

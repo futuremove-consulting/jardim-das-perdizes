@@ -14,7 +14,7 @@ export default function AlugarPage() {
   const properties = getCommercialByModality("alugar");
 
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
         Alugar — Salas e Lajes Comerciais
       </h1>

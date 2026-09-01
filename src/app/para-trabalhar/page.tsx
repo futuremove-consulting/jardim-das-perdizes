@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
 
 export default function ParaTrabalharPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
         Trabalhar no Jardim das Perdizes
       </h1>

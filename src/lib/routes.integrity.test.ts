@@ -98,14 +98,24 @@ describe("site integrity (declared routes vs physical pages)", () => {
   it("every literal internal href in src/ resolves to a page", () => {
     const files = collectTsxFiles(join(process.cwd(), "src"));
     const broken: Array<{ file: string; href: string }> = [];
+    const literalHref = /href="(\/[^"]*)"/g;
+    // href={`/condominios-e-produtos/${slug}/`} — validate the literal prefix.
+    const templateHref = /href=\{`([^`]*)`\}/g;
 
     for (const file of files) {
       const content = readFileSync(file, "utf8");
-      for (const match of content.matchAll(/href="(\/[^"]*)"/g)) {
+      for (const match of content.matchAll(literalHref)) {
         const href = match[1];
         const withoutAnchor = href.split("#")[0] || "/";
         if (!pageExistsForPath(withoutAnchor)) {
           broken.push({ file: file.replace(process.cwd() + "/", ""), href });
+        }
+      }
+      for (const match of content.matchAll(templateHref)) {
+        const literalPrefix = match[1].split("${")[0] || "/";
+        const withoutAnchor = literalPrefix.split("#")[0] || "/";
+        if (!pageExistsForPath(withoutAnchor)) {
+          broken.push({ file: file.replace(process.cwd() + "/", ""), href: match[1] });
         }
       }
     }

@@ -37,7 +37,7 @@ export const metadata = buildPageMetadata({
 
 export default function GuiaJardimDasPerdizesPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <JsonLd schema={faqPageSchema(FAQ_ITEMS)} />
       <JsonLd
         schema={breadcrumbSchema([
@@ -180,7 +180,7 @@ export default function GuiaJardimDasPerdizesPage() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/condominios-e-produtos/"
-            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-contrast hover:opacity-90"
           >
             Explorar condomínios
           </Link>

@@ -107,7 +107,7 @@ const TIMELINE: Array<{ periodo: string; evento: string; fonte: string }> = [
 
 export default function MercadoEDadosPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <h1 className="text-3xl font-semibold tracking-tight">
         Mercado &amp; Dados
       </h1>
@@ -191,7 +191,7 @@ export default function MercadoEDadosPage() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/fontes-e-metodo/"
-            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-contrast transition-colors hover:opacity-90"
           >
             Ver Fontes e Método
           </Link>

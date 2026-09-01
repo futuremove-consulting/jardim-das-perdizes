@@ -14,7 +14,7 @@ export const metadata = buildPageMetadata({
 
 export default function CondominiumsHubPage() {
   return (
-    <section className="px-6 py-12">
+    <section className="container-page py-12">
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", path: "/" },
