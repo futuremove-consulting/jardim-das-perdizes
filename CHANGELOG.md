@@ -5,7 +5,7 @@ Todas as mudanças notáveis do projeto.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e versionamento semântico.
 
-## [Não publicado]
+## [1.1.0] - 2026-09-01
 
 ### Adicionado
 - **Sistema "Guias do Bairro"** (8 guias no formato-exemplar AEO/GEO com fonte
