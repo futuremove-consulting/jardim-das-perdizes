@@ -113,6 +113,7 @@ describe("site integrity (declared routes vs physical pages)", () => {
       }
       for (const match of content.matchAll(templateHref)) {
         const literalPrefix = match[1].split("${")[0] || "/";
+        if (!literalPrefix.startsWith("/")) continue; // mailto:, tel:, external
         const withoutAnchor = literalPrefix.split("#")[0] || "/";
         if (!pageExistsForPath(withoutAnchor)) {
           broken.push({ file: file.replace(process.cwd() + "/", ""), href: match[1] });

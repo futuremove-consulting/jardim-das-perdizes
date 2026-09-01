@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { NAV_MAIN, NAV_SECONDARY } from "@/lib/routes";
+import ActiveLink from "./ActiveLink";
 import ThemeToggle from "./ThemeToggle";
+import WhatsAppCta from "@/components/conversion/WhatsAppCta";
 
-/** Conversion anchor on the home page where the dual CTAs land (Phase 3 builds the form there). */
+/** Conversion anchor on the home page where the dual CTAs land. */
 const CONVERSION_ANCHOR = "/#conversao";
 
 export default function Header() {
@@ -15,13 +17,9 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          {/* Dual conversion CTAs — two ports, never competing (docs: Duas portas de conversão). */}
-          <Link
-            href={CONVERSION_ANCHOR}
-            className="hidden rounded-full border border-line-strong px-3 py-1.5 text-sm font-medium text-ink hover:border-brand hover:text-brand sm:inline-flex"
-          >
-            Falar agora com especialista
-          </Link>
+          {/* Dual conversion doors — door 2 is the real WhatsApp, never a link
+              to the form (docs: Duas portas de conversão). */}
+          <WhatsAppCta className="hidden rounded-full border border-line-strong px-3 py-1.5 text-sm font-medium text-ink hover:border-brand hover:text-brand sm:inline-flex" />
           <Link
             href={CONVERSION_ANCHOR}
             className="inline-flex rounded-full bg-brand px-3 py-1.5 text-sm font-semibold text-brand-contrast hover:opacity-90"
@@ -36,20 +34,19 @@ export default function Header() {
         <ul className="hidden gap-6 text-sm font-medium text-ink lg:flex">
           {NAV_MAIN.map((item) => (
             <li key={item.path}>
-              <Link href={item.path} className="hover:text-brand">
-                {item.label}
-              </Link>
+              <ActiveLink {...item} />
             </li>
           ))}
         </ul>
 
-        {/* Mobile: simple hierarchical list (CSS only, no JS drawer) */}
-        <ul className="flex flex-col gap-2 text-sm text-ink lg:hidden">
+        {/* Mobile: horizontally scrollable chips (CSS only, no JS drawer) */}
+        <ul className="flex gap-2 overflow-x-auto pb-1 text-sm font-medium text-ink lg:hidden">
           {NAV_MAIN.map((item) => (
-            <li key={item.path}>
-              <Link href={item.path} className="hover:text-brand">
-                {item.label}
-              </Link>
+            <li key={item.path} className="shrink-0">
+              <ActiveLink
+                {...item}
+                className="whitespace-nowrap rounded-full border border-line px-3 py-1.5"
+              />
             </li>
           ))}
         </ul>
@@ -60,9 +57,7 @@ export default function Header() {
         <ul className="flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
           {NAV_SECONDARY.map((item) => (
             <li key={item.path}>
-              <Link href={item.path} className="hover:text-brand">
-                {item.label}
-              </Link>
+              <ActiveLink {...item} />
             </li>
           ))}
         </ul>

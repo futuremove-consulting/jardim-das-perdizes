@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { NAV_SECONDARY } from "@/lib/routes";
+import WhatsAppCta from "@/components/conversion/WhatsAppCta";
+import { BROKER } from "@/lib/config";
 
 const CONVERSION_ANCHOR = "/#conversao";
 
@@ -17,12 +19,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <Link
-              href={CONVERSION_ANCHOR}
-              className="rounded-full border border-line-strong px-4 py-2 text-sm font-medium text-ink hover:border-brand hover:text-brand"
-            >
-              Falar agora com especialista
-            </Link>
+            <WhatsAppCta className="rounded-full border border-line-strong px-4 py-2 text-sm font-medium text-ink hover:border-brand hover:text-brand" />
             <Link
               href={CONVERSION_ANCHOR}
               className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-brand-contrast hover:opacity-90"
@@ -40,7 +37,7 @@ export default function Footer() {
             <p className="font-semibold text-ink">Jardim das Perdizes Broker</p>
             <p className="mt-2 text-sm text-muted">
               Imobiliária especializada no Jardim das Perdizes
-              (Perdizes, São Paulo). CRECI: 43.897-J.
+              (Perdizes, São Paulo). CRECI: {BROKER.creci}.
             </p>
           </div>
 
@@ -48,7 +45,12 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-ink">Contato</p>
             <p className="mt-2 text-sm text-muted">
-              gustavo@jardimdasperdizesbroker.com.br
+              <a
+                href={`mailto:${BROKER.email}`}
+                className="underline underline-offset-4 hover:text-brand"
+              >
+                {BROKER.email}
+              </a>
             </p>
           </div>
 
@@ -63,9 +65,12 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/privacidade/" className="hover:text-brand">
+                  Privacidade (LGPD)
+                </Link>
+              </li>
             </ul>
-            {/* Privacy page is Phase 3 — render label as text, not a dead link */}
-            <p className="mt-2 text-sm text-muted">Privacidade</p>
           </div>
         </div>
       </div>

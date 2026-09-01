@@ -11,8 +11,8 @@ afterEach(() => {
 });
 
 describe("sitemap", () => {
-  it("returns exactly 30 entries — one per registered route", () => {
-    expect(sitemap()).toHaveLength(30);
+  it("returns exactly 31 entries — one per registered route", () => {
+    expect(sitemap()).toHaveLength(31);
     expect(sitemap()).toHaveLength(ROUTES.length);
   });
 

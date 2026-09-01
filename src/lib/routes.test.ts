@@ -43,8 +43,8 @@ const CONDOMINIUM_PATHS = [
 ];
 
 describe("route registry", () => {
-  it("contains EXACTLY 30 entries (21 P0 + 9 condominium)", () => {
-    expect(ROUTES).toHaveLength(30);
+  it("contains EXACTLY 31 entries (21 P0 + 9 condominium + hub + privacidade)", () => {
+    expect(ROUTES).toHaveLength(31);
   });
 
   it("contains all 21 P0 paths", () => {

@@ -77,6 +77,25 @@ body {
   transition: background-color 200ms ease, color 200ms ease;
 }
 
+/* Quality floor: visible keyboard focus everywhere (buttons already have their
+   own focus-visible classes; this covers links and other interactive roots). */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Quality floor: respect the OS reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Shared page container: consistent horizontal rhythm across all pages */
 .container-page {
   width: 100%;
