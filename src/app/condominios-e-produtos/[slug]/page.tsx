@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps) {
   return buildPageMetadata({
     title: `${condominium.name} — Condomínio no Jardim das Perdizes`,
     description: condominium.blurb,
-    path: `/condominios/${slug}/`,
+    path: `/condominios-e-produtos/${slug}/`,
   });
 }
 
@@ -55,7 +55,7 @@ export default async function CondominiumPage({ params }: PageProps) {
       <JsonLd
         schema={apartmentComplexSchema({
           name: condominium.name,
-          path: `/condominios/${condominium.slug}/`,
+          path: `/condominios-e-produtos/${condominium.slug}/`,
           description: condominium.blurb,
           address: condominium.address,
           numberOfUnits: condominium.units,
@@ -65,15 +65,15 @@ export default async function CondominiumPage({ params }: PageProps) {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Condomínios", path: "/condominios/" },
+          { name: "Condomínios", path: "/condominios-e-produtos/" },
           {
             name: condominium.name,
-            path: `/condominios/${condominium.slug}/`,
+            path: `/condominios-e-produtos/${condominium.slug}/`,
           },
         ])}
       />
       <nav className="text-sm text-muted">
-        <Link href="/condominios/" className="hover:text-ink">
+        <Link href="/condominios-e-produtos/" className="hover:text-ink">
           Condomínios
         </Link>
         <span className="mx-2" aria-hidden="true">

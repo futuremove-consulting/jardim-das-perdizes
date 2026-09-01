@@ -43,7 +43,7 @@ describe("condominium [slug] page", () => {
 
     expect(metadata.title).toContain("Reserva Manacá");
     expect(metadata.alternates?.canonical).toContain(
-      "/condominios/reserva-manaca/"
+      "/condominios-e-produtos/reserva-manaca/"
     );
   });
 
@@ -97,7 +97,7 @@ describe("condominium [slug] page", () => {
       itemListElement: Array<{ item: string }>;
     };
     expect(breadcrumbs.itemListElement[2].item).toContain(
-      "/condominios/reserva-manaca/"
+      "/condominios-e-produtos/reserva-manaca/"
     );
   });
 });

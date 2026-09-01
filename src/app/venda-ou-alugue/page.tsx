@@ -139,7 +139,7 @@ export default function VendaOuAluguePage() {
             Ver Mercado &amp; Dados
           </Link>
           <Link
-            href="/condominios/"
+            href="/condominios-e-produtos/"
             className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-brand"
           >
             Explorar condomínios
