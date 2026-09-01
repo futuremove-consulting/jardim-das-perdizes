@@ -7,7 +7,7 @@ const INTENT_LINKS = [
   { label: /morar/i, href: "/para-morar" },
   { label: /investir/i, href: "/para-investir" },
   { label: /vender ou alugar/i, href: "/venda-ou-alugue" },
-  { label: /encontre seu perfil/i, href: "/encontre-seu-perfil" },
+  { label: /trabalhar/i, href: "/para-trabalhar" },
 ];
 
 describe("Home identity page", () => {

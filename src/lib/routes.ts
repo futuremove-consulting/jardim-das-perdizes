@@ -19,7 +19,9 @@ export const ROUTES: Route[] = [
   { key: "venda-ou-alugue", path: "/venda-ou-alugue/", label: "Venda ou Alugue" },
   { key: "guias-do-bairro", path: "/guias-do-bairro/", label: "Guias do Bairro" },
   { key: "mercado-e-dados", path: "/mercado-e-dados/", label: "Mercado & Dados" },
-  { key: "encontre-seu-perfil", path: "/encontre-seu-perfil/", label: "Encontre seu Perfil" },
+  { key: "para-trabalhar", path: "/para-trabalhar/", label: "Trabalhar" },
+  { key: "para-trabalhar-comprar", path: "/para-trabalhar/comprar/", label: "Comprar" },
+  { key: "para-trabalhar-alugar", path: "/para-trabalhar/alugar/", label: "Alugar" },
   { key: "guia-jardim-das-perdizes", path: "/guia-jardim-das-perdizes/", label: "Guia do Jardim das Perdizes" },
   { key: "condominios", path: `${CONDOS_PREFIX}/`, label: "Condomínios" },
   { key: "glossario", path: "/ferramentas/glossario/", label: "Glossário" },
@@ -53,7 +55,7 @@ export const NAV_MAIN: NavItem[] = [
  */
 export const NAV_SECONDARY: NavItem[] = [
   { path: `${CONDOS_PREFIX}/`, label: "Condomínios" },
-  { path: "/encontre-seu-perfil/", label: "Encontre seu Perfil" },
+  { path: "/para-trabalhar/", label: "Trabalhar" },
   { path: "/guia-jardim-das-perdizes/", label: "Guia do Jardim das Perdizes" },
   { path: "/fontes-e-metodo/", label: "Fontes e Método" },
   { path: "/ferramentas/glossario/", label: "Glossário" },

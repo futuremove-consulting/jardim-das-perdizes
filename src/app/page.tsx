@@ -33,10 +33,10 @@ const INTENT_CARDS = [
     text: "Quero vender ou alugar o meu imóvel — avaliação com método, não com promessa.",
   },
   {
-    key: "perfil",
-    href: "/encontre-seu-perfil/",
-    title: "Encontre seu Perfil",
-    text: "Descubra qual perfil de imóvel e condomínio combina com a sua rotina e orçamento.",
+    key: "trabalhar",
+    href: "/para-trabalhar/",
+    title: "Trabalhar",
+    text: "Salas comerciais (TIME Office) e lajes corporativas (TIME Corporate) para comprar ou alugar no bairro.",
   },
 ];
 

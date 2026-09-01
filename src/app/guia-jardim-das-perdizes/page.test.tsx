@@ -54,7 +54,7 @@ describe("guia-jardim-das-perdizes page (pillar)", () => {
       screen.getByRole("link", { name: /explorar condomínios/i })
     ).toHaveAttribute("href", "/condominios");
     expect(
-      screen.getByRole("link", { name: /descobrir seu perfil/i })
-    ).toHaveAttribute("href", "/encontre-seu-perfil");
+      screen.getByRole("link", { name: /trabalhar no bairro/i })
+    ).toHaveAttribute("href", "/para-trabalhar");
   });
 });

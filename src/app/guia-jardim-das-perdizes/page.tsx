@@ -185,10 +185,10 @@ export default function GuiaJardimDasPerdizesPage() {
             Explorar condomínios
           </Link>
           <Link
-            href="/encontre-seu-perfil"
+            href="/para-trabalhar"
             className="rounded-full border border-line px-5 py-2.5 text-sm font-medium hover:border-brand"
           >
-            Descobrir seu perfil
+            Trabalhar no bairro
           </Link>
         </div>
       </section>
