@@ -101,6 +101,55 @@ pnpm exec impeccable detect src/
 Uma regra estrutural importante: **nunca hardcode valores do design system**
 (ex.: `font-family: Arial`) — use os tokens (`var(--font-sans)`).
 
+## Deploy & Analytics
+
+Deploy na Vercel (Next.js auto-detectado; `trailingSlash: true` já definido
+em `next.config.ts` — URLs servidas batem com os canonicals).
+
+### Variáveis de ambiente de produção
+
+| Variável | Valor | Efeito |
+|---|---|---|
+| `APP_MODE` | `prod` | Camada de dados real; sem Supabase, leads falham honestamente (não silenciosamente) |
+| `NEXT_PUBLIC_SITE_URL` | `https://<dominio>/` | Canonical, sitemap, robots.txt, JSON-LD |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | `5511999783379` | Porta "Falar agora com especialista" |
+| `NEXT_PUBLIC_GA4_MEASUREMENT_ID` | `G-XXXXXXXXXX` | GA4; vazio = script não carrega (privacy-first, sem cookies em dev) |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | — | Persistência de leads (tabela `leads`) |
+
+### Deploy via CLI
+
+```bash
+vercel login        # uma vez, interativo
+vercel link         # vincula o repositório ao projeto Vercel
+vercel env add APP_MODE production   # repita para cada variável da tabela
+vercel --prod       # build + deploy de produção
+```
+
+Alternativa sem CLI: importar `futuremove-consulting/jardim-das-perdizes`
+no dashboard da Vercel (Add New Project) e configurar as variáveis em
+Settings → Environment Variables.
+
+### GA4
+
+1. analytics.google.com → criar propriedade → Web → copiar o Measurement ID (`G-…`).
+2. `vercel env add NEXT_PUBLIC_GA4_MEASUREMENT_ID production` + redeploy.
+3. Validação: HTML servido referencia `googletagmanager.com/gtag/js`; conferir
+   visita no relatório **Tempo real**.
+
+### Search Console
+
+1. Criar propriedade do tipo **Prefixo de URL** com a URL de produção
+   (migrar para tipo **Domínio** quando houver domínio próprio).
+2. Verificação: arquivo HTML em `public/` ou meta tag no `<head>`.
+3. Enviar o sitemap `https://<dominio>/sitemap.xml` (33 URLs) e acompanhar
+   a cobertura de indexação.
+
+### Migração futura de domínio
+
+Apontar o DNS → adicionar o domínio na Vercel (Settings → Domains) →
+atualizar `NEXT_PUBLIC_SITE_URL` → redeploy (canonical, sitemap e robots
+atualizam sozinhos) → reenviar o sitemap no Search Console.
+
 ## Licença
 
 Proprietário — todos os direitos reservados. Dados de terceiros mantêm a
