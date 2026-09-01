@@ -15,21 +15,21 @@ const P0_PATHS = [
   "/guias-do-bairro/",
   "/mercado-e-dados/",
   "/encontre-seu-perfil/",
-  "/condominios/",
+  "/condominios-e-produtos/",
   "/ferramentas/glossario/",
   "/fontes-e-metodo/",
 ];
 
 const CONDOMINIUM_PATHS = [
-  "/condominios/reserva-manaca/",
-  "/condominios/bosque-jequitiba/",
-  "/condominios/bosque-araucaria/",
-  "/condominios/recanto-jacaranda/",
-  "/condominios/reserva-figueiras/",
-  "/condominios/sequoia/",
-  "/condominios/bosque-cerejeiras/",
-  "/condominios/reserva-flamboyant/",
-  "/condominios/recanto-oliveiras/",
+  "/condominios-e-produtos/reserva-manaca/",
+  "/condominios-e-produtos/bosque-jequitiba/",
+  "/condominios-e-produtos/bosque-araucaria/",
+  "/condominios-e-produtos/recanto-jacaranda/",
+  "/condominios-e-produtos/reserva-figueiras/",
+  "/condominios-e-produtos/sequoia/",
+  "/condominios-e-produtos/bosque-cerejeiras/",
+  "/condominios-e-produtos/reserva-flamboyant/",
+  "/condominios-e-produtos/recanto-oliveiras/",
 ];
 
 describe("route registry", () => {
@@ -44,7 +44,7 @@ describe("route registry", () => {
     }
   });
 
-  it("contains all 9 condominium paths under /condominios/", () => {
+  it("contains all 9 condominium paths under /condominios-e-produtos/", () => {
     const paths = ROUTES.map((r) => r.path);
     for (const p of CONDOMINIUM_PATHS) {
       expect(paths).toContain(p);

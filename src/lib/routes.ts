@@ -9,7 +9,7 @@ export interface NavItem {
   label: string;
 }
 
-const CONDOS_PREFIX = "/condominios";
+const CONDOS_PREFIX = "/condominios-e-produtos";
 
 export const ROUTES: Route[] = [
   // --- 6 main navigation items (P0 hub pages) ---
