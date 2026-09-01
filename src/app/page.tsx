@@ -57,10 +57,19 @@ export default function Home() {
             </p>
           )}
 
-          <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-            Jardim das Perdizes Broker
+          <p className="text-sm font-medium uppercase tracking-wide text-brand">
+            Jardim das Perdizes · Perdizes, São Paulo
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+            Guia, dados e imóveis verificados do Jardim das Perdizes
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
+          {/* Signature: the park line — one quiet stroke of the bairro-parque
+              identity. Everything else on the page stays quiet. */}
+          <div
+            aria-hidden="true"
+            className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-brand to-brand-strong"
+          />
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
             Guias, dados, análises e contexto hiperlocal sobre o bairro, seus
             condomínios, o parque, a mobilidade e o mercado — com fontes, datas
             e metodologia. A informação certa para morar, investir, vender ou

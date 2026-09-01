@@ -32,6 +32,25 @@ e versionamento semântico.
   vars de produção e validações pós-deploy (fases B–F).
 
 ### Corrigido
+- **Auditoria completa de UI/UX (SKILL frontend-design + Impeccable)**:
+  - P0 — rotas de condomínio trifurcadas (`/condominios/` vs
+    `/condominios-e-produtos/` vs físico): canonicalizado em
+    `/condominios-e-produtos/`, hub criado, 10+ hrefs mortos corrigidos,
+    breadcrumb/sitemap/llms.txt alinhados; crawler `routes.integrity.test.ts`
+    impede regressão (rotas declaradas e hrefs internos vs páginas físicas).
+  - P1 — `text-white` sobre marca clara em dark mode substituído por
+    `text-brand-contrast` (7 CTAs); `.container-page` adotado em todas as
+    páginas; ficha reusa `Badge` (tons com dark variants); token `--error`
+    adicionado (bloco de erro renderizava cor indefinida); `LeadForm` com
+    `aria-invalid`/`aria-describedby`, erros inline e foco por etapa.
+  - P2 — `aria-current="page"` na navegação ativa; skip-link; nav mobile em
+    chips roláveis; porta 2 no Header/Footer agora é o WhatsApp real; página
+    `/privacidade/` (LGPD); `mailto:` no contato; `prefers-reduced-motion` e
+    `:focus-visible` global.
+  - P3 — hero com tese e eyebrow local + traço assinatura do bairro-parque;
+    copy de roadmap removida do conteúdo.
+
+### Corrigido
 - `globals.css`: `font-family: Arial, Helvetica, sans-serif` hardcoded →
   `var(--font-sans)` (anti-padrão `overused-font` do Impeccable — detect
   agora retorna zero ocorrências).
