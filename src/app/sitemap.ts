@@ -13,8 +13,9 @@ function priorityFor(path: string): number {
 }
 
 /**
- * 16-entry sitemap derived solely from ROUTES + siteUrl() (threat T-04-02:
+ * Sitemap derived solely from ROUTES + siteUrl() (threat T-04-02:
  * no hardcoded URLs). Absolute, trailing-slash-normalized canonical form.
+ * 31 routes today: 21 P0 + hub/privacidade + 9 condominium pages.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteUrl().replace(/\/+$/, "");

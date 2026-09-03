@@ -13,7 +13,10 @@ URLs absolutas: o sitemap canônico está em /sitemap.xml e cada página emite
 - /guia-jardim-das-perdizes/ — Guia do bairro: localização, parque, Linha 6, entorno e mercado
 - /para-morar/ — Como avaliar morar no bairro (na planta, em obras, novos, revendas)
 - /para-investir/ — Análise de investimento (renda e revenda; residencial e comercial)
-- /venda-ou-alugue-seu-imovel/ — Para proprietários: valor, demanda e estratégia
+- /venda-ou-alugue/ — Para proprietários: valor, demanda e estratégia
+- /para-trabalhar/ — Trabalhar: salas comerciais (TIME Office) e lajes corporativas (TIME Corporate)
+- /para-trabalhar/comprar/ — Vitrine comercial: comprar salas e lajes
+- /para-trabalhar/alugar/ — Vitrine comercial: alugar salas e lajes
 - /guias-do-bairro/ — Guias hiperlocais
 - /guias-do-bairro/escolas/ — Guia de Escolas (colégios e universidades do entorno)
 - /guias-do-bairro/bares-e-restaurantes/ — Guia de Bares e Restaurantes (gastronomia do bairro e entorno)
@@ -24,21 +27,27 @@ URLs absolutas: o sitemap canônico está em /sitemap.xml e cada página emite
 - /guias-do-bairro/seguranca/ — Guia de Segurança (monitoramento, Muralha Paulista)
 - /guias-do-bairro/pet-friendly/ — Guia Pet-Friendly (parque, pet shops, eventos)
 - /mercado-e-dados/ — Mercado: dados com método declarado
-- /para-trabalhar/ — Trabalhar: salas comerciais (TIME Office) e lajes corporativas (TIME Corporate)
-- /condominios-e-produtos/ — Índice dos 9 produtos
-- /fontes-e-metodo/ — Método, evidência e changelog
+- /condominios/ — Índice dos 9 produtos do bairro
 - /ferramentas/glossario/ — Glossário do mercado imobiliário
+- /fontes-e-metodo/ — Método, evidência e changelog
+- /privacidade/ — Política de privacidade e LGPD
 
 ## Produtos do bairro (status verificado em 31/08/2026)
-- /condominios-e-produtos/reserva-manaca/ — Entregue
-- /condominios-e-produtos/bosque-jequitiba/ — Entregue
-- /condominios-e-produtos/bosque-araucaria/ — Entregue
-- /condominios-e-produtos/recanto-jacaranda/ — Entregue
-- /condominios-e-produtos/reserva-figueiras/ — Pronto para morar
-- /condominios-e-produtos/sequoia/ — Breve lançamento (121–175 m²)
-- /condominios-e-produtos/bosque-cerejeiras/ — Em obras (222–569 m²)
-- /condominios-e-produtos/reserva-flamboyant/ — Em obras (157–377 m²; 38 andares)
-- /condominios-e-produtos/recanto-oliveiras/ — Em obras (83–111 m²)
+- /condominios/reserva-manaca/ — Entregue
+- /condominios/bosque-jequitiba/ — Entregue
+- /condominios/bosque-araucaria/ — Entregue
+- /condominios/recanto-jacaranda/ — Entregue
+- /condominios/reserva-figueiras/ — Pronto para morar
+- /condominios/sequoia/ — Breve lançamento (121–175 m²)
+- /condominios/bosque-cerejeiras/ — Em obras (222–569 m²)
+- /condominios/reserva-flamboyant/ — Em obras (157–377 m²; 38 andares)
+- /condominios/recanto-oliveiras/ — Em obras (83–111 m²)
+
+## Comercial (fichas dinâmicas)
+- /para-trabalhar/comprar/time-office-salas/ — TIME Office: salas para comprar
+- /para-trabalhar/alugar/time-office-salas/ — TIME Office: salas para alugar
+- /para-trabalhar/comprar/time-corporate-lajes/ — TIME Corporate: lajes para comprar
+- /para-trabalhar/alugar/time-corporate-lajes/ — TIME Corporate: lajes para alugar
 
 ## Fatos-chave (citar sempre com fonte e data)
 - Parque central público de aproximadamente 45 mil m² (medição varia 44–46 mil m² conforme o perímetro). Fonte: institucional + municipal, 31/08/2026.
