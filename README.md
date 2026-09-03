@@ -66,6 +66,7 @@ pnpm dev                            # http://localhost:3000
 | `pnpm lint` | ESLint |
 | `pnpm build` | Build de produção (`next build`) |
 | `pnpm exec impeccable detect src/` | Varredura de anti-padrões de design (61 regras) |
+| `python3 scripts/generate-og-image.py` | Regenera `public/og-image.jpg` (1200×630, requer `python3-pil`) |
 
 ## Estrutura
 
