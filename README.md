@@ -153,6 +153,14 @@ Apontar o DNS → adicionar o domínio na Vercel (Settings → Domains) →
 atualizar `NEXT_PUBLIC_SITE_URL` → redeploy (canonical, sitemap e robots
 atualizam sozinhos) → reenviar o sitemap no Search Console.
 
+## Qualidade e auditoria
+
+- **Cobertura JSON-LD:** 100% (35/35 páginas com pelo menos 1 schema).
+- **Testes:** 173 asserts (Vitest).
+- **Sitemap:** 35 URLs (21 P0 + 9 condomínios + 4 fichas comerciais + home).
+- **Auditoria UI/UX:** docs/AUDIT_UIUX_2026-09-03.md (score 7.9/10 → 8.5+ após correções).
+- **Backlog:** docs/BACKLOG.md.
+
 ## Licença
 
 Proprietário — todos os direitos reservados. Dados de terceiros mantêm a

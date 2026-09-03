@@ -5,6 +5,21 @@ Todas as mudanças notáveis do projeto.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e versionamento semântico.
 
+## [1.1.3] - 2026-09-03
+
+### Adicionado
+- **Página 404 personalizada** (src/app/not-found.tsx): branding, links para
+  hubs e CTA WhatsApp.
+- **JSON-LD BreadcrumbList** em 5 páginas (100% cobertura, 35/35).
+- **FAQPage JSON-LD** nos hubs comerciais (4 perguntas cada).
+- **BreadcrumbList na home** (além do RealEstateAgent).
+- **Respeito a prefers-reduced-motion** (globals.css, WCAG 2.3.3).
+
+### Corrigido
+- **P0-01**: Canonical com dupla barra (metadata.ts).
+- **P1-02**: Home sem BreadcrumbList (page.tsx).
+- **P2-03**: Alvos < 44px em nav secundária (Header.tsx).
+
 ## [1.1.2] - 2026-09-03
 
 ### Adicionado
