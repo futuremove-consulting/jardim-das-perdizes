@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { localBusinessSchema } from "@/lib/seo/schemas";
+import { localBusinessSchema, breadcrumbSchema, crumb } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 import { isDemo } from "@/lib/config";
 import { CONDOMINIUMS, STATUS_LABELS } from "@/data/condominiums";
 import { getCondoMedia } from "@/data/projectMedia";

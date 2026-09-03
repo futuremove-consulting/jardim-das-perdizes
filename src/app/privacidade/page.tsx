@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbSchema, crumb } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 import { BROKER } from "@/lib/config";
 
 export const metadata = buildPageMetadata({

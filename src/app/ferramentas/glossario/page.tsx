@@ -1,4 +1,6 @@
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbSchema, crumb } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata = buildPageMetadata({
   title: "Glossário Imobiliário — Jardim das Perdizes Broker",
@@ -10,6 +12,9 @@ export const metadata = buildPageMetadata({
 export default function GlossarioPage() {
   return (
     <section className="container-page py-12">
+      <JsonLd
+        schema={breadcrumbSchema([crumb("/"), crumb("/ferramentas/glossario/")])}
+      />
       <h1 className="text-3xl font-semibold tracking-tight">Glossário</h1>
       <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         Um glossário para você entender os termos do mercado imobiliário sem

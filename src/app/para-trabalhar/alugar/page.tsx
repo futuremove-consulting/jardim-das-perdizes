@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbSchema, crumb, faqPageSchema } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 import { getCommercialByModality } from "@/data/commercial";
 import { STATUS_LABELS, STATUS_TONES } from "@/data/condominiums";
 
@@ -10,11 +12,35 @@ export const metadata = buildPageMetadata({
   path: "/para-trabalhar/alugar/",
 });
 
+
+const FAQ_ALUGAR = [
+  {
+    "question": "Quais são as garantias exigidas para alugar um imóvel comercial?",
+    "answer": "As mais comuns são fiador, caução (até 3 meses de aluguel) e seguro fiança. Em alguns casos, o locador pode aceitar letter of credit ou capital de giro como garantia alternativa."
+  },
+  {
+    "question": "Quem paga o IPTU e as despesas de condomínio na locação comercial?",
+    "answer": "Normalmente, o inquilino arca com IPTU, condomínio e taxas prediais. O aluguel base geralmente não inclui esses encargos — verifique o contrato para confirmar a divisão de despesas."
+  },
+  {
+    "question": "Qual é a duração típica de um contrato de aluguel comercial?",
+    "answer": "Contratos de 5 anos são comuns no mercado comercial, com reajuste anual por IPCA ou IGP-M. Contratos mais longos (10 anos) podem ser negociados para lajes corporativas."
+  },
+  {
+    "question": "Posso fazer reformas no imóvel comercial alugado?",
+    "answer": "Sim, com autorização do locador. Adequações de layout geralmente são permitidas, mas modificações estruturais exigem aprovação formal. Consulte o contrato para verificar as condições específicas."
+  }
+];
+
 export default function AlugarPage() {
   const properties = getCommercialByModality("alugar");
 
   return (
     <section className="container-page py-12">
+      <JsonLd
+        schema={breadcrumbSchema([crumb("/"), crumb("/para-trabalhar/alugar/")])}
+      />
+      <JsonLd schema={faqPageSchema(FAQ_ALUGAR)} />
       <h1 className="text-3xl font-semibold tracking-tight">
         Alugar — Salas e Lajes Comerciais
       </h1>
@@ -45,6 +71,20 @@ export default function AlugarPage() {
           </Link>
         ))}
       </div>
+
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold tracking-tight">
+          Perguntas frequentes
+        </h2>
+        <dl className="mt-6 max-w-2xl space-y-6">
+          {FAQ_ALUGAR.map((item, i) => (
+            <div key={i}>
+              <dt className="text-base font-medium text-ink">{item.question}</dt>
+              <dd className="mt-2 text-ink-soft">{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
     </section>
   );
 }

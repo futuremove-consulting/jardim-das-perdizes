@@ -1,4 +1,6 @@
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbSchema, crumb } from "@/lib/seo/schemas";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata = buildPageMetadata({
   title: "Fontes e Método — Jardim das Perdizes Broker",
@@ -10,6 +12,9 @@ export const metadata = buildPageMetadata({
 export default function FontesEMetodoPage() {
   return (
     <section className="container-page py-12">
+      <JsonLd
+        schema={breadcrumbSchema([crumb("/"), crumb("/fontes-e-metodo/")])}
+      />
       <h1 className="text-3xl font-semibold tracking-tight">Fontes e Método</h1>
       <p className="mt-3 max-w-2xl text-lg leading-8 text-ink-soft">
         A credibilidade do nosso conteúdo vem do método. Explicamos aqui como

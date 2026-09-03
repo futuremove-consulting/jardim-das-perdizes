@@ -34,7 +34,7 @@ export default function Header() {
         <ul className="hidden gap-6 text-sm font-medium text-ink lg:flex">
           {NAV_MAIN.map((item) => (
             <li key={item.path}>
-              <ActiveLink {...item} />
+              <ActiveLink {...item} className="inline-block py-2" />
             </li>
           ))}
         </ul>
@@ -57,7 +57,7 @@ export default function Header() {
         <ul className="flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
           {NAV_SECONDARY.map((item) => (
             <li key={item.path}>
-              <ActiveLink {...item} />
+              <ActiveLink {...item} className="inline-block py-2" />
             </li>
           ))}
         </ul>
