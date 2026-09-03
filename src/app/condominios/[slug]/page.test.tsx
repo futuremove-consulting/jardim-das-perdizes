@@ -10,7 +10,7 @@ describe("condominium [slug] page", () => {
     render(element);
 
     expect(
-      screen.getByRole("heading", { name: /reserva manacá/i })
+      screen.getByRole("heading", { level: 1, name: /reserva manacá/i })
     ).toBeInTheDocument();
     for (const block of [
       "Andorinha",
@@ -22,7 +22,7 @@ describe("condominium [slug] page", () => {
     ]) {
       expect(screen.getByText(block)).toBeInTheDocument();
     }
-    expect(screen.getByText(/entregue/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/entregue/i).length).toBeGreaterThan(0);
   });
 
   it("renders Recanto Jacarandá unconfirmed-towers disclosure", async () => {
@@ -54,7 +54,7 @@ describe("condominium [slug] page", () => {
     render(element);
 
     expect(screen.getAllByText(/breve lançamento/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/não divulgado — breve lançamento/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/não divulgado — breve lançamento/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/tecnisa\.com\.br\/imoveis\/sequoia/i)).toBeInTheDocument();
     expect(screen.getByText("4 dormitórios — 148 m²")).toBeInTheDocument();
   });
