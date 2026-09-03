@@ -6,6 +6,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import {
   faqPageSchema,
   breadcrumbSchema,
+  crumb,
   type FaqItem,
 } from "@/lib/seo/schemas";
 
@@ -90,9 +91,9 @@ export default function GuiaPage({
       <JsonLd schema={faqPageSchema(faq)} />
       <JsonLd
         schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Guias do Bairro", path: "/guias-do-bairro/" },
-          { name: guia.title, path: `/guias-do-bairro/${guia.slug}/` },
+          crumb("/"),
+          crumb("/guias-do-bairro/"),
+          crumb(`/guias-do-bairro/${guia.slug}/`, guia.title),
         ])}
       />
 

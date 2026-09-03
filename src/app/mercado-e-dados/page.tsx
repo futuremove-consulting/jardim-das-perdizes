@@ -6,6 +6,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import {
   faqPageSchema,
   breadcrumbSchema,
+  crumb,
   type FaqItem,
 } from "@/lib/seo/schemas";
 
@@ -206,10 +207,7 @@ export default function MercadoEDadosPage() {
 
       <JsonLd schema={faqPageSchema(FAQ_ITEMS)} />
       <JsonLd
-        schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Mercado", path: "/mercado-e-dados/" },
-        ])}
+        schema={breadcrumbSchema([crumb("/"), crumb("/mercado-e-dados/")])}
       />
 
       <p className="mt-10 max-w-2xl text-xs text-muted">

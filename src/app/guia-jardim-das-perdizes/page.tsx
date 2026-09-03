@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import { faqPageSchema, breadcrumbSchema, crumb } from "@/lib/seo/schemas";
 import JsonLd from "@/components/seo/JsonLd";
 import KeyTakeaways from "@/components/content/KeyTakeaways";
 import Faq from "@/components/content/Faq";
@@ -41,11 +41,8 @@ export default function GuiaJardimDasPerdizesPage() {
       <JsonLd schema={faqPageSchema(FAQ_ITEMS)} />
       <JsonLd
         schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          {
-            name: "Guia do Jardim das Perdizes",
-            path: "/guia-jardim-das-perdizes/",
-          },
+          crumb("/"),
+          crumb("/guia-jardim-das-perdizes/"),
         ])}
       />
 

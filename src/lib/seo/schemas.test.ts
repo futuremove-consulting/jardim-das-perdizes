@@ -4,6 +4,7 @@ import {
   breadcrumbSchema,
   localBusinessSchema,
   apartmentComplexSchema,
+  crumb,
 } from "./schemas";
 
 const ORIGINAL_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
@@ -49,6 +50,42 @@ describe("breadcrumbSchema", () => {
     expect(items[0].position).toBe(1);
     expect(items[1].position).toBe(2);
     expect(String(items[1].item)).toMatch(/\/para-morar\/$/);
+  });
+});
+
+describe("crumb", () => {
+  it("derives the label from the routes registry (nav and JSON-LD can't drift)", () => {
+    expect(crumb("/")).toEqual({ path: "/", name: "Home" });
+    expect(crumb("/para-morar/")).toEqual({
+      path: "/para-morar/",
+      name: "Para Morar",
+    });
+    expect(crumb("/condominios/sequoia/")).toEqual({
+      path: "/condominios/sequoia/",
+      name: "Sequoia",
+    });
+  });
+
+  it("accepts an explicit name for leaves outside ROUTES (dynamic fichas)", () => {
+    expect(
+      crumb(
+        "/para-trabalhar/comprar/time-office-salas/",
+        "TIME Office — Salas Comerciais"
+      )
+    ).toEqual({
+      path: "/para-trabalhar/comprar/time-office-salas/",
+      name: "TIME Office — Salas Comerciais",
+    });
+  });
+
+  it("throws on an unregistered path without an explicit name (build-time failure)", () => {
+    expect(() => crumb("/rota-fantasma/")).toThrowError(/not in ROUTES/);
+  });
+
+  it("feeds breadcrumbSchema end-to-end", () => {
+    const schema = breadcrumbSchema([crumb("/"), crumb("/para-morar/")]);
+    const items = schema.itemListElement as Array<Record<string, unknown>>;
+    expect(items[1].name).toBe("Para Morar");
   });
 });
 

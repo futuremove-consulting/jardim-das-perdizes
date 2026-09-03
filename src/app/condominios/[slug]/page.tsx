@@ -8,7 +8,11 @@ import {
 } from "@/data/condominiums";
 import { getCondoMedia } from "@/data/projectMedia";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { apartmentComplexSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import {
+  apartmentComplexSchema,
+  breadcrumbSchema,
+  crumb,
+} from "@/lib/seo/schemas";
 import JsonLd from "@/components/seo/JsonLd";
 import Badge from "@/components/ui/Badge";
 import Icon, { type IconName } from "@/components/ui/Icon";
@@ -137,9 +141,9 @@ export default async function CondominiumPage({ params }: PageProps) {
       />
       <JsonLd
         schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Condomínios", path: "/condominios/" },
-          { name: condominium.name, path: `/condominios/${condominium.slug}/` },
+          crumb("/"),
+          crumb("/condominios/"),
+          crumb(`/condominios/${condominium.slug}/`),
         ])}
       />
 

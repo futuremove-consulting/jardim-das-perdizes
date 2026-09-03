@@ -1,4 +1,5 @@
 import { siteUrl } from "@/lib/config";
+import { getRouteLabel } from "@/lib/routes";
 
 /**
  * LocalBusiness JSON-LD builder (plan 01-04).
@@ -50,6 +51,26 @@ export interface BreadcrumbEntry {
   name: string;
   /** Site-absolute path with trailing slash ("/" for home). */
   path: string;
+}
+
+/**
+ * Breadcrumb entry builder. Derives the label from the routes registry
+ * (src/lib/routes.ts) so navigation labels and breadcrumb JSON-LD — which
+ * Google renders in SERPs — can never drift apart (this already happened
+ * when "Mercado & Dados" was renamed to "Mercado"). Pass an explicit name
+ * only for leaves outside ROUTES (dynamic commercial fichas) or when a
+ * data-layer title should win (e.g. guia.title). An unregistered path
+ * without a name throws at render time — SSG turns that into a build
+ * failure instead of a silent label drift.
+ */
+export function crumb(path: string, name?: string): BreadcrumbEntry {
+  const label = name ?? getRouteLabel(path);
+  if (!label) {
+    throw new Error(
+      `crumb(): path "${path}" is not in ROUTES and no explicit name was given`
+    );
+  }
+  return { path, name: label };
 }
 
 /** BreadcrumbList JSON-LD with absolute canonical URLs derived from siteUrl. */

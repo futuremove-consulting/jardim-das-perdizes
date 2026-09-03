@@ -7,7 +7,7 @@ import {
 } from "@/data/commercial";
 import { STATUS_LABELS, STATUS_TONES } from "@/data/condominiums";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema } from "@/lib/seo/schemas";
+import { breadcrumbSchema, crumb } from "@/lib/seo/schemas";
 import JsonLd from "@/components/seo/JsonLd";
 
 type PageProps = {
@@ -58,13 +58,10 @@ export default async function CommercialPropertyPage({ params }: PageProps) {
     <section className="container-page py-12">
       <JsonLd
         schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Trabalhar", path: "/para-trabalhar/" },
-          { name: action, path: `/para-trabalhar/${modality}/` },
-          {
-            name: property.name,
-            path: `/para-trabalhar/${modality}/${property.slug}/`,
-          },
+          crumb("/"),
+          crumb("/para-trabalhar/"),
+          crumb(`/para-trabalhar/${modality}/`),
+          crumb(`/para-trabalhar/${modality}/${property.slug}/`, property.name),
         ])}
       />
       <nav className="text-sm text-muted">

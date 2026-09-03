@@ -3,7 +3,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CONDOMINIUMS } from "@/data/condominiums";
 import DiscoveryCard from "@/components/discovery/DiscoveryCard";
 import JsonLd from "@/components/seo/JsonLd";
-import { breadcrumbSchema } from "@/lib/seo/schemas";
+import { breadcrumbSchema, crumb } from "@/lib/seo/schemas";
 
 export const metadata = buildPageMetadata({
   title: "Condomínios e produtos do Jardim das Perdizes",
@@ -16,10 +16,7 @@ export default function CondominiumsHubPage() {
   return (
     <section className="container-page py-12">
       <JsonLd
-        schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Condomínios", path: "/condominios/" },
-        ])}
+        schema={breadcrumbSchema([crumb("/"), crumb("/condominios/")])}
       />
 
       <nav className="text-sm text-muted" aria-label="Você está em">

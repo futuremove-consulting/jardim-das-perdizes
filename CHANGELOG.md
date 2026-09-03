@@ -5,6 +5,26 @@ Todas as mudanças notáveis do projeto.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e versionamento semântico.
 
+## [1.1.2] - 2026-09-03
+
+### Adicionado
+- **OG image dedicada com marca** (1200×630, `public/og-image.jpg`):
+  foto das esculturas de Tomie Ohtake no parque central com os fundos do
+  bairro, scrim em `--brand-strong`, barra em `--accent` e fonte Ubuntu —
+  gerada por `scripts/generate-og-image.py` (Pillow; sem dependência npm).
+  Substitui o apontamento temporário para a banner do bairro.
+- Helper `crumb()` em `src/lib/seo/schemas.ts`: deriva o label do registry
+  de rotas (`getRouteLabel`) com nome explícito opcional para folhas fora
+  dele; path não registrado sem nome falha o build. 4 testes novos.
+
+### Corrigido
+- **Labels de breadcrumb derivados do registry**: os 11 pontos que
+  hardcodavam nomes no JSON-LD `BreadcrumbList` agora herdam os labels de
+  `ROUTES` — navegação e breadcrumb não dessincronizam mais (ex.:
+  "Mercado & Dados" → "Mercado" havia deixado breadcrumbs desatualizados;
+  breadcrumb de /venda-ou-alugue/ padronizado em "Venda ou Alugue").
+  Folhas dinâmicas mantêm nome do dado (fichas comerciais, `guia.title`).
+
 ## [1.1.1] - 2026-09-03
 
 ### Adicionado

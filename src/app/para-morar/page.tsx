@@ -6,6 +6,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import {
   faqPageSchema,
   breadcrumbSchema,
+  crumb,
   type FaqItem,
 } from "@/lib/seo/schemas";
 
@@ -158,10 +159,7 @@ export default function ParaMorarPage() {
 
       <JsonLd schema={faqPageSchema(FAQ_ITEMS)} />
       <JsonLd
-        schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Para Morar", path: "/para-morar/" },
-        ])}
+        schema={breadcrumbSchema([crumb("/"), crumb("/para-morar/")])}
       />
 
       <p className="mt-10 max-w-2xl text-xs text-muted">

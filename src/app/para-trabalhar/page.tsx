@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import { faqPageSchema, breadcrumbSchema, crumb } from "@/lib/seo/schemas";
 import KeyTakeaways from "@/components/content/KeyTakeaways";
 import Faq from "@/components/content/Faq";
 import JsonLd from "@/components/seo/JsonLd";
@@ -73,10 +73,7 @@ export default function ParaTrabalharPage() {
 
       <JsonLd schema={faqPageSchema(FAQ_ITEMS)} />
       <JsonLd
-        schema={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Trabalhar", path: "/para-trabalhar/" },
-        ])}
+        schema={breadcrumbSchema([crumb("/"), crumb("/para-trabalhar/")])}
       />
     </section>
   );
