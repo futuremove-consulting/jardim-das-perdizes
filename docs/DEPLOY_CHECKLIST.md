@@ -51,7 +51,7 @@ vercel whoami       # deve imprimir seu username — sinal para o AGENTE
 - HTTP 200 nas rotas-chave (`/`, `/para-morar/`, `/para-trabalhar/`, fichas de condomínio)
 - `trailingSlash` ativo (sem 308 intermediários)
 - `robots.txt` apontando `https://<dominio>/sitemap.xml`
-- `sitemap.xml` com 33 URLs e canonicals no domínio servido
+- `sitemap.xml` com 35 URLs e canonicals no domínio servido
 
 ---
 
@@ -98,7 +98,7 @@ clicar em **Verificar**.
 ### D3 · VOCÊ — Verificar e enviar sitemap
 
 1. Clicar **Verificar** na tela do método escolhido
-2. **Sitemaps → Enviar** → `https://<dominio>/sitemap.xml` (33 URLs)
+2. **Sitemaps → Enviar** → `https://<dominio>/sitemap.xml` (35 URLs)
 3. Acompanhar **Cobertura de indexação** nas semanas seguintes
 
 ---

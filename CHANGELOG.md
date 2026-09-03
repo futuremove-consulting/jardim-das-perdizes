@@ -5,6 +5,28 @@ Todas as mudanças notáveis do projeto.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e versionamento semântico.
 
+## [1.1.1] - 2026-09-03
+
+### Adicionado
+- **Fichas comerciais no sitemap** (35 URLs no total): as 4 páginas SSG
+  `/para-trabalhar/{comprar,alugar}/{time-office-salas,time-corporate-lajes}/`
+  agora derivam de `COMMERCIAL_PROPERTIES` - a mesma fonte de
+  `generateStaticParams()`, impedindo desalinhamento entre sitemap e páginas
+  geradas (sem hardcode, T-04-02). Priority 0.7 (tier ficha) e `lastModified`
+  por `verifiedAt` (2026-08-31).
+- `lastModified` do sitemap por produto verificado também para as 9 fichas
+  de condomínio (antes: data global da fase, 2026-08-28).
+
+### Corrigido
+- **OG image 404**: `buildPageMetadata` apontava `/og-image.jpg`, inexistente
+  em `public/` - todas as páginas emitiam OpenGraph/Twitter card com imagem
+  quebrada. Agora usa asset real do bairro
+  (`/assets/bairro/jardim-das-perdizes-bairro-planejado-sao-paulo-banner.jpg`,
+  1500x775, proporção ideal ~1.91); arte dedicada 1200x630 fica no backlog.
+- Contagem desatualizada do sitemap na documentação: README e
+  DEPLOY_CHECKLIST diziam "33 URLs" (o real era 31; agora 35).
+- Comentário de rotas de condomínio em `routes.ts` ("10 páginas" -> 9).
+
 ## [1.1.0] - 2026-09-01
 
 ### Adicionado
@@ -33,9 +55,9 @@ e versionamento semântico.
 
 ### Corrigido
 - **Auditoria completa de UI/UX (SKILL frontend-design + Impeccable)**:
-  - P0 — rotas de condomínio trifurcadas (`/condominios/` vs
-    `/condominios-e-produtos/` vs físico): canonicalizado em
-    `/condominios-e-produtos/`, hub criado, 10+ hrefs mortos corrigidos,
+  - P0 — rotas de condomínio trifurcadas (`/condomínios/` vs
+    `/condomínios-e-produtos/` vs físico): canonicalizado em
+    `/condomínios-e-produtos/`, hub criado, 10+ hrefs mortos corrigidos,
     breadcrumb/sitemap/llms.txt alinhados; crawler `routes.integrity.test.ts`
     impede regressão (rotas declaradas e hrefs internos vs páginas físicas).
   - P1 — `text-white` sobre marca clara em dark mode substituído por

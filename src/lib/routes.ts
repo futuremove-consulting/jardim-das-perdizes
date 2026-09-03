@@ -35,7 +35,7 @@ export const ROUTES: Route[] = [
   { key: "glossario", path: "/ferramentas/glossario/", label: "Glossário" },
   { key: "fontes-e-metodo", path: "/fontes-e-metodo/", label: "Fontes e Método" },
   { key: "privacidade", path: "/privacidade/", label: "Privacidade" },
-  // --- 10 condominium/product pages (P0) under /condominios/ ---
+  // --- 9 condominium pages (P0) under /condominios/ ---
   { key: "condominio-reserva-manaca", path: `${CONDOS_PREFIX}/reserva-manaca/`, label: "Reserva Manacá" },
   { key: "condominio-bosque-jequitiba", path: `${CONDOS_PREFIX}/bosque-jequitiba/`, label: "Bosque Jequitibá" },
   { key: "condominio-bosque-araucaria", path: `${CONDOS_PREFIX}/bosque-araucaria/`, label: "Bosque Araucária" },

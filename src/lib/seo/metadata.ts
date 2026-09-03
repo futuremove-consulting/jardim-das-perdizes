@@ -9,7 +9,13 @@ export interface PageMetadataInput {
 }
 
 const SITE_NAME = "Jardim das Perdizes Broker";
-const DEFAULT_OG_IMAGE = "/og-image.jpg";
+/**
+ * Real asset (1500×775, ratio ≈ 1.91 — the ideal OG aspect). Dedicated
+ * 1200×630 art is backlog; this replaces the previous "/og-image.jpg",
+ * which never existed (every OG/Twitter card pointed at a 404).
+ */
+const DEFAULT_OG_IMAGE =
+  "/assets/bairro/jardim-das-perdizes-bairro-planejado-sao-paulo-banner.jpg";
 
 /**
  * Metadata factory: title + description + a single absolute canonical

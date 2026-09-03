@@ -143,7 +143,7 @@ Settings → Environment Variables.
 1. Criar propriedade do tipo **Prefixo de URL** com a URL de produção
    (migrar para tipo **Domínio** quando houver domínio próprio).
 2. Verificação: arquivo HTML em `public/` ou meta tag no `<head>`.
-3. Enviar o sitemap `https://<dominio>/sitemap.xml` (33 URLs) e acompanhar
+3. Enviar o sitemap `https://<dominio>/sitemap.xml` (35 URLs) e acompanhar
    a cobertura de indexação.
 
 ### Migração futura de domínio
