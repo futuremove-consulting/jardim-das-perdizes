@@ -10,6 +10,8 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
 }
 
+/* Primary = brand (verde do bairro) — CTA principal.
+   Secondary = brand border/text. Ghost = text only. */
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary:
     "bg-brand text-brand-contrast hover:opacity-90",

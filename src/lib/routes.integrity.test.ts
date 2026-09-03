@@ -99,7 +99,7 @@ describe("site integrity (declared routes vs physical pages)", () => {
     const files = collectTsxFiles(join(process.cwd(), "src"));
     const broken: Array<{ file: string; href: string }> = [];
     const literalHref = /href="(\/[^"]*)"/g;
-    // href={`/condominios-e-produtos/${slug}/`} — validate the literal prefix.
+    // href={`/condominios/${slug}/`} — validate the literal prefix.
     const templateHref = /href=\{`([^`]*)`\}/g;
 
     for (const file of files) {

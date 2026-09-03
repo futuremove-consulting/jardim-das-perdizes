@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/config";
 export interface PageMetadataInput {
   title: string;
   description: string;
-  /** Route path, e.g. "/condominios-e-produtos/reserva-manaca/" (trailing slash optional). */
+  /** Route path, e.g. "/condominios/reserva-manaca/" (trailing slash optional). */
   path: string;
 }
 

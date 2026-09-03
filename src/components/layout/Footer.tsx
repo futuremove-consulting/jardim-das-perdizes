@@ -19,10 +19,10 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <WhatsAppCta className="rounded-full border border-line-strong px-4 py-2 text-sm font-medium text-ink hover:border-brand hover:text-brand" />
+          <WhatsAppCta className="rounded-full border border-line-strong px-4 py-2 text-sm font-medium text-ink hover:border-accent hover:text-accent" />
             <Link
               href={CONVERSION_ANCHOR}
-              className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-brand-contrast hover:opacity-90"
+              className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast hover:opacity-90"
             >
               Enviar solicitação
             </Link>

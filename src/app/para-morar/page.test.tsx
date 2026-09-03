@@ -49,7 +49,7 @@ describe("para-morar page", () => {
 
     expect(
       screen.getByRole("link", { name: /explorar condomínios/i })
-    ).toHaveAttribute("href", "/condominios-e-produtos");
+    ).toHaveAttribute("href", "/condominios");
     expect(
       screen.getByRole("link", { name: /trabalhar no bairro/i })
     ).toHaveAttribute("href", "/para-trabalhar");

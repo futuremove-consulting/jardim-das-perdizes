@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   CONDOMINIUMS,
   getCondominiumBySlug,
 } from "@/data/condominiums";
+import { getCondoMedia } from "@/data/projectMedia";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { apartmentComplexSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 import JsonLd from "@/components/seo/JsonLd";
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
   return buildPageMetadata({
     title: `${condominium.name} — Condomínio no Jardim das Perdizes`,
     description: condominium.blurb,
-    path: `/condominios-e-produtos/${slug}/`,
+    path: `/condominios/${slug}/`,
   });
 }
 
@@ -37,17 +39,19 @@ export default async function CondominiumPage({ params }: PageProps) {
     condominium.deliveryStatus === "delivered" ||
     condominium.deliveryStatus === "ready-to-move";
   const deliveryLabel = isFinished ? "Entrega" : "Previsão de entrega";
-  const verifiedLabel = condominium.verifiedAt
+    const verifiedLabel = condominium.verifiedAt
     .split("-")
     .reverse()
     .join("/");
+
+  const media = getCondoMedia(condominium.slug);
 
   return (
     <section className="container-page py-12">
       <JsonLd
         schema={apartmentComplexSchema({
           name: condominium.name,
-          path: `/condominios-e-produtos/${condominium.slug}/`,
+          path: `/condominios/${condominium.slug}/`,
           description: condominium.blurb,
           address: condominium.address,
           numberOfUnits: condominium.units,
@@ -57,15 +61,15 @@ export default async function CondominiumPage({ params }: PageProps) {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Condomínios", path: "/condominios-e-produtos/" },
+          { name: "Condomínios", path: "/condominios/" },
           {
             name: condominium.name,
-            path: `/condominios-e-produtos/${condominium.slug}/`,
+            path: `/condominios/${condominium.slug}/`,
           },
         ])}
       />
       <nav className="text-sm text-muted">
-        <Link href="/condominios-e-produtos/" className="hover:text-ink">
+        <Link href="/condominios/" className="hover:text-ink">
           Condomínios
         </Link>
         <span className="mx-2" aria-hidden="true">
@@ -80,7 +84,47 @@ export default async function CondominiumPage({ params }: PageProps) {
         </h1>
         <Badge status={condominium.deliveryStatus} />
       </div>
-      <p className="mt-3 max-w-2xl text-ink-soft">{condominium.blurb}</p>
+            <p className="mt-3 max-w-2xl text-ink-soft">{condominium.blurb}</p>
+
+      {media && (
+        <>
+          {/* Hero image — reference-style full-bleed aspect ratio with badge overlay */}
+          <div className="relative mt-8 w-full overflow-hidden rounded-2xl border border-line md:aspect-[16/9] sm:aspect-[16/10]">
+            <Image
+              src={media.hero}
+              alt={media.heroAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 64rem"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4">
+              <Badge status={condominium.deliveryStatus} />
+            </div>
+          </div>
+
+          {/* Gallery grid — first 8 images in reference style */}
+          <h2 className="mt-10 text-xl font-semibold tracking-tight">Galeria</h2>
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {media.gallery.slice(0, 8).map((item) => (
+              <div
+                key={item.src}
+                className="relative aspect-square overflow-hidden rounded-xl border border-line"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       <h2 className="mt-10 text-xl font-semibold">Torres</h2>
       {condominium.towers ? (
@@ -185,6 +229,21 @@ export default async function CondominiumPage({ params }: PageProps) {
           {condominium.statusNote}
         </p>
       )}
+
+            <div className="mt-8 flex flex-wrap gap-3">
+        <Link
+          href="#conversao"
+          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast hover:opacity-90"
+        >
+          Quero mais informações
+        </Link>
+        <Link
+          href="/privacidade/"
+          className="inline-flex items-center justify-center rounded-full border border-line-strong px-6 py-3 text-sm font-medium text-ink hover:border-accent hover:text-accent"
+        >
+          Ver política de privacidade
+        </Link>
+      </div>
 
       <p className="mt-10 max-w-2xl text-xs text-muted">
         Fonte: {condominium.source} · Verificado em {verifiedLabel}

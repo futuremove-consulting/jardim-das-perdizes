@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import FloatingWhatsApp from "@/components/conversion/FloatingWhatsApp";
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,6 +16,9 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
         {children}
       </main>
       <Footer />
+
+      {/* Global FAB — sticky WhatsApp door present on every page (reference pattern) */}
+      <FloatingWhatsApp />
     </div>
   );
 }

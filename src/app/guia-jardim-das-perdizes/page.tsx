@@ -179,7 +179,7 @@ export default function GuiaJardimDasPerdizesPage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/condominios-e-produtos/"
+            href="/condominios/"
             className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-contrast hover:opacity-90"
           >
             Explorar condomínios

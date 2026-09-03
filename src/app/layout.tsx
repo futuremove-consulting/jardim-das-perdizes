@@ -1,14 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Lato, Geist_Mono } from "next/font/google";
 import PageLayout from "@/components/layout/PageLayout";
 import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 import { siteUrl } from "@/lib/config";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const lato = Lato({
+  variable: "--font-lato",
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -43,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${inter.variable} ${lato.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <meta name="theme-color" content="#14532d" />

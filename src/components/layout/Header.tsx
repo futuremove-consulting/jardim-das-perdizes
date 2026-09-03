@@ -19,10 +19,10 @@ export default function Header() {
           <ThemeToggle />
           {/* Dual conversion doors — door 2 is the real WhatsApp, never a link
               to the form (docs: Duas portas de conversão). */}
-          <WhatsAppCta className="hidden rounded-full border border-line-strong px-3 py-1.5 text-sm font-medium text-ink hover:border-brand hover:text-brand sm:inline-flex" />
-          <Link
+                    <WhatsAppCta className="hidden rounded-full border border-line-strong px-3 py-1.5 text-sm font-medium text-ink hover:border-accent hover:text-accent sm:inline-flex" />
+                    <Link
             href={CONVERSION_ANCHOR}
-            className="inline-flex rounded-full bg-brand px-3 py-1.5 text-sm font-semibold text-brand-contrast hover:opacity-90"
+            className="inline-flex rounded-full bg-accent px-3 py-1.5 text-sm font-semibold text-accent-contrast hover:opacity-90"
           >
             Enviar solicitação
           </Link>

@@ -65,7 +65,7 @@ describe("DiscoveryExplorer", () => {
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute(
       "href",
-      `/condominios-e-produtos/${CONDOMINIUMS[0].slug}`
+      `/condominios/${CONDOMINIUMS[0].slug}`
     );
     expect(screen.getByText(/ver ficha do produto/i)).toBeInTheDocument();
   });

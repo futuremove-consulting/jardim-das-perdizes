@@ -54,6 +54,6 @@ describe("GuiaPage (shared guia layout)", () => {
     ).toHaveAttribute("href", "/guia-jardim-das-perdizes");
     expect(
       screen.getByRole("link", { name: /explorar condomínios/i })
-    ).toHaveAttribute("href", "/condominios-e-produtos");
+    ).toHaveAttribute("href", "/condominios");
   });
 });

@@ -14,7 +14,7 @@ describe("Home identity page", () => {
   it("renders the site brand as a heading", () => {
     render(<Home />);
     expect(
-      screen.getByRole("heading", { name: /jardim das perdizes/i })
+      screen.getByRole("heading", { level: 1, name: /jardim das perdizes/i })
     ).toBeInTheDocument();
   });
 

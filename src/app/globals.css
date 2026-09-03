@@ -3,28 +3,41 @@
 /* Class-based dark mode: `.dark` on <html> (set by the theme layer). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ---------- Semantic tokens: light (default) ---------- */
+/* ---------- Semantic tokens: light (default) ----------
+   Aligned with the reference palette (iApartamentos / ZN):
+   luxury deep-blue headers, vermelho de destaque e whitespace limpo.
+   O verde do broker (jardimdasperdizes.com.br) é mantido como accent
+   institucional — toque de identidade sem perder o posicionamento. */
 :root {
   color-scheme: light;
 
-  /* Brand — deep green from the bairro-parque identity (jardimdasperdizes.com.br) */
-  --brand: #14532d;
-  --brand-soft: #dcfce7;
-  --brand-strong: #166534;
+  /* Secondary — luxury blue (referência: headers/textos) */
+  --brand: #1d3557;
+  --brand-soft: #e8f0fe;
+  --brand-strong: #0f2140;
   --brand-contrast: #ffffff;
 
-  /* Neutrals (warm stone) */
-  --paper: #fafaf9;
-  --paper-secondary: #ffffff;
+    /* Accent — vermelho de destaque (referência: CTAs primários) */
+  --accent: #e63946;
+  --accent-strong: #c1272d;
+  --accent-contrast: #ffffff;
+
+  /* Institutional — verde do broker (toque de identidade) */
+  --institutional: #14532d;
+  --institutional-strong: #166534;
+
+  /* Neutrals — clean whitespace (referência) */
+  --paper: #ffffff;
+  --paper-secondary: #f8f9fa;
   --surface: #ffffff;
-  --ink: #1c1917;
-  --ink-soft: #57534e;
-  --muted: #78716c;
-  --line: #e7e5e4;
-  --line-strong: #d6d3d1;
+  --ink: #1d3557;
+  --ink-soft: #647489;
+  --muted: #94a3b8;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
 
   /* States */
-  --focus-ring: #14532d;
+  --focus-ring: #1d3557;
   --error: #b91c1c;
 }
 
@@ -32,21 +45,28 @@
 .dark {
   color-scheme: dark;
 
-  --brand: #4ade80;
-  --brand-soft: #052e16;
-  --brand-strong: #22c55e;
+  --brand: #4fc3f7;
+  --brand-soft: #0c2b5b;
+  --brand-strong: #2196f3;
   --brand-contrast: #052e16;
 
-  --paper: #0c0a09;
-  --paper-secondary: #171412;
-  --surface: #1c1917;
-  --ink: #f5f5f4;
-  --ink-soft: #d6d3d1;
-  --muted: #a8a29e;
-  --line: #292524;
-  --line-strong: #44403c;
+    --accent: #ff6b6b;
+  --accent-strong: #cc4b51;
+  --accent-contrast: #0f172a;
 
-  --focus-ring: #4ade80;
+  --institutional: #4ade80;
+  --institutional-strong: #22c55e;
+
+  --paper: #0f172a;
+  --paper-secondary: #1e293b;
+  --surface: #273449;
+  --ink: #f8fafc;
+  --ink-soft: #cbd5e1;
+  --muted: #94a3b8;
+  --line: #334159;
+  --line-strong: #475569;
+
+  --focus-ring: #4fc3f7;
   --error: #fca5a5;
 }
 
@@ -62,19 +82,38 @@
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
   --color-brand-strong: var(--brand-strong);
-  --color-brand-contrast: var(--brand-contrast);
+    --color-brand-contrast: var(--brand-contrast);
+    --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-institutional: var(--institutional);
+  --color-institutional-strong: var(--institutional-strong);
   --color-focus-ring: var(--focus-ring);
   --color-error: var(--error);
 
-  --font-sans: var(--font-geist-sans);
+  /* Typography: Inter (headings/display) + Lato (body) — matches references */
+  --font-sans: var(--font-inter);
+  --font-body: var(--font-lato);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Headings use Inter (referência: Luxury Typography) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 /* Quality floor: visible keyboard focus everywhere (buttons already have their
@@ -99,8 +138,76 @@ body {
 /* Shared page container: consistent horizontal rhythm across all pages */
 .container-page {
   width: 100%;
-  max-width: 72rem;
+  max-width: 80rem;
   margin-inline: auto;
-  padding-inline: 1.25rem;
+  padding-inline: 1.5rem;
 }
 
+/* Subtle hover/pulse animation used by the floating WhatsApp FAB. */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+}
+
+/* Hide on mobile for the FAB? No — keep visible everywhere (conversion priority). */
+
+
+/* ---------- Editorial + Structured Layout System ---------- */
+/* Mobile-first: single column, scales to multi-column */
+
+/* Section spacing rhythm for editorial pages */
+.section-eyebrow {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand);
+}
+
+/* Editorial prose: optimized for readability */
+.prose-editorial {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.prose-editorial p + p {
+  margin-top: 1.25rem;
+}
+
+/* Sticky table header for comparison tables */
+.table-sticky thead th {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 10;
+}
+
+/* Card hover lift effect */
+.card-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}

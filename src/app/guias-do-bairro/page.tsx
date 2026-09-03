@@ -163,7 +163,7 @@ export default function GuiasDoBairroPage() {
             Guia completo do bairro
           </Link>
           <Link
-            href="/condominios-e-produtos/"
+            href="/condominios/"
             className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-brand"
           >
             Explorar condomínios
